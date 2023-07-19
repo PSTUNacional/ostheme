@@ -1,0 +1,21 @@
+/*========================================
+
+    ADS
+
+*========================================*/
+
+section.ads {
+    margin: 48px auto;
+}
+
+.ad-horizontal-large {
+    width: 100%;
+    background-color: var(--gray-200);
+    height: 120px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size:cover;
+    background-position: center;
+}

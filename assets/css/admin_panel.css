@@ -1,0 +1,40 @@
+fieldset {
+    margin-bottom: 24px;
+    width: 100%;
+}
+
+fieldset h2 {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 24px;
+    color:
+}
+
+
+.block_layout_selector{
+    margin: 24px auto;
+    display: flex;
+    gap: 16px;
+}
+
+.block_layout_selector input[type=radio]{
+    display: none;
+}
+
+.block_layout_selector span{
+    width:128px;
+    height:128px;
+    display: block;
+    border-radius:4px;
+    border: 2px solid #ccc;
+    background-color: #ffffff90 ;
+    overflow:hidden;
+}
+.block_layout_selector input:checked + span{
+    width:128px;
+    height:128px;
+    display: block;
+    border-radius:4px;
+    border: 1px solid #2271b1;
+    outline: 3px solid #2271b140;
+    background-color: #2271b110;
+}

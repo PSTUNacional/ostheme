@@ -1,0 +1,85 @@
+/*========================================
+
+    POST
+
+*========================================*/
+
+article.post .container {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+article.post p,
+article.post h6,
+article.post h5,
+article.post h4,
+article.post h3 {
+    margin-bottom: var(--gap);
+}
+
+article.post img {
+    margin: 48px auto;
+    width: 100%;
+    height: auto;
+}
+
+article.post p {
+    line-height: 1.8em;
+}
+
+article.post h6 {
+    color: var(--primary);
+    font-size: 1em;
+    margin-bottom: 0;
+}
+
+article.post .author-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: var(--gap);
+    margin-right: auto;
+}
+
+article.post .author-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 28px;
+    background-color: var(--gray-300);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gray-100);
+    font-size: 24px;
+}
+
+article.post .info {
+    border-bottom: 1px solid var(--gray-400);
+    padding: 8px 24px;
+}
+
+article.post .tagline {
+    font-weight: 200;
+    font-size: 2em;
+}
+
+article.post .author-line {
+    color: var(--black);
+    font-size: 1em;
+    text-transform: none;
+}
+
+article.post .author-line {
+    margin-bottom: 8px
+}
+
+@media screen and (max-width:560px) {
+    article.post h1 {
+        font-size: 2em;
+    }
+
+    article.post .tagline {
+        font-size: 1.25em;
+    }
+}
