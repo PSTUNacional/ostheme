@@ -1,10 +1,6 @@
 <?php
-
-$args = array('numberposts' => 5, 'category__not_in' => array(50), 'tag__not_in' => array(5));
-$posts = get_posts($args);
-
 ?>
-<section>
+<section class="header-block-02-section">
     <div class="header-block-02">
         <div class="container">
             <article class="destak">

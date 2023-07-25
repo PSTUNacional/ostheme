@@ -41,3 +41,49 @@ function ostheme_config()
 add_action( 'after_setup_theme', 'ostheme_config', 0 );
 
 include get_template_directory() . '/utils/ostheme-panel/functions.php';
+
+
+/*==============================
+
+    Add METABOXES
+    Tagline
+
+==============================*/    
+
+function tagline_metabox()
+{
+    add_meta_box(
+        'post_tagline',
+        'Linha fina',
+        'tagline_metabox_callback',
+        'post',
+        'normal',
+        'high'
+    );
+}
+
+function tagline_metabox_callback($post)
+{
+    $value = get_post_meta( $post->ID, 'post_tagline', true); ?>
+    <p>A linha fina é o resumo que aparece logo abaixo do título e funciona como uma síntese da matéria. Esse valor será exibido também na página inicial como chamada. Não havendo esse valor, o site usará o começo do texto (menos recomendável).</p>
+    <textarea class="panel" id="post_tagline" name="post_tagline"><?= $value; ?></textarea>
+    <?php
+
+}
+
+add_action( 'add_meta_boxes', 'tagline_metabox');
+
+
+function tagline_metabox_saver($postId)
+{
+    if(array_key_exists('post_tagline', $_POST))
+    {
+        update_post_meta(
+            $postId,
+            'post_tagline',
+            $_POST['post_tagline']
+        );
+    }
+}
+
+add_action( 'save_post', 'tagline_metabox_saver' );

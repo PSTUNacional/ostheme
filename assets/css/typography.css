@@ -36,7 +36,7 @@ small,
 
 p{
     line-height: 1.5;
-    line-break: anywhere;
+    line-break: normal;
 }
 
 @media screen and (max-width:560px)
@@ -60,4 +60,16 @@ p{
     h5 {
         font-size: 1rem;
     }
+}
+
+.ta-center{
+    text-align: center;
+}
+
+.ta-left{
+    text-align: left;
+}
+
+.ta-right{
+    text-align: right;
 }

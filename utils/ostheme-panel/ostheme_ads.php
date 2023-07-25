@@ -51,8 +51,14 @@ function theme_settings_ads()
 
 function home_ad_01_active_callback()
 {
-    get_option('theme_ads_01_options_active') == 'on' ? $value = 'checked' : $value = '';
-    echo '<input type="checkbox" name="theme_ads_01_options_active" ' . $value . '/>';
+    get_option('theme_ads_01_options_active') == 'on' ? $active = 'checked' : $active = '';
+?>
+    <label class="switcher">
+        <input type="checkbox" name="theme_ads_01_options_active" <?= $active ?> />
+        <span>
+            <span class="pin"></span>
+    </label>
+<?php
 }
 function home_ad_01_title_callback()
 {
@@ -73,8 +79,14 @@ function home_ad_01_link_callback()
 
 function home_ad_02_active_callback()
 {
-    get_option('theme_ads_02_options_active') == 'on' ? $value = 'checked' : $value = '';
-    echo '<input type="checkbox" name="theme_ads_02_options_active" ' . $value . '/>';
+    get_option('theme_ads_02_options_active') == 'on' ? $active = 'checked' : $active = '';
+?>
+    <label class="switcher">
+        <input type="checkbox" name="theme_ads_02_options_active" <?= $active ?> />
+        <span>
+            <span class="pin"></span>
+    </label>
+<?php
 }
 function home_ad_02_title_callback()
 {
@@ -113,6 +125,12 @@ function render_theme_admin_ads()
     ?>
     <form action="options.php" method="POST" class="card">
         <fieldset>
+        <div class="header">
+            <div class="title">
+                <h3>Banner 01</h3>
+            </div>
+            <p>O banner que é exibido na homepage, acima do bloco de manchetes.</p>
+        </div>
             <table class="form-table">
                 <?php
                 settings_fields('ads_options_group');

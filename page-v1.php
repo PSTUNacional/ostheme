@@ -1,17 +1,62 @@
 <?php
 
 /*
-Template Name: Página Principal
+Template Name: OS Home Page
 */
+
+function render_section($section_id)
+{
+    $cat = get_option('ostheme_section' . $section_id . '_category');
+    $layout = get_option('ostheme_section' . $section_id . '_layout');
+    $block_path = __DIR__ . '/components/' . $layout . '.php';
+
+    $args = array(
+        'numberposts' => 5,
+        'category' => array($cat),
+        'offset' => 0,
+        'tag__not_in' => array(4)
+    );
+
+    $posts = get_posts($args);
+    include($block_path);
+}
 
 get_header(); ?>
 <div class="content-area">
     <main>
 
         <?php
+
+        // ========== Main video ========== //
+        $mainvideo_url =  get_option('ostheme_mainvideo_url');
+
+        if (get_option('ostheme_mainvideo_active') == 'on' && $mainvideo_url !== '') {
+            preg_match("/v=(.*)&/", $mainvideo_url, $url);
+            $videoId = $url[1];
+        ?>
+            <section>
+                <div class="container">
+                    <div class="mainvideo">
+                        <div class="video-info">
+                            <span class="badge primary">ASSISTA AGORA</span>
+                            <h1><?= get_option('ostheme_mainvideo_title') ?></h1>
+                            <p id="videoDescription"><?= get_option('ostheme_mainvideo_description') ?></p>
+                            <a class="btn" href="<?= $mainvideo_url ?>" target="_blank"><i class="fa fa-play-circle"></i> Assistir!</a>
+                        </div>
+                        <div class="video-thumb-container">
+                            <div class="gradient"></div>
+                            <div class="video-thumb" style="background-image:url('https://i.ytimg.com/vi/<?= $videoId ?>/mqdefault.jpg')"></div>
+                        </div>
+                    </div>
+            </section>
+        <?php } ?>
+
+        <?php
+
+        // ========== Ad Block ========== //
         if (get_option('theme_ads_01_options_active') == 'on') {
         ?>
-            <section class="ads">
+            <section class=" ads">
                 <a href="<?= get_option('theme_ads_01_options_link') ?>" class="container">
                     <div class="ad-horizontal-large" style="background-image:url('<?= get_option('theme_ads_01_options_background') ?>')">
                         <h3><?= get_option('theme_ads_01_options_title') ?></h3>
@@ -29,10 +74,13 @@ get_header(); ?>
         );
         $posts = get_posts($args);
 
-        $headerblock = get_option('headerblock_layout_version');
+        // ========== Header Block ========== //
+        $headerblock = get_option('ostheme_headerblock_layout');
+        $headerblock == '' ? $headerblock = 'header_block_01' : '';
         include(__DIR__ . '/components/' . $headerblock . '.php'); ?>
 
         <?php
+        // ========== Ad Block ========== //
         if (get_option('theme_ads_02_options_active') == 'on') {
         ?>
             <section class="ads">
@@ -42,80 +90,51 @@ get_header(); ?>
                     </div>
                 </a>
             </section>
-        <?php } ?>
+        <?php }
 
-        <?php
         $args = array('numberposts' => 4, 'offset' => 5, 'category__not_in' => array(50), 'tag__not_in' => array(4));
         $posts = get_posts($args);
         include(__DIR__ . '/components/block_01.php');
-        ?>
 
-        <?php
-        include(__DIR__ . '/components/os_last-edition.php');
-        ?>
+        /***
+         * 
+         *  Sections
+         *          
+         */
 
-        <?php
-        $args = array('numberposts' => 5, 'category__not_in' => array(50), 'tag__not_in' => array(4));
-        $posts = get_posts($args);
-        include(__DIR__ . '/components/opinion_block_01.php');
-        ?>
+        render_section('01');
 
-        <?php
-        $cat = 23; // Internacional
-        $args = array('numberposts' => 5, 'category' => array($cat), 'offset' => 0, 'tag__not_in' => array(4));
-        $posts = get_posts($args);
-        include(__DIR__ . '/components/block_02.php');
-        ?>
+        render_section('02');
 
-        <?php
-        $cat = 9; // Movimento
-        $args = array('numberposts' => 5, 'category' => array($cat), 'offset' => 0, 'tag__not_in' => array(4));
-        $posts = get_posts($args);
-        include(__DIR__ . '/components/block_03.php');
-        ?>
+        render_section('03');
 
-        <?php
-        $cat = 71; // Cultura
-        $args = array('numberposts' => 2, 'category' => array($cat), 'offset' => 0, 'tag__not_in' => array(4));
-        $posts = get_posts($args);
-        include(__DIR__ . '/components/block_04.php');
+        render_section('04');
+
+        render_section('05');
+
+
         ?>
         <section>
             <div class="container">
                 <div class="col col-33">
-                    <?php
-                    $cat = 7; // SNN
-                    $args = array('numberposts' => 3, 'category' => array($cat), 'offset' => 0, 'tag__not_in' => array(5));
-                    $posts = get_posts($args);
-                    include(__DIR__ . '/components/block_06.php');
-                    ?>
+                    <?php render_section('06') ?>
                 </div>
                 <div class="divider"></div>
                 <div class="col col-33">
-                    <?php
-                    $cat = 81; // LGBT
-                    $args = array('numberposts' => 3, 'category' => array($cat), 'offset' => 0, 'tag__not_in' => array(5));
-                    $posts = get_posts($args);
-                    include(__DIR__ . '/components/block_06.php');
-                    ?>
+                    <?php render_section('07') ?>
                 </div>
                 <div class="divider"></div>
                 <div class="col col-33">
-                    <?php
-                    $cat = 48; // Mulheres
-                    $args = array('numberposts' => 3, 'category' => array($cat), 'offset' => 0, 'tag__not_in' => array(5));
-                    $posts = get_posts($args);
-                    include(__DIR__ . '/components/block_06.php');
-                    ?>
+                    <?php render_section('08') ?>
                 </div>
             </div>
         </section>
 
         <?php
-        $cat = 10; // Debates
-        $args = array('numberposts' => 5, 'category' => array($cat), 'offset' => 0, 'tag__not_in' => array(4));
-        $posts = get_posts($args);
-        include(__DIR__ . '/components/block_02.php');
+
+        render_section('09');
+
+        render_section('10');
         ?>
 
     </main>
