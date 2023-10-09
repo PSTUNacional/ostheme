@@ -8,12 +8,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Opinião Socialista</title>
 	<?php wp_head(); ?>
+
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
 </head>
 
 <body <?php body_class(); ?>>
 	<header>
 		<section class="top-bar">
-			<i class="hamb fa fa-bars" onclick="openMobileMenu()"></i>
 			<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 506.3 112.9" xml:space="preserve">
 				<style type="text/css">
 					.st0 {

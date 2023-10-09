@@ -32,6 +32,8 @@ article.post h6 {
     color: var(--primary);
     font-size: 1em;
     margin-bottom: 0;
+    display: block;
+    width: 100%;
 }
 
 article.post .author-box {
@@ -46,16 +48,16 @@ article.post .author-avatar {
     width: 56px;
     height: 56px;
     border-radius: 28px;
-    background-color: var(--gray-300);
+    background-color: var(--grey-300);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--gray-100);
+    color: var(--grey-100);
     font-size: 24px;
 }
 
 article.post .info {
-    border-bottom: 1px solid var(--gray-400);
+    border-bottom: 1px solid var(--grey-400);
     padding: 8px 24px;
 }
 
@@ -82,5 +84,61 @@ article.post .author-line {
 
     article.post .tagline {
         font-size: 1.25em;
+    }
+}
+
+article .metainfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.rate-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:var(--grey-100);
+    padding: 16px;
+    border-radius:32px;
+}
+
+.socialmedia {
+    display: flex;
+    gap:4px;
+}
+.socialmedia .share{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    aspect-ratio: 1;
+    width: 100%;
+    min-width: 32px;
+    height: 100%;
+    padding: 8px;
+    border-radius:50%;
+    cursor:pointer;
+}
+.socialmedia .share.wa{
+    background-color: #090;
+}
+.socialmedia .share.fb{
+    background-color: #339;
+}
+.socialmedia .share.tw{
+    background-color: #39f;
+}
+
+@media screen and (max-width:560px) {
+    .metainfo {
+        flex-wrap: wrap;
+    }
+
+    article.post .author-box{
+        width: 100%;
+    }
+
+    article.post .socialmedia{
+        order:3;
     }
 }

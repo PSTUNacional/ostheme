@@ -43,4 +43,3 @@ add_action('admin_menu', 'theme_admin_page');
 
 include get_template_directory() . '/utils/ostheme-panel/ostheme_layout.php';
 include get_template_directory() . '/utils/ostheme-panel/ostheme_ads.php';
-

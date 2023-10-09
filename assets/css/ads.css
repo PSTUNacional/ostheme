@@ -10,7 +10,7 @@ section.ads {
 
 .ad-horizontal-large {
     width: 100%;
-    background-color: var(--gray-200);
+    background-color: var(--grey-200);
     height: 120px;
     border-radius: 8px;
     display: flex;

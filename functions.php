@@ -1,5 +1,8 @@
 <?php
 
+include get_template_directory() . '/autoloader.php';
+use OS\Repository\EvaluationRepository;
+
 /***
  * 
  * Load JS and CSS
@@ -7,8 +10,13 @@
  */
 function load_scripts()
 {
+    // CSSs
     wp_enqueue_style('style', get_template_directory_uri() . '/assets/css/style.css', array(), '1.0', 'all');
+
+   // JS Scripts
     wp_enqueue_script('functions', get_template_directory_uri() . '/assets/js/functions.js', array(), '1.0', true);
+    wp_enqueue_script('cookies', get_template_directory_uri().'/assets/js/cookies.js', array(), '1.0', true);
+   
 }
 
 add_action('wp_enqueue_scripts', 'load_scripts');
@@ -87,3 +95,12 @@ function tagline_metabox_saver($postId)
 }
 
 add_action( 'save_post', 'tagline_metabox_saver' );
+
+function get_the_rate($id)
+{
+
+    $evaluation = new EvaluationRepository;
+    $result = $evaluation->getRateById($id);
+    return($result);
+
+}   
