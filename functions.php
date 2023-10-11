@@ -104,3 +104,16 @@ function get_the_rate($id)
     return($result);
 
 }   
+
+function formatDate($str)
+{
+    $months = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez' ];
+    $date = strtotime($str);
+    $d = date('d', $date);
+    $m = date('n', $date);
+    $m = $months[$m-1];
+    $y = date('Y', $date);
+
+    $result = $d." de ".$m." de ".$y;
+    return $result;
+}

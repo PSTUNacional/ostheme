@@ -480,6 +480,66 @@ div.divider {
 
 /***
 *
+*   HEADER BLOCK 04
+*
+*/
+
+.header-block-04 {
+    display: flex;
+    gap: var(--gap);
+}
+
+.header-block-04 h2 {
+    font-size: 1.25em;
+}
+
+.header-block-04 .col.middle article:not(:last-child) {
+    border-bottom: 2px dotted var(--grey-400);
+}
+
+.header-block-04 .featured-image-container {
+    height: 100%;
+    aspect-ratio: 16/9;
+    max-width: 50%;
+    min-width: 50%;
+}
+
+.header-block-04 article.destak .featured-image-container{
+    max-width: 100%;
+}
+
+.header-block-04 article{
+    display: flex;
+    gap: var(--gap);
+    flex-direction: row;
+}
+
+.header-block-04 article.destak {
+    flex-direction: column;
+}
+
+.header-block-04 article.destak h2 {
+    font-weight: 900;
+}
+
+.header-block-04 .post-info{
+    display: flex;
+    flex-direction: column;
+    gap:calc(var(--gap)/2);
+}
+
+@media screen and (max-width:560px) {
+    .header-block-04 .divider {
+        display: none;
+    }
+
+    .header-block-04 {
+        flex-direction: column;
+    }
+}
+
+/***
+*
 *   BLOCK 01
 *
 */
@@ -494,8 +554,6 @@ div.divider {
 .block-01 h2 {
     font-size: 1.25em;
 }
-
-
 
 /***
 *
@@ -1057,11 +1115,31 @@ div.divider {
     border: 1px solid #ccc;
 }
 
-/***
-*
-*   FOOTER
-*
-*/
+/*========================================
+
+    CATEGORY PAGE
+
+*========================================*/
+
+.category-title{
+    width: 100%;
+    margin-top:var(--gap);
+    margin-bottom:var(--gap);
+    border-bottom: 1px solid var(--grey-400);
+    padding-bottom: var(--gap);
+}
+
+.category-title h1{
+    text-align: center;
+    font-size: 3em;
+}
+
+
+/*========================================
+
+    FOOTER
+
+*========================================*/
 
 footer {
     background-color: #333;
@@ -1082,4 +1160,37 @@ footer .bottom-line {
 footer i {
     font-size: 24px;
     padding: 4px;
+}
+
+article.article-01{
+    display: flex;
+    gap: var(--gap);
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    padding-top: var(--gap);
+    border-top: 2px dotted var(--grey-400);
+}
+
+article.article-01 .featured-image-container {
+    height: 100%;
+    aspect-ratio: 16/9;
+    max-width: 30%;
+    min-width: 30%;
+}
+
+article.article-01 h2{
+    font-size:1.5em;
+}
+
+.article-01 .post-info{
+    display: flex;
+    flex-direction: column;
+    gap:calc(var(--gap)/2);
+}
+
+@media screen and (max-width:560px) {
+    .article-01  {
+        flex-direction: column;
+    }
 }

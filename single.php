@@ -1,8 +1,8 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
-if(isset($_COOKIE['osAllowCookies'])){
-  echo $_COOKIE['osContent']->id;
-}
 get_header(); ?>
 <div class="content-area">
   <main>
