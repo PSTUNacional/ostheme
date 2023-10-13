@@ -63,6 +63,8 @@ article.post .author-avatar {
     height: 56px;
     border-radius: 28px;
     background-color: var(--grey-300);
+    background-position: center;
+    background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;

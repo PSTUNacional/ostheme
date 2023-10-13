@@ -12,7 +12,9 @@ get_header(); ?>
         if (have_posts()) {
           while (have_posts()) {
             the_post();
-            $categories = get_the_category(); ?>
+            $categories = get_the_category();
+            $profile = get_avatar_url($post->post_author);
+            ?>
             <div class="block-header">
               <span><?= $categories[0]->name; ?></span>
             </div>
@@ -32,8 +34,11 @@ get_header(); ?>
             <!-- Author Box -->
             <div class="metainfo">
               <div class="author-box">
-                <div class="author-avatar">
-                  <i class="fa fa-user"></i>
+                <div class="author-avatar" style="background-image:url('<?= $profile ?>')">
+                  <?php
+                  if (!$profile) { ?>
+                    <i class="fa fa-user"></i>
+                  <?php } ?>
                 </div>
                 <div class="info">
                   <h4 class="author-line"><?= the_author_meta('display_name', $post->post_author); ?></h4>
@@ -41,9 +46,9 @@ get_header(); ?>
                 </div>
               </div>
               <div class="socialmedia">
-                <a   href="whatsapp://send?text=<?=the_title();?>%0A%0A<?=get_permalink();?>" data-action="share/whatsapp/share" class="wa share"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://www.facebook.com/sharer.php?u=<?=urlencode(get_permalink());?>" class="fb share"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://twitter.com/intent/tweet?text=<?= urlencode(the_title());?>&url=<?= get_permalink();?>%0A%0A&via=opiniaosocialista" class="tw share" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="whatsapp://send?text=<?= the_title(); ?>%0A%0A<?= get_permalink(); ?>" data-action="share/whatsapp/share" class="wa share" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.facebook.com/sharer.php?u=<?= urlencode(get_permalink()); ?>" class="fb share" target="_blank"> <i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/intent/tweet?text=<?= urlencode(the_title()); ?>&url=<?= get_permalink(); ?>%0A%0A&via=opiniaosocialista" class="tw share" target="_blank"><i class="fab fa-twitter"></i></a>
               </div>
 
               <div class="rate-box">
