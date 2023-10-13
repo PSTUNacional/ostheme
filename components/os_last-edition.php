@@ -40,7 +40,7 @@
                         $posts = get_posts($args);
                         foreach ($posts as $post) {
 
-                            $tags = get_the_tags();
+                            $tags = get_the_tags($post);
                             foreach ($tags as $tag) {
                                 if ($tag->slug == 'editorial' || $tag->slug == 'centrais') { ?>
 
@@ -67,7 +67,7 @@
                         <?php
                         foreach ($posts as $post) {
                             $publish = true;
-                            $tags = get_the_tags();
+                            $tags = get_the_tags($post);
 
                             foreach ($tags as $tag) {
                                 if ($tag->slug == 'editorial' || $tag->slug == 'centrais' || $tag->slug == 'oscapa') {
