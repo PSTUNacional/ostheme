@@ -3,7 +3,9 @@
         <div class="col">
             <h2 class="block-header">
                 <span><?= get_cat_name($cat) ?></span>
+                <a href="<?= get_category_link($cat)?>" class="more">Ver todos</a>
             </h2>
+            
             <div class="block-02">
                 <article class="main-article">
                     <a class="featured-image-container" href="<?= get_permalink($posts[0]->ID); ?>">

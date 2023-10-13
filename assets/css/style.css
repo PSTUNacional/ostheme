@@ -359,6 +359,7 @@ article .author-line {
     border-bottom: 1px solid var(--grey-400);
     margin-bottom: calc(2*var(--gap));
     margin-top: calc(2*var(--gap));
+    display: flex;
 }
 
 .block-header span {
@@ -371,6 +372,12 @@ article .author-line {
     font-size: 24px;
     display: block;
     width: fit-content
+}
+
+.block-header .more{
+    margin-left: auto;
+    font-size: 16px;
+    font-weight: initial;
 }
 
 .featured-image-container {
@@ -957,8 +964,12 @@ div.divider {
 #lastOS .oscover {
     display: flex;
     align-items: center;
+    max-width: 25%;
 }
 
+#lastOS .oscover img{
+    width: 100%;
+}
 
 #lastOS .main-articles article {
     flex-direction: row;
