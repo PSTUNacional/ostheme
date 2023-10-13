@@ -169,7 +169,7 @@ section.menu-area {
 @media screen and (max-width:560px) {
 
     main {
-        margin-top: 114px;
+        margin-top: var(--gap);
     }
 
     .top-bar {
@@ -181,7 +181,7 @@ section.menu-area {
         top: 0;
         background: #fff;
         margin: 0;
-        padding: 24px;
+        padding: 12px 24px;
         z-index: 99;
     }
 
@@ -1212,6 +1212,15 @@ div.divider {
     font-size: 3em;
 }
 
+@media screen and (max-width:560px) {
+    .category-title {
+        padding-bottom: calc(var(--gap)/2);
+    }
+    .category-title h1{
+        font-size:2rem;
+    }
+}
+
 
 /*========================================
 
@@ -1268,15 +1277,17 @@ article.article-01 h2 {
 }
 
 @media screen and (max-width:560px) {
-    .article-01 {
+    article.article-01 {
         flex-direction: column;
     }
 
     article.article-01 .featured-image-container {
         height: 100%;
         aspect-ratio: 16/9;
-        max-width: 50%;
-        min-width: 50%;
+        max-width: 100%;
+        min-width: 100%;
+        overflow: hidden;
+        border-radius: 8px;
     }
 
     article.article-01 h2 {

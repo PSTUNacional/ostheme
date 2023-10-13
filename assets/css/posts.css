@@ -132,9 +132,11 @@ article .metainfo {
     padding: 8px;
     border-radius:50%;
     cursor:pointer;
+    text-decoration: none;
 }
 .socialmedia .share.wa{
     background-color: #090;
+    display: none;
 }
 .socialmedia .share.fb{
     background-color: #339;
@@ -154,5 +156,8 @@ article .metainfo {
 
     article.post .socialmedia{
         order:3;
+    }
+    .socialmedia .share.wa{
+        display: flex;
     }
 }
