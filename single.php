@@ -49,7 +49,7 @@ get_header(); ?>
               <div class="rate-box">
                 <?php
                 $evaluation = get_the_rate($post->ID);
-                $evRate = round($evaluation['rate'], 2, '.');
+                $evRate = round($evaluation['rate'], 2);
                 $evTotal = round($evaluation['total']);
 
                 echo '<i class="material-icons checked">star</i>' . $evRate . ' (' . $evTotal . ' avaliações)'; ?>
