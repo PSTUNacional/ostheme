@@ -17,6 +17,7 @@
 <body <?php body_class(); ?>>
 	<header>
 		<section class="top-bar">
+			<a href="/">
 			<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 506.3 112.9" xml:space="preserve">
 				<style type="text/css">
 					.st0 {
@@ -110,6 +111,7 @@
 		c0.7,0,1.4-0.4,1.9-1.3c0.5-0.9,0.8-1.9,0.8-3.2L360.2,1.7z"></path>
 				</g>
 			</svg>
+				</a>
 			<i class="hamb fa fa-bars" onclick="openMobileMenu()"></i>
 		</section>
 		<section class="menu-area">

@@ -117,9 +117,14 @@ header {
     top: 0;
 }
 
-.top-bar svg {
-    max-width: 180px;
+.top-bar a {
     margin: 24px auto;
+}
+
+.top-bar a svg {
+    max-width: 180px;
+    display: block;
+    width: 100%;
 }
 
 section.menu-area {
@@ -130,8 +135,10 @@ section.menu-area {
 
 .main-menu {
     max-width: var(--max-width);
-    padding: var(--gap);
+    padding: 0px var(--gap);
     margin: auto;
+    z-index: 99;
+    position: relative;
 }
 
 .main-menu ul {
@@ -142,6 +149,16 @@ section.menu-area {
 
 .main-menu ul li {
     list-style-type: none;
+    position: relative;
+}
+
+.main-menu ul li a {
+    display: block;
+    padding: var(--gap) 0;
+}
+
+.main-menu ul li:hover {
+    color: var(--primary);
 }
 
 .main-menu a {
@@ -209,6 +226,61 @@ section.menu-area {
 
     .main-menu ul {
         flex-direction: column;
+        gap: 0;
+    }
+
+    .main-menu ul li a {
+        display: block;
+        padding: 12px 0;
+    }
+}
+
+nav .sub-menu {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    position: absolute;
+    bottom: 0;
+    transform: translateY(100%);
+    min-width: 240px;
+    background-color: #fff;
+    box-shadow: 0 6px 10px 0 #0009;
+    z-index: -1;
+}
+
+nav .menu-item:hover>.sub-menu {
+    display: flex;
+}
+
+nav .sub-menu>li a {
+    padding: 0;
+}
+
+nav .sub-menu>li {
+    padding: 12px 24px;
+    border-left: 4px solid var(--primary-00);
+    color: var(--black);
+}
+
+nav .sub-menu>li:hover {
+    color: var(--primary);
+    border-left: 4px solid var(--primary);
+    background-color: var(--primary-05);
+}
+
+@media screen and (max-width:560px) {
+    nav .sub-menu {
+        display: flex;
+        box-shadow: none;
+    }
+
+    nav .sub-menu>li {
+        border: none;
+    }
+
+    nav .sub-menu>li:hover {
+        border: none;
+        background-color: none;
     }
 }
 
@@ -403,12 +475,12 @@ div.divider {
 
 }
 
-.header-block-02 .featured-image-container .gradient{
+.header-block-02 .featured-image-container .gradient {
     background: linear-gradient(90deg, #000f 0%, #0000 100%);
     width: 100%;
     height: 100%;
     position: absolute;
-    z-index:2;
+    z-index: 2;
 }
 
 .header-block-02 .featured-image-container .featured-image {
@@ -433,7 +505,7 @@ div.divider {
         top: inherit;
     }
 
-    .header-block-02 .featured-image-container .gradient{
+    .header-block-02 .featured-image-container .gradient {
         background: linear-gradient(180deg, #000f 0%, #0000 100%);
     }
 }
@@ -504,11 +576,11 @@ div.divider {
     min-width: 50%;
 }
 
-.header-block-04 article.destak .featured-image-container{
+.header-block-04 article.destak .featured-image-container {
     max-width: 100%;
 }
 
-.header-block-04 article{
+.header-block-04 article {
     display: flex;
     gap: var(--gap);
     flex-direction: row;
@@ -522,10 +594,10 @@ div.divider {
     font-weight: 900;
 }
 
-.header-block-04 .post-info{
+.header-block-04 .post-info {
     display: flex;
     flex-direction: column;
-    gap:calc(var(--gap)/2);
+    gap: calc(var(--gap)/2);
 }
 
 @media screen and (max-width:560px) {
@@ -1121,15 +1193,15 @@ div.divider {
 
 *========================================*/
 
-.category-title{
+.category-title {
     width: 100%;
-    margin-top:var(--gap);
-    margin-bottom:var(--gap);
+    margin-top: var(--gap);
+    margin-bottom: var(--gap);
     border-bottom: 1px solid var(--grey-400);
     padding-bottom: var(--gap);
 }
 
-.category-title h1{
+.category-title h1 {
     text-align: center;
     font-size: 3em;
 }
@@ -1162,7 +1234,7 @@ footer i {
     padding: 4px;
 }
 
-article.article-01{
+article.article-01 {
     display: flex;
     gap: var(--gap);
     flex-direction: row;
@@ -1179,18 +1251,29 @@ article.article-01 .featured-image-container {
     min-width: 30%;
 }
 
-article.article-01 h2{
-    font-size:1.5em;
+article.article-01 h2 {
+    font-size: 1.5em;
 }
 
-.article-01 .post-info{
+.article-01 .post-info {
     display: flex;
     flex-direction: column;
-    gap:calc(var(--gap)/2);
+    gap: calc(var(--gap)/2);
 }
 
 @media screen and (max-width:560px) {
-    .article-01  {
+    .article-01 {
         flex-direction: column;
+    }
+
+    article.article-01 .featured-image-container {
+        height: 100%;
+        aspect-ratio: 16/9;
+        max-width: 50%;
+        min-width: 50%;
+    }
+
+    article.article-01 h2 {
+        font-size: 1.25rem;
     }
 }
