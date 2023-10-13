@@ -5,11 +5,16 @@
                 <span>Opinião</span>
             </h2>
             <div class="opinion-block-01">
-                <?php foreach ($posts as $post) { ?>
+                <?php foreach ($posts as $post) {
+                    $profile = get_avatar_url($post->post_author);
+                    ?>
                     <article>
                         <div class="author-box">
-                            <div class="author-avatar">
-                                <i class="fa fa-user"></i>
+                            <div class="author-avatar" style="background-image:url('<?=$profile?>')">
+                            <?php
+                                if(!$profile){ ?>
+                                    <i class="fa fa-user"></i>
+                                <?php } ?>
                             </div>
                             <h4 class="author-line"><?= the_author_meta('display_name', $post->post_author); ?></h4>
                         </div>
@@ -19,6 +24,6 @@
                     </article>
                 <?php }   ?>
             </div>
-        </div>
+        </div> 
     </div>
 </section>

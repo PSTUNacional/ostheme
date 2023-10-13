@@ -899,6 +899,8 @@ div.divider {
     height: 56px;
     border-radius: 28px;
     background-color: var(--grey-300);
+    background-size: cover;
+    background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
