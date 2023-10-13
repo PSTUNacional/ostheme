@@ -451,6 +451,10 @@ div.divider {
     overflow: hidden;
 }
 
+.header-block-02 article.destak h2 {
+    font-size: 2.5em;
+}
+
 .header-block-02 h2 {
     font-size: 1em;
 }

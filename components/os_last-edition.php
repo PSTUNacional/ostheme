@@ -1,7 +1,15 @@
 <section id="lastOS">
 
     <?php
-    $args = array('numberposts' => 1, 'tag__in' => array(4));
+    $args = array(
+        'numberposts' => 1,
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'post_tag',
+                'field'    => 'name',
+                'terms'    => 'oscapa')
+            ),
+        );
     $posts = get_posts($args);
     $edition = (int)filter_var($posts[0]->post_title, FILTER_SANITIZE_NUMBER_INT);
     ?>

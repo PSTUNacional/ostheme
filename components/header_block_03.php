@@ -13,16 +13,16 @@
                     <p><?= get_the_excerpt($posts[0]->ID); ?></p>
                     </a>
                 </div>
-                <div class="featured-image-container">
+                <a class="featured-image-container" href="<?= get_permalink($posts[0]->ID); ?>">
                     <div class="featured-image" style="background-image: url('<?= get_the_post_thumbnail_url($posts[0]->ID); ?>');"></div>
-                </div>
+                </a>
             </article>
             <div class="articles-list">
                 <?php for ($i = 1; $i < 5; $i++) { ?>
                     <article>
-                        <div class="featured-image-container">
+                        <a class="featured-image-container" href="<?= get_permalink($posts[$i]->ID); ?>">
                             <div class="featured-image" style="background-image:url('<?= get_the_post_thumbnail_url($posts[$i]->ID); ?>')"></div>
-                        </div>
+                        </a>
                         <h5 class="sup-category"><?= get_cat_name(wp_get_post_categories($posts[$i]->ID)[0]); ?></h5>
                         <a href="<?= get_permalink($posts[$i]->ID); ?>" title="<?= $posts[$i]->post_title; ?>">
                             <h2><?= $posts[$i]->post_title; ?></h2>

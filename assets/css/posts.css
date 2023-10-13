@@ -24,8 +24,22 @@ article.post img {
     height: auto;
 }
 
+article.post .wp-caption img{
+    margin-bottom:0px;
+}
+.wp-caption .wp-caption-text{
+    color: var(--grey-500);
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
 article.post p {
     line-height: 1.8em;
+}
+
+article.post a,
+article.post p a{
+    text-decoration: underline;
 }
 
 article.post h6 {
@@ -139,6 +153,6 @@ article .metainfo {
     }
 
     article.post .socialmedia{
-        order:3;˜`
+        order:3;
     }
 }
