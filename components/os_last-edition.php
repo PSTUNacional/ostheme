@@ -20,7 +20,7 @@
             </h2>
             <div class="content">
                 <div class="oscover">
-                    <img src="https://www.pstu.org.br/wp-content/uploads/2023/04/OS652_Capa.jpg" />
+                    <img src="<?= '/archive/cover/webp/os'.$edition.'.webp'?>" />
                 </div>
                 <div class="edition-info">
                     <h3>Destaques</h3>
