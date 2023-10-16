@@ -4,6 +4,7 @@
     border: none;
     cursor: pointer;
     background-color: var(--grey-200);
+    width: fit-content;
 }
 
 .btn.primary{
@@ -15,4 +16,17 @@
     background-color: #ffffff00;
     color: var(--primary);
     border: 1px solid var(--primary)
+}
+
+.btn.secondary{
+    background-color: #fff0;
+    color: var(--black);
+    border-color: var(--grey-600);
+    border-width: 1px;
+    border-style: solid;
+}
+
+.btn.secondary:hover{
+    color:var(--primary);
+    border-color: var(--primary);
 }

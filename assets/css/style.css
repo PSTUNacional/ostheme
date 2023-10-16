@@ -4,6 +4,7 @@
 @import url('posts.css');
 @import url('videos.css');
 @import url('buttons.css');
+@import url('os-edition.css');
 
 /*========================================
 
@@ -323,7 +324,7 @@ article {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    height: 100%;
+    height: fit-content;
     padding-bottom: var(--gap);
 }
 
@@ -1267,6 +1268,10 @@ article.article-01 {
     align-items: center;
     width: 100%;
     padding-top: var(--gap);
+    
+}
+
+article.article-01:not(:first-child) {
     border-top: 2px dotted var(--grey-400);
 }
 
