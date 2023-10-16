@@ -326,6 +326,7 @@ article {
     gap: 8px;
     height: fit-content;
     padding-bottom: var(--gap);
+    width: 100%;
 }
 
 article.destak h2 {
