@@ -42,7 +42,7 @@ get_header(); ?>
     <main>
         <div class="edition-grid">
         <?php
-        $editions = scandir(ABSPATH . 'archive/pdf/', 1);
+        $editions = scandir($_SERVER['HTTP_HOST']. '/archive/pdf/', 1);
         foreach ($editions as $e) {
             if (strpos($e, '.pdf')) {
                 $ed = (int)filter_var($e, FILTER_SANITIZE_NUMBER_INT);
