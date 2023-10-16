@@ -17,7 +17,7 @@
         <div class="col">
             <h2 class="block-header">
                 <span>Última edição | Nº<?= $edition; ?></span>
-                <a href="<?= ABSPATH ?>/edicoes" class="more">Ver todos</a>
+                <a href="edicoes" class="more">Ver todos</a>
             </h2>
             <div class="content">
                 <div class="oscover">

@@ -50,7 +50,7 @@ get_header(); ?>
 
         ?>
                 <div class="os-edition">
-                    <a class="image-container" href="<?=ABSPATH?>/edicao/<?=$ed?>">
+                    <a class="image-container" href="edicao/<?=$ed?>">
                         <div class="cover" style="background-image: url('<?= $cover ?>')"></div>
             </a>
                 </div>
