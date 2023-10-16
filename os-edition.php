@@ -4,19 +4,12 @@
 Template Name: OS Edition
 */
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 get_header(); ?>
 <div class="content-area">
-
     <main>
-
         <?php
-        if (isset($_GET['ed'])) {
-            $ed = $_GET['ed'];
-
+        if (get_query_var('edicao')) {
+            $ed = get_query_var('edicao');
         ?>
             <div class="edition-header">
                 <div class="container">
