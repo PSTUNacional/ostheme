@@ -78,7 +78,7 @@ get_header(); ?>
                                     <div class="featured-image" style="background-image:url('<?= get_the_post_thumbnail_url($post->ID); ?>')"></div>
                                 </a>
                                 <div class="article-info">
-                                    <h5 class="sup-category"><?= ucfirst($tag->slug) ?></h5>
+                                    <h5 class="sup-category">Centrais</h5>
                                     <a href="<?= get_permalink($post->ID); ?>" title="<?= $post->post_title; ?>">
                                         <h2><?= $post->post_title; ?></h2>
                                     </a>
