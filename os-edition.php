@@ -133,11 +133,16 @@ get_header(); ?>
                                 <div class="post-info">
                                     <h5 class="sup-category">
                                         <?php
-                                        $cat = get_cat_name(wp_get_post_categories($post->ID)[0]);
-                                        if ($cat == 'Opinião Socialista' && sizeof(wp_get_post_categories($post->ID)) >= 1) {
-                                            $cat = get_cat_name(wp_get_post_categories($post->ID)[1]);
+                                        $cats = wp_get_post_categories($post->ID);
+                                        if (sizeof($cats) == 0) {
+                                            $cat = 'Sem categoria';
                                         } else {
-                                            $cat = 'Especial'
+                                            $cat = get_cat_name($cats[0]);
+                                            if($cat == 'Opinião Socialista' && sizeof($cats) > 1){
+                                                $cat = get_cat_name($cats[1]);
+                                            } elseif ($cat == 'Opinião Socialista' && sizeof($cats) <= 1){
+                                                $cat = 'Especial';
+                                            }
                                         }
                                         echo $cat;
                                         ?>
