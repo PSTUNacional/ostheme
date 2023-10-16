@@ -137,6 +137,7 @@ get_header(); ?>
                                         if ($cat == 'Opinião Socialista') {
                                             $cat = get_cat_name(wp_get_post_categories($post->ID)[1]);
                                         }
+                                        $cat ? $cat : '';
                                         echo $cat;
                                         ?>
                                     </h5>
