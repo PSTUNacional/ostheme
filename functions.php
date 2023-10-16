@@ -122,7 +122,7 @@ function edition_rewrite_rule()
 {
     add_rewrite_rule(
         'edicao/([0-9]+)[/]?$', 
-        '/edicao/?edicao=$matches[1]',
+        'edicao/?edicao=$matches[1]',
         'top'
     );
 }
