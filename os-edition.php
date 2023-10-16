@@ -134,10 +134,11 @@ get_header(); ?>
                                     <h5 class="sup-category">
                                         <?php
                                         $cat = get_cat_name(wp_get_post_categories($post->ID)[0]);
-                                        if ($cat == 'Opinião Socialista') {
+                                        if ($cat == 'Opinião Socialista' && sizeof(wp_get_post_categories($post->ID)) >= 1) {
                                             $cat = get_cat_name(wp_get_post_categories($post->ID)[1]);
+                                        } else {
+                                            $cat = 'Especial'
                                         }
-                                        $cat ? $cat : '';
                                         echo $cat;
                                         ?>
                                     </h5>
