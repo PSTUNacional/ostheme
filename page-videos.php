@@ -15,6 +15,15 @@ get_header(); ?>
     background-color: #000;
     position: relative;
 }
+
+nav.main-menu{
+    color:#fff;
+}
+@media screen and (max-width:560px){
+    nav.main-menu{
+    color:var(--black);
+}
+}
 </style>
 <div class="video-player">
     <div class="video-container">

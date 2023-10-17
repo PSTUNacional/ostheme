@@ -5,13 +5,13 @@ Template Name: OS Edition
 */
 
 $ed = get_query_var('edicao');
-$file = 'os'.$ed.'.pdf';
+$file = 'os' . $ed . '.pdf';
 
 get_header(); ?>
 <div class="content-area">
     <main>
         <?php
-        if(file_exists($_SERVER['DOCUMENT_ROOT'].'/archive/pdf/'.$file)) {
+        if (file_exists($_SERVER['DOCUMENT_ROOT'] . '/archive/pdf/' . $file)) {
         ?>
             <div class="edition-header">
                 <div class="container">
@@ -90,6 +90,9 @@ get_header(); ?>
                         }
                         ?>
                     </div>
+
+                    <?php include(__DIR__ . '/components/ads/whatsapp.php'); ?>
+
                     <h3 class="block-header">
                         <span>Também nesta edição</span>
                     </h3>
@@ -134,20 +137,7 @@ get_header(); ?>
                                 </a>
                                 <div class="post-info">
                                     <h5 class="sup-category">
-                                        <?php
-                                        $cats = wp_get_post_categories($post->ID);
-                                        if (sizeof($cats) == 0) {
-                                            $cat = 'Sem categoria';
-                                        } else {
-                                            $cat = get_cat_name($cats[0]);
-                                            if($cat == 'Opinião Socialista' && sizeof($cats) > 1){
-                                                $cat = get_cat_name($cats[1]);
-                                            } elseif ($cat == 'Opinião Socialista' && sizeof($cats) <= 1){
-                                                $cat = 'Especial';
-                                            }
-                                        }
-                                        echo $cat;
-                                        ?>
+                                        <?= escape_categories(wp_get_post_categories($post->ID))?>
                                     </h5>
                                     <a href="<?= get_permalink($posts[$i]->ID); ?>" title="<?= $post->post_title; ?>">
                                         <h2><?= $post->post_title; ?></h2>
@@ -164,7 +154,7 @@ get_header(); ?>
             </div>
         <?php
         } else { ?>
-             <div class="edition-header">
+            <div class="edition-header">
                 <div class="container" style="margin:auto;max-width:480px; padding: 128px 0">
                     <div class="col ta-center ha-center va-center">
                         <h1>Ops...</h1>

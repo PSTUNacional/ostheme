@@ -410,7 +410,6 @@ article .author-line {
 .block-header {
     width: 100%;
     border-bottom: 1px solid var(--grey-400);
-    margin-bottom: calc(2*var(--gap));
     margin-top: calc(2*var(--gap));
     display: flex;
 }
@@ -912,7 +911,7 @@ div.divider {
 }
 
 .block-06 .main-article h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .block-06 .articles-column article {

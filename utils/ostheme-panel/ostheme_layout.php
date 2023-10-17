@@ -26,6 +26,8 @@ $options = [
     'section09_category',
     'section10_layout',
     'section10_category',
+    'section11_layout',
+    'section11_category',
 
 ];
 
@@ -47,7 +49,8 @@ function render_blocks($value)
                 ['block_03', 'Bloco 03'],
                 ['block_04', 'Bloco 04'],
                 ['block_05', 'Bloco 05'],
-                ['block_06', 'Bloco 06']
+                ['block_06', 'Bloco 06'],
+                ['block_07', 'Bloco 07']
             ]
         ],
     ];
@@ -568,6 +571,39 @@ function section01_layout_callback()
         </div>
     <?php
         }
+
+                /* ==============================
+
+    Sectiont 11
+
+============================== */
+
+function section11_layout_callback()
+{
+    $value = get_option('ostheme_section11_layout');
+?>
+<div class="field-line">
+    <div class="info">
+        <p><b>Seção 11</b></p>
+    </div>
+    <div>
+        <select name="ostheme_section11_layout" class="layout_selector">
+            <?php render_blocks($value); ?>
+        </select>
+    <?php
+}
+
+function section11_category_callback()
+{
+    render_categories_dropdown(
+        'ostheme_section11_category',
+        get_option('ostheme_section11_category')
+    );
+    ?>
+    </div>
+</div>
+<?php
+}
 
 
         /*========================================

@@ -11,11 +11,63 @@ section.ads {
 .ad-horizontal-large {
     width: 100%;
     background-color: var(--grey-200);
-    height: 120px;
     border-radius: 8px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-size:cover;
     background-position: center;
+}
+
+.ads-whatsapp{
+    width: 100%;
+    background:linear-gradient(20deg, #3e6f67 0%,  #7cd67e 100%);
+    color:#fff;
+    display: flex;
+    align-items: center;
+    border-radius: 12px;
+    padding: var(--gap);
+    justify-content: space-between;
+}
+
+.ads-whatsapp h3{
+    font-size: 1.25rem
+}
+
+.ads-whatsapp h3 span{
+    font-size: 2rem
+}
+
+.ads-whatsapp .actions{
+    display: flex;
+    gap:calc(var(--gap)/2);
+}
+
+.ads-whatsapp .cta{
+    padding: 12px 24px;
+    border-radius:50px;
+    color: #fff;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap:8px;
+}
+
+.ads-whatsapp .cta.whatsapp{
+    background-color: #fff;
+    color: #3e6f67;
+}
+.ads-whatsapp .cta.telegram{
+    background-color: #236be0;
+}
+
+@media screen and (max-width:560px){
+    .ads-whatsapp{
+        flex-direction: column;
+        text-align: center;
+        gap:12px;
+    }
+    .ads-whatsapp h3{
+        font-size:1rem;
+    }
 }

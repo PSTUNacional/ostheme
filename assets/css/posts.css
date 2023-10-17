@@ -8,6 +8,11 @@ article.post {
     width: 100%;
 }
 
+article.post p,
+article.post a{
+    font-family: 'Merriweather', serif;
+}
+
 article.post .container {
     max-width: 720px;
     margin-left: auto;
@@ -47,6 +52,7 @@ article.post .wp-caption img {
 
 article.post p {
     line-height: 1.8em;
+    font-size: 18px;
     width: 100%;
 }
 

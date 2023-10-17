@@ -116,12 +116,27 @@ function formatDate($str)
     return $result;
 }
 
+function escape_categories($cats)
+{
+    if (sizeof($cats) == 0) {
+        $cat = 'Sem categoria';
+    } else {
+        $cat = get_cat_name($cats[0]);
+        if ($cat == 'Opinião Socialista' && sizeof($cats) > 1) {
+            $cat = get_cat_name($cats[1]);
+        } elseif ($cat == 'Opinião Socialista' && sizeof($cats) <= 1) {
+            $cat = 'Especial';
+        }
+    }
+    return $cat;
+}
+
 add_action('init', 'edition_rewrite_rule');
 
 function edition_rewrite_rule()
 {
     add_rewrite_rule(
-        'edicao/([0-9]+)[/]?$', 
+        'edicao/([0-9]+)[/]?$',
         'edicao/?edicao=$1',
         'top'
     );
@@ -129,15 +144,15 @@ function edition_rewrite_rule()
 
 add_filter('query_vars', 'edition_query_vars');
 
-function edition_query_vars( $query_vars )
+function edition_query_vars($query_vars)
 {
     $query_vars[] = 'edicao';
     return $query_vars;
 }
 
-add_action( 'template_include' , function($template){
-    if(get_query_var('edicao') == false || get_query_var('edicao') == ''){
+add_action('template_include', function ($template) {
+    if (get_query_var('edicao') == false || get_query_var('edicao') == '') {
         return $template;
     }
     return get_template_directory() . '/os-edition.php';
-} );
+});

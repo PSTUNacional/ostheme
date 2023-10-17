@@ -110,12 +110,13 @@ get_header(); ?>
 
         render_section('04');
 
-        render_section('05');
-
-
         ?>
         <section>
             <div class="container">
+                <div class="col col-33">
+                    <?php render_section('05') ?>
+                </div>
+                <div class="divider"></div>
                 <div class="col col-33">
                     <?php render_section('06') ?>
                 </div>
@@ -123,20 +124,27 @@ get_header(); ?>
                 <div class="col col-33">
                     <?php render_section('07') ?>
                 </div>
-                <div class="divider"></div>
-                <div class="col col-33">
-                    <?php render_section('08') ?>
-                </div>
             </div>
         </section>
 
         <?php
-
-        render_section('09');
-
-        render_section('10');
+        render_section('08');
         ?>
-
+        <section>
+            <div class="container">
+                <div class="col col-33">
+                    <?php render_section('09') ?>
+                </div>
+                <div class="divider"></div>
+                <div class="col col-33">
+                    <?php render_section('10') ?>
+                </div>
+                <div class="divider"></div>
+                <div class="col col-33">
+                    <?php render_section('11') ?>
+                </div>
+            </div>
+        </section>
     </main>
 </div>
 <?php get_footer(); ?>

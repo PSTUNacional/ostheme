@@ -79,7 +79,7 @@
 
                                 <article>
                                     <div class="article-info">
-                                        <h5 class="sup-category"><?= get_cat_name(wp_get_post_categories($post->ID)[0]); ?></h5>
+                                        <h5 class="sup-category"><?= escape_categories(wp_get_post_categories($post->ID)); ?></h5>
                                         <a href="<?= get_permalink($post->ID); ?>" title="<?= $post->post_title; ?>">
                                             <h2><?= $post->post_title; ?></h2>
                                         </a>
