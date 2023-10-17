@@ -485,7 +485,7 @@ div.divider {
 }
 
 .header-block-01 .article-editorial .featured-image-container {
-    aspect-ratio: 1;
+    aspect-ratio: unset;
     height: 500px;
 }
 
