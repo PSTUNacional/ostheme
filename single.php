@@ -11,7 +11,7 @@ get_header(); ?>
             the_post();
             $categories = get_the_category();
             $profile = get_avatar_url($post->post_author);
-            ?>
+        ?>
             <div class="block-header">
               <span><?= $categories[0]->name; ?></span>
             </div>
@@ -68,9 +68,8 @@ get_header(); ?>
             <div class="container">
               <?php the_content(); ?>
             </div>
-    </div>
 
-<?php }
+        <?php }
           $cats = get_the_category();
           $categoriesArr = [];
           foreach ($cats as $a) {
@@ -78,10 +77,10 @@ get_header(); ?>
           }
         } ?>
 
-</div>
-</article>
+    </div>
+    </article>
 
-</main>
+  </main>
 </div>
 <script>
   let getPostInfo = () => {

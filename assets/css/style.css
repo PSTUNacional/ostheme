@@ -66,6 +66,14 @@ section {
     width: 100%;
 }
 
+.col.va-center{
+    justify-content: center;
+}
+
+.col.ha-center{
+    align-items: center;
+}
+
 .col.col-50 {
     flex-basis: 50%;
 }
@@ -125,6 +133,11 @@ header {
 .top-bar a svg {
     max-width: 180px;
     display: block;
+    width: 100%;
+    aspect-ratio: 4;
+}
+
+.top-bar svg image{
     width: 100%;
 }
 
@@ -1288,7 +1301,6 @@ footer {
     background-color: #333;
     color: #fff;
     padding-top: 48px;
-    margin-top: 48px;
 }
 
 footer .bottom-line {

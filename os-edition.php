@@ -4,12 +4,14 @@
 Template Name: OS Edition
 */
 
+$ed = get_query_var('edicao');
+$file = 'os'.$ed.'.pdf';
+
 get_header(); ?>
 <div class="content-area">
     <main>
         <?php
-        if (get_query_var('edicao')) {
-            $ed = get_query_var('edicao');
+        if(file_exists($_SERVER['DOCUMENT_ROOT'].'/archive/pdf/'.$file)) {
         ?>
             <div class="edition-header">
                 <div class="container">
@@ -161,10 +163,17 @@ get_header(); ?>
                 </div>
             </div>
         <?php
-        } else {
-            echo 'não está setado';
-        }
-        ?>
+        } else { ?>
+             <div class="edition-header">
+                <div class="container" style="margin:auto;max-width:480px; padding: 128px 0">
+                    <div class="col ta-center ha-center va-center">
+                        <h1>Ops...</h1>
+                        <h3>Não encontramos essa edição.</h3>
+                        <a class="btn secondary" target="_blank" href="/edicoes"> Ver todas as edições</a>
+                    </div>
+                </div>
+            </div>
+        <?php } ?>
     </main>
 </div>
 <?php get_footer(); ?>

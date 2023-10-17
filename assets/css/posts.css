@@ -47,6 +47,7 @@ article.post .wp-caption img {
 
 article.post p {
     line-height: 1.8em;
+    width: 100%;
 }
 
 article.post a,
