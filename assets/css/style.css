@@ -170,7 +170,7 @@ section.menu-area {
 @media screen and (max-width:560px) {
 
     main {
-        margin-top: var(--gap);
+        margin-top: 73px;
     }
 
     .top-bar {
@@ -205,6 +205,7 @@ section.menu-area {
         background: #fff;
         width: 80%;
         box-shadow: 10px 0 100px 0 #000900;
+        padding: var(--gap);
         left: -120%;
         height: 100%;
         top: 0;
@@ -223,6 +224,7 @@ section.menu-area {
     .main-menu.active {
         left: 0%;
         transition: all .6s ease-in-out;
+        overflow: scroll;
     }
 
     .main-menu ul {
@@ -269,10 +271,38 @@ nav .sub-menu>li:hover {
     background-color: var(--primary-05);
 }
 
+nav hr{
+    margin: 12px 0;
+    border:none;
+    border-bottom: 1px solid var(--grey-500);
+}
+
+.main-menu .mobile {
+    display: none;
+}
+
+.main-menu .mobile .social-media{
+    display: flex;
+    gap: 8px;
+}
+
+.main-menu .mobile .social-media a{  
+    font-size:16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 32px;
+    aspect-ratio: 1;
+    border: 1px solid var(--grey-500);
+}
+
 @media screen and (max-width:560px) {
     nav .sub-menu {
         display: flex;
         box-shadow: none;
+        position: inherit;
+        transform: translateY(0);
     }
 
     nav .sub-menu>li {
@@ -282,6 +312,9 @@ nav .sub-menu>li:hover {
     nav .sub-menu>li:hover {
         border: none;
         background-color: none;
+    }
+    nav.main-menu .mobile {
+        display: block;
     }
 }
 
@@ -348,6 +381,11 @@ article .author-line {
     font-size: 0.7em;
     color: var(--grey-500);
     text-transform: uppercase;
+}
+
+.featured-image-container{
+    border-radius: 4px;
+    overflow: hidden;
 }
 
 /*========================================
@@ -1042,12 +1080,17 @@ div.divider {
 @media screen and (max-width: 656px) {
 
     #lastOS .content,
-    #lastOS .main-articles {
+    #lastOS .main-articles,
+    #lastOS .main-articles article {
         flex-direction: column;
     }
 
     #lastOS .article-list {
         grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    }
+
+    #lastOS .oscover{
+        max-width: 100%;
     }
 }
 
@@ -1296,6 +1339,8 @@ article.article-01 h2 {
 @media screen and (max-width:560px) {
     article.article-01 {
         flex-direction: column;
+        gap: 0px;
+        padding-bottom: 0px;
     }
 
     article.article-01 .featured-image-container {
@@ -1304,7 +1349,6 @@ article.article-01 h2 {
         max-width: 100%;
         min-width: 100%;
         overflow: hidden;
-        border-radius: 8px;
     }
 
     article.article-01 h2 {

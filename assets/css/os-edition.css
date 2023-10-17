@@ -49,3 +49,9 @@
 .os-edition .main-articles article h2{
     font-size: 2rem;
 }
+
+@media screen and (max-width: 560px){
+    .edition-header .image-container{
+        max-width: 100%;
+    }
+}

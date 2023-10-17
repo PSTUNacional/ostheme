@@ -4,10 +4,15 @@
 
 *========================================*/
 
+article.post {
+    width: 100%;
+}
+
 article.post .container {
     max-width: 720px;
     margin-left: auto;
     margin-right: auto;
+    width: 100%;
 }
 
 article.post p,
@@ -24,10 +29,17 @@ article.post img {
     height: auto;
 }
 
-article.post .wp-caption img{
-    margin-bottom:0px;
+article.post iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
 }
-.wp-caption .wp-caption-text{
+
+article.post .wp-caption img {
+    margin-bottom: 0px;
+}
+
+.wp-caption .wp-caption-text {
     color: var(--grey-500);
     font-size: 0.8rem;
     font-style: italic;
@@ -38,7 +50,7 @@ article.post p {
 }
 
 article.post a,
-article.post p a{
+article.post p a {
     text-decoration: underline;
 }
 
@@ -93,37 +105,28 @@ article.post .author-line {
     margin-bottom: 8px
 }
 
-@media screen and (max-width:560px) {
-    article.post h1 {
-        font-size: 2em;
-    }
-
-    article.post .tagline {
-        font-size: 1.25em;
-    }
-}
-
 article .metainfo {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.rate-box{
+.rate-box {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color:var(--grey-100);
+    background-color: var(--grey-100);
     padding: 16px;
-    border-radius:32px;
+    border-radius: 32px;
 }
 
 .socialmedia {
     display: flex;
-    gap:4px;
+    gap: 4px;
 }
-.socialmedia .share{
-    display:flex;
+
+.socialmedia .share {
+    display: flex;
     align-items: center;
     justify-content: center;
     color: #fff;
@@ -132,34 +135,51 @@ article .metainfo {
     min-width: 32px;
     height: 100%;
     padding: 8px;
-    border-radius:50%;
-    cursor:pointer;
+    border-radius: 50%;
+    cursor: pointer;
     text-decoration: none;
 }
-.socialmedia .share.wa{
+
+.socialmedia .share.wa {
     background-color: #090;
     display: none;
 }
-.socialmedia .share.fb{
+
+.socialmedia .share.fb {
     background-color: #339;
 }
-.socialmedia .share.tw{
+
+.socialmedia .share.tw {
     background-color: #39f;
 }
 
 @media screen and (max-width:560px) {
+
+    article.post .container {
+        padding: 0;
+    }
+
+    article.post h1 {
+        font-size: 2em;
+    }
+
+    article.post .tagline {
+        font-size: 1.25em;
+    }
+
     .metainfo {
         flex-wrap: wrap;
     }
 
-    article.post .author-box{
+    article.post .author-box {
         width: 100%;
     }
 
-    article.post .socialmedia{
-        order:3;
+    article.post .socialmedia {
+        order: 3;
     }
-    .socialmedia .share.wa{
+
+    .socialmedia .share.wa {
         display: flex;
     }
 }
