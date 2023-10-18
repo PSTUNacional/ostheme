@@ -1,3 +1,7 @@
+button{
+    border:none;
+    background-color: inherit;
+}
 .btn {
     padding: 8px 16px;
     border-radius: 4px;

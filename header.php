@@ -17,17 +17,28 @@
 <body <?php body_class(); ?>>
 	<header>
 		<section class="top-bar">
-			<a href="/">
-				<svg xmlns="http://www.w3.org/2000/svg">
-					<image href="<?= get_template_directory_uri() . '/assets/img/logos/os_logo_red.svg'; ?>"/>
-				</svg>
-			</a>
-			<i class="hamb fa fa-bars" onclick="openMobileMenu()"></i>
+			<div class="container">
+				<i class="hamb fa fa-bars" onclick="openMobileMenu()"></i>
+				<a href="/">
+					<svg xmlns="http://www.w3.org/2000/svg">
+						<image href="<?= get_template_directory_uri() . '/assets/img/logos/os_logo_red.svg'; ?>" />
+					</svg>
+				</a>
+				<div class="search">
+					<button onclick="handleSearchBar()"><i class="fa fa-search"></i></button>
+				</div>
+			</div>
+		</section>
+		<section id="search-bar">
+			<div class="container">
+			<?php get_search_form(array('aria_label'=>'modafuca'))?>
+			<div class="fast-results"></div>
+			</div>
 		</section>
 		<section class="menu-area">
 			<nav class="main-menu">
 				<div class="mobile">
-					<h4 style="color:var(--primary); text-transform:uppercase">Opinião Socialista</h4>
+					<h4 style="color:var(--primary); text-transform:uppercase; padding-left:24px;">Opinião Socialista</h4>
 					<hr />
 				</div>
 				<?php wp_nav_menu(
@@ -42,8 +53,8 @@
 						<li><a>Seja um colaborador</a></li>
 					</ul>
 					<hr />
-					<p>Siga o <b>Opinião</b></p><br />
-					<div class="social-media">
+					<p style="padding-left:24px;">Siga o <b>Opinião</b></p><br />
+					<div class="social-media" style="padding-left:24px;">
 						<a href="https://www.facebook.com/opiniaosocialista" target="_blank"><i class="fab fa-facebook"></i></a>
 						<a href="https://www.instagram.com/opiniaosocialista/" target="_blank"><i class="fab fa-instagram"></i></a>
 					</div>

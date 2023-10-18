@@ -98,4 +98,53 @@ function submitEvaluation() {
 
 // Adds chevron icon to Nav menu
 menuitems = document.querySelectorAll('.sub-menu')
-menuitems.forEach((s)=>{s.parentElement.querySelector('a').innerHTML+= '<i class="fa fa-caret-right"></i>'}) 
+menuitems.forEach((s) => { s.parentElement.querySelector('a').innerHTML += '<i class="fa fa-caret-right"></i>' })
+
+/*========================================
+
+    SEARCH BAR
+
+*========================================*/
+
+function handleSearchBar() {
+    s = document.getElementById('search-bar');
+    c = s.querySelector('.container')
+    ch = c.offsetHeight
+
+    if (s.offsetHeight == 0) {
+        s.style.height = ch + 'px'
+    } else {
+        s.style.height = '0px'
+    }
+}
+
+document.querySelector('#search-bar input[type=text]')
+    .addEventListener('keyup', async () => {
+        sq = event.target.value
+        if (sq.length > 3) {
+            await fetch('http://localhost:8080/wordpress/wp-json/wp/v2/search?_embed&search=' + sq)
+                .then(resp => resp.json())
+                .then(results => {
+                    place = document.querySelector('#search-bar .fast-results');
+                    place.innerHTML = '';
+                    for (i = 0; i < 3; i++) {
+
+                        title = results[i]['title']
+                        fimg = results[i]['_embedded']['self'][0]['fimg_url']
+                        console.log(fimg)
+                        link = results[i]['url']
+                        category = results[i]['categories_names'][0]
+
+                        article = document.createElement('article')
+                        article.innerHTML = '<a class="featured-image-container" href="'+link+'"><div class="featured-image" style="background-image:url('+fimg+')"></div></a><div class="info"><h5 class="sup-category">'+category+'</h5><a href='+link+'><h3>'+title+'</h3></a>'
+                        place.prepend(article)
+                    }
+
+                    s = document.getElementById('search-bar');
+                    c = s.querySelector('.container')
+                    ch = c.offsetHeight
+                    s.style.height = ch + 'px'
+                })
+        }
+
+    })
