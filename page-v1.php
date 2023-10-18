@@ -4,14 +4,14 @@
 Template Name: OS Home Page
 */
 
-function render_section($section_id)
+function render_section($section_id, $posts = 5)
 {
     $cat = get_option('ostheme_section' . $section_id . '_category');
     $layout = get_option('ostheme_section' . $section_id . '_layout');
     $block_path = __DIR__ . '/components/' . $layout . '.php';
 
     $args = array(
-        'numberposts' => 5,
+        'numberposts' => $posts,
         'category' => array($cat),
         'offset' => 0,
         'tag__not_in' => array(4)
@@ -102,7 +102,7 @@ get_header(); ?>
          *          
          */
 
-        render_section('01');
+        render_section('01', 4);
 
         render_section('02');
 

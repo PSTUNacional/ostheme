@@ -948,8 +948,17 @@ div.divider {
 
 .opinion-block-01 {
     display: grid;
-    gap: calc(2*var(--gap));
+    gap: var(--gap);
     grid-template-columns: repeat(auto-fit, minmax(224px, 1fr));
+    
+}
+
+.opinion-block-01 article{
+    padding:var(--gap);
+    border: 1px solid var(--grey-400);
+    border-radius: 8px;
+    height: 100%;
+    gap: 0;
 }
 
 .opinion-block-01 .author-box {
@@ -981,18 +990,18 @@ div.divider {
 
 .opinion-block-01 h2 {
     font-style: italic;
-    font-weight: 200;
+    font-weight: 400;
     font-size: 1.25em;
 }
 
 @media screen and (max-width:560px) {
     .opinion-block-01 article {
-        align-items: center;
-        text-align: center;
+        align-items: start;
+        text-align: left;
     }
 
     .opinion-block-01 .author-box {
-        flex-direction: column;
+        flex-direction: row;
     }
 }
 
@@ -1338,8 +1347,6 @@ article.article-01:not(:first-child) {
 }
 
 article.article-01 .featured-image-container {
-    height: 100%;
-    aspect-ratio: 16/9;
     max-width: 30%;
     min-width: 30%;
 }
@@ -1362,11 +1369,8 @@ article.article-01 h2 {
     }
 
     article.article-01 .featured-image-container {
-        height: 100%;
-        aspect-ratio: 16/9;
         max-width: 100%;
         min-width: 100%;
-        overflow: hidden;
     }
 
     article.article-01 h2 {
