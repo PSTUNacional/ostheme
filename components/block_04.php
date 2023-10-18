@@ -17,7 +17,7 @@
                         <div>
                 </article>
                 <article>
-                    <?= os_render_thumbnail($post[1]); ?>
+                    <?= os_render_thumbnail($posts[1]); ?>
                     <div class="article-info">
                         <h5 class="sup-category"><?= get_cat_name(wp_get_post_categories($posts[1]->ID)[0]); ?></h5>
                         <a href="<?= get_permalink($posts[1]->ID); ?>" title="<?= $posts[1]->post_title; ?>">
