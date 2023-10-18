@@ -95,3 +95,7 @@ function submitEvaluation() {
 
     box.innerHTML = "<h4 style='margin:0'>Obrigado pelo sua avaliação!</h4><p>Sua contribuição é importante para melhoria do nosso trabalho.</p>"
 }
+
+// Adds chevron icon to Nav menu
+menuitems = document.querySelectorAll('.sub-menu')
+menuitems.forEach((s)=>{s.parentElement.querySelector('a').innerHTML+= '<i class="fa fa-caret-right"></i>'}) 

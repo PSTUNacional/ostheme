@@ -4,9 +4,12 @@
 }
 .edition-header .container {
     display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
     gap: var(--gap);
     width: 100%;
     padding: 48px 0;
+    align-items: center;
 }
 .edition-header .image-container{
     aspect-ratio: 11/15;
@@ -51,6 +54,10 @@
 }
 
 @media screen and (max-width: 560px){
+    .edition-header .container {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
     .edition-header .image-container{
         max-width: 100%;
     }

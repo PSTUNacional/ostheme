@@ -170,6 +170,10 @@ section.menu-area {
     display: block;
     padding: var(--gap) 0;
 }
+.main-menu ul li a i {
+    margin-left: 8px;
+    transform: rotate(90deg);
+}
 
 .main-menu ul li:hover {
     color: var(--primary);
@@ -270,6 +274,12 @@ nav .menu-item:hover>.sub-menu {
 
 nav .sub-menu>li a {
     padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav .sub-menu li a i{
+    transform: rotate(0deg);
 }
 
 nav .sub-menu>li {
@@ -282,6 +292,15 @@ nav .sub-menu>li:hover {
     color: var(--primary);
     border-left: 4px solid var(--primary);
     background-color: var(--primary-05);
+}
+
+nav .sub-menu .sub-menu {
+    bottom: unset;
+    top: 0;
+    transform: translate(98%, 0);
+    left: 0;
+    right: unset;
+    margin: 0;
 }
 
 nav hr {
