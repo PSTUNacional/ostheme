@@ -51,6 +51,32 @@ add_action('after_setup_theme', 'ostheme_config', 0);
 include get_template_directory() . '/utils/ostheme-panel/functions.php';
 
 
+add_action('init', 'edition_rewrite_rule');
+
+function edition_rewrite_rule()
+{
+    add_rewrite_rule(
+        'edicao/([0-9]+)[/]?$',
+        'edicao/?edicao=$1',
+        'top'
+    );
+}
+
+add_filter('query_vars', 'edition_query_vars');
+
+function edition_query_vars($query_vars)
+{
+    $query_vars[] = 'edicao';
+    return $query_vars;
+}
+
+add_action('template_include', function ($template) {
+    if (get_query_var('edicao') == false || get_query_var('edicao') == '') {
+        return $template;
+    }
+    return get_template_directory() . '/os-edition.php';
+});
+
 /*==============================
 
     Add METABOXES
@@ -103,6 +129,12 @@ function get_the_rate($id)
     return ($result);
 }
 
+/*==============================
+
+    HELPERS
+
+==============================*/
+
 function formatDate($str)
 {
     $months = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'];
@@ -131,28 +163,23 @@ function escape_categories($cats)
     return $cat;
 }
 
-add_action('init', 'edition_rewrite_rule');
-
-function edition_rewrite_rule()
+function os_render_thumbnail($post)
 {
-    add_rewrite_rule(
-        'edicao/([0-9]+)[/]?$',
-        'edicao/?edicao=$1',
-        'top'
-    );
-}
+    $cats = wp_get_post_categories($post->ID);
+    $link =  get_permalink($post->ID);
+    $thumbURL = get_the_post_thumbnail_url($post->ID);
 
-add_filter('query_vars', 'edition_query_vars');
+    $tb = '<a class="featured-image-container" href="'. $link .'"><div class="featured-image" style="background-image:url(\''. $thumbURL . '\')"></div></a>';
 
-function edition_query_vars($query_vars)
-{
-    $query_vars[] = 'edicao';
-    return $query_vars;
-}
-
-add_action('template_include', function ($template) {
-    if (get_query_var('edicao') == false || get_query_var('edicao') == '') {
-        return $template;
+    foreach ($cats as $cat)
+    {
+        $name = get_cat_name($cat);
+       
+        if($name == 'Colunas')
+        {
+            $tb = '<a class="featured-image-container" href="'. $link .'"><div class="opinion-ribbon">Opinião</div><div class="featured-image" style="background-image:url(\''. $thumbURL . '\')"></div></a>';
+        }
     }
-    return get_template_directory() . '/os-edition.php';
-});
+
+    return $tb;
+}

@@ -24,7 +24,7 @@
                     <img src="<?= '/archive/cover/webp/os'.$edition.'.webp'?>" />
                 </div>
                 <div class="edition-info">
-                    <h3>Destaques</h3>
+                    <!-- <h3>Destaques</h3> -->
                     <div class="main-articles">
                         <?php
                         $args = array(

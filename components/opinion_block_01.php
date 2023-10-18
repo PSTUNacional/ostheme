@@ -3,6 +3,7 @@
         <div class="col">
             <h2 class="block-header">
                 <span>Opinião</span>
+                <a href="<?= get_category_link($cat) ?>" class="more">Ver todos</a>
             </h2>
             <div class="opinion-block-01">
                 <?php foreach ($posts as $post) {

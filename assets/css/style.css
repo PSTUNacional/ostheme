@@ -420,9 +420,9 @@ article .author-line {
     margin-right: auto;
     border-bottom: 4px solid var(--black);
     height: 100%;
-    padding: 0 24px 8px;
+    padding: 0 8px 8px;
     font-weight: bolder;
-    font-size: 24px;
+    font-size: 18px;
     display: block;
     width: fit-content
 }
@@ -438,6 +438,20 @@ article .author-line {
     overflow: hidden;
     aspect-ratio: 16/9;
     margin-bottom: calc(var(--gap)/2);
+    position: relative;
+}
+
+.featured-image-container .opinion-ribbon {
+    background-color: var(--primary);
+    padding: 4px;
+    color: #fff;
+    font-size: 0.8em;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 0;
+    z-index: 99;
+    width: 100%;
 }
 
 .featured-image {
@@ -950,11 +964,11 @@ div.divider {
     display: grid;
     gap: var(--gap);
     grid-template-columns: repeat(auto-fit, minmax(224px, 1fr));
-    
+
 }
 
-.opinion-block-01 article{
-    padding:var(--gap);
+.opinion-block-01 article {
+    padding: var(--gap);
     border: 1px solid var(--grey-400);
     border-radius: 8px;
     height: 100%;

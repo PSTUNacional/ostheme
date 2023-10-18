@@ -8,9 +8,7 @@
             
             <div class="block-02">
                 <article class="main-article">
-                    <a class="featured-image-container" href="<?= get_permalink($posts[0]->ID); ?>">
-                        <div class="featured-image" style="background-image:url('<?= get_the_post_thumbnail_url($posts[0]->ID); ?>')"></div>
-                    </a>
+                <?= os_render_thumbnail($posts[0]); ?> 
                     <div class="article-info">
                         <h5 class="sup-category"><?= get_cat_name(wp_get_post_categories($posts[0]->ID)[0]); ?></h5>
                         <a href="<?= get_permalink($posts[0]->ID); ?>" title="<?= $posts[0]->post_title; ?>">
