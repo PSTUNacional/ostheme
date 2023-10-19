@@ -21,7 +21,7 @@
             </h2>
             <div class="content">
                 <div class="oscover">
-                    <img src="<?= '/archive/cover/webp/os'.$edition.'.webp'?>" />
+                    <img src="<?= '/archive/cover/webp/os'.$edition.'.webp'?>" alt="Opinião Socialista Nº <?=$edition?>"/>
                 </div>
                 <div class="edition-info">
                     <!-- <h3>Destaques</h3> -->
