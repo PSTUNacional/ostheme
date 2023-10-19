@@ -620,7 +620,7 @@ function section11_category_callback()
         <h1>Configurações de Anúncios</h1>
         <?php settings_errors(); // Exibe alertas na página 
         ?>
-        <form action="options.php" method="POST" class="card">
+        <form action="options.php" method="POST" class="card" style="max-width:720px">
             <?php
 
             settings_fields('ostheme_homepage_layout');
