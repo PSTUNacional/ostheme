@@ -236,7 +236,7 @@ function os_render_thumbnail($post)
        
         if($name == 'Colunas')
         {
-            $tb = '<a class="featured-image-container" href="'. $link .'" aria-labe="'.$post->post_title.'"><div class="opinion-ribbon">Opinião</div><div class="featured-image" style="background-image:url(\''. $thumbURL . '\')"></div></a>';
+            $tb = '<a class="featured-image-container" href="'. $link .'" aria-label="'.$post->post_title.'"><div class="opinion-ribbon">Opinião</div><div class="featured-image" style="background-image:url(\''. $thumbURL . '\')"></div></a>';
         }
     }
 
