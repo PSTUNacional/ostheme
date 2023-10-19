@@ -7,10 +7,23 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Opinião Socialista</title>
+	<title><?= wp_title(); ?></title>
 	<?php wp_head(); ?>
 
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-JRDXFKDNWQ"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'G-JRDXFKDNWQ');
+	</script>
 
 </head>
 
@@ -28,13 +41,19 @@
 					<button onclick="handleSearchBar()"><i class="fa fa-search"></i></button>
 				</div>
 			</div>
+			<section id="search-bar">
+				<div class="container">
+					<?php get_search_form(array('aria_label' => 'modafuca')) ?>
+					<div id="fast-results-header">
+						<h5>Resultados rápidos</h5>
+						<hr />
+					</div>
+					<div class="fast-results"></div>
+				</div>
+				</div>
+			</section>
 		</section>
-		<section id="search-bar">
-			<div class="container">
-			<?php get_search_form(array('aria_label'=>'modafuca'))?>
-			<div class="fast-results"></div>
-			</div>
-		</section>
+
 		<section class="menu-area">
 			<nav class="main-menu">
 				<div class="mobile">

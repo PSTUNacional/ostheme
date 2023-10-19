@@ -107,6 +107,7 @@ header {
 
 .top-bar {
     display: flex;
+    flex-direction: column;
     border-bottom: 1px solid var(--grey-300);
     padding: 0;
     align-items: center;
@@ -198,6 +199,7 @@ section.menu-area {
 
     .top-bar {
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: space-between;
         border-bottom: 1px solid var(--grey-300);
@@ -205,12 +207,12 @@ section.menu-area {
         top: 0;
         background: #fff;
         margin: 0;
-        padding: 12px 24px;
         z-index: 99;
     }
 
-    .top-bar .container{
+    .top-bar .container {
         align-items: center;
+        padding: 12px 24px
     }
 
     .top-bar .hamb {
@@ -435,69 +437,114 @@ nav hr {
     font-size: 18px;
 }
 
-#search-bar{
-    background-color: var(--grey-300);
+#search-bar {
+    background-color: var(--grey-200);
     margin: 0;
     overflow: hidden;
     height: 0px;
     transition: all .6s ease-in-out;
 }
 
-#search-bar .container{
-
-    padding: 24px 0;
+#search-bar .container {
+    padding: 24px 12px;
 }
 
-#search-bar div{
+#search-bar div {
     display: flex;
 }
 
-#search-bar input[type=submit]{
+#search-bar input[type=submit] {
     display: none;
 }
 
-#search-bar form{
+#search-bar form {
     width: 100%;
 }
-#search-bar input{
+
+#search-bar input {
     width: 100%;
     max-width: 960px;
     margin: auto;
-    padding:8px 16px;
+    padding: 8px 16px;
     border: 1px solid #fff;
     border-radius: 8px;
 }
 
-#search-bar input:focus{
+#search-bar input:focus {
     outline: 3px solid var(--primary-25) !important;
     border: 1px solid var(--primary);
 }
 
-#search-bar .fast-results{
+#search-bar .fast-results {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(128px, 1fr));
-    width:100%;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    width: 100%;
     gap: var(--gap);
 }
 
-#search-bar .fast-results article{
+#search-bar .fast-results a{
+    margin: 0;
+}
+
+#search-bar .fast-results article {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: var(--gap);
 }
-#search-bar .fast-results article .info{
+
+#search-bar .fast-results article .info {
     display: flex;
     flex-direction: column;
 }
 
-#search-bar .fast-results article .info h3{
-    font-size:1rem;
+#search-bar .fast-results article .info h3 {
+    font-size: 1rem;
+    font-weight: 700;
 }
 
-#search-bar .fast-results article .featured-image-container{
+#search-bar .fast-results article .featured-image-container {
     max-width: 128px;
-    margin-bottom:0;
+    margin-bottom: 0;
+}
+
+#search-bar #fast-results-header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    display: none;
+}
+
+#search-bar #fast-results-header a,
+#search-bar #fast-results-header h5 {
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+}
+
+#search-bar #fast-results-header hr {
+    border: none;
+    border-bottom: 1px solid var(--grey-500);
+    margin-bottom: 12px;
+}
+
+@media screen and (max-width: 560px) {
+    #search-bar{
+        box-shadow: 0 30px 30px 0 #0009;
+    }
+
+    #search-bar .fast-results {
+        gap: 0px;
+    }
+
+    #search-bar .fast-results article .featured-image-container {
+        aspect-ratio: 4/3;
+        width: 30%;
+    }
+
+    #search-bar .fast-results article .info {
+        width: 70%;
+    }
 }
 
 /*========================================
