@@ -9,7 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="robots" content="follow">
 	<linl ref="canonical" href="https://www.opiniaosocialista.com.br"/>
-	<meta name="description" content="O jornal oficial do PSTU">
+	<meta name="description" content="O jornal oficial do PSTU"/>
 
 	<meta property="og:title" content="<?php is_front_page() ? bloginfo('name') : wp_title('|', 1, 'right').' | '.bloginfo('name'); ?>"/>
 	<meta property="og:type" content="article"/>
@@ -55,7 +55,7 @@
 					</svg>
 				</a>
 				<div class="search">
-					<button onclick="handleSearchBar()"><i class="fa fa-search"></i></button>
+					<button onclick="handleSearchBar()" aria-label="Buscar"><i class="fa fa-search"></i></button>
 				</div>
 			</div>
 			<section id="search-bar">
