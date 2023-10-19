@@ -152,7 +152,7 @@ function headerblock_layout_callback()
                     $checked = 'checked';
                 }
 
-                $img = 'assets/img/panel/headerblock_layout_0' . $i . '.gif")';
+                $img = get_theme_root_uri().'/ostheme/assets/img/panel/headerblock_layout_0' . $i . '.gif")';
 
                 echo '<label for="headerblock_layout_version' . $i . '" style="background-image: url(' . $img . ')"><input type="radio" id="headerblock_layout_version' . $i . '" name="ostheme_headerblock_layout" value="header_block_0' . $i . '" ' . $checked . '/><span ></span></label>';
             }

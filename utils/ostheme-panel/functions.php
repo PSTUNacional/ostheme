@@ -2,7 +2,8 @@
 
 function theme_admin_css()
 {
-    echo '<link rel="stylesheet" href="../../assets/css/admin_panel.css" type="text/css" >';
+    $url = get_theme_root_uri().'/ostheme/assets/css/admin_panel.css';
+    echo '<link rel="stylesheet" href="'.$url.'" type="text/css" >';
 }
 add_action('admin_head', 'theme_admin_css');
 
