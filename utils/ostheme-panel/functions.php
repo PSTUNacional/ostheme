@@ -2,8 +2,7 @@
 
 function theme_admin_css()
 {
-    $url = get_template_directory().'/assets/css/admin_panel.css';
-    echo '<link rel="stylesheet" href="'.$url.'" type="text/css" >';
+    echo '<link rel="stylesheet" href="../../assets/css/admin_panel.css" type="text/css" >';
 }
 add_action('admin_head', 'theme_admin_css');
 
