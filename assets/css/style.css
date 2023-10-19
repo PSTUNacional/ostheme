@@ -466,7 +466,7 @@ nav hr {
     max-width: 960px;
     margin: auto;
     padding: 8px 16px;
-    border: 1px solid #fff;
+    border: 1px solid var(--grey-500);
     border-radius: 8px;
 }
 
@@ -477,12 +477,13 @@ nav hr {
 
 #search-bar .fast-results {
     display: grid;
+    align-items: center;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     width: 100%;
     gap: var(--gap);
 }
 
-#search-bar .fast-results a{
+#search-bar .fast-results a {
     margin: 0;
 }
 
@@ -529,7 +530,7 @@ nav hr {
 }
 
 @media screen and (max-width: 560px) {
-    #search-bar{
+    #search-bar {
         box-shadow: 0 30px 30px 0 #0009;
     }
 

@@ -2,7 +2,7 @@
 
 function theme_admin_css()
 {
-    $url = 'http://localhost:8080/wp-content/themes/ostheme/assets/css/admin_panel.css';
+    $url = get_template_directory().'/assets/css/admin_panel.css';
     echo '<link rel="stylesheet" href="'.$url.'" type="text/css" >';
 }
 add_action('admin_head', 'theme_admin_css');
