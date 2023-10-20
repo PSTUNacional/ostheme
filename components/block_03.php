@@ -23,7 +23,7 @@
                             <?= os_render_thumbnail($posts[$i]); ?>
                             <div class="article-info">
                                 <span class="sup-category"><?= get_cat_name(wp_get_post_categories($posts[$i]->ID)[0]); ?></span>
-                                <a href="<?= get_permalink($posts[$i]->ID); ?>" title="<?= $posts[$i]->post_title; ?>" aria-labe="<?= $posts[$i]->post_title; ?>">
+                                <a href="<?= get_permalink($posts[$i]->ID); ?>" title="<?= $posts[$i]->post_title; ?>" aria-label="<?= $posts[$i]->post_title; ?>">
                                     <h2><?= $posts[$i]->post_title; ?></h2>
                                 </a>
                             </div>
