@@ -54,7 +54,7 @@
                 $editorial = get_posts($args);
                 ?>
                 <article class="article-editorial">
-                    <h5 class="badge primary">Editorial</h5>
+                    <span class="badge primary">Editorial</span>
                     <a class="featured-image-container" href="<?= get_permalink($editorial[0]->ID); ?>" aria-label="<?= $editorial[0]->post_title; ?>">
                         <div class="featured-image" style="background-image:url('<?= get_the_post_thumbnail_url($editorial[0]->ID); ?>')"></div>
 

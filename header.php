@@ -49,7 +49,7 @@
 		<section class="top-bar">
 			<div class="container">
 				<i class="hamb fa fa-bars" onclick="openMobileMenu()"></i>
-				<a href="/">
+				<a href="/" title="Opinião Socialista" aria-label="Página inicial">
 					<svg xmlns="http://www.w3.org/2000/svg">
 						<image href="<?= get_template_directory_uri() . '/assets/img/logos/os_logo_red.svg'; ?>" />
 					</svg>
@@ -91,8 +91,8 @@
 					<hr />
 					<p style="padding-left:24px;">Siga o <b>Opinião</b></p><br />
 					<div class="social-media" style="padding-left:24px;">
-						<a href="https://www.facebook.com/opiniaosocialista" target="_blank"><i class="fab fa-facebook"></i></a>
-						<a href="https://www.instagram.com/opiniaosocialista/" target="_blank"><i class="fab fa-instagram"></i></a>
+						<a href="https://www.facebook.com/opiniaosocialista" target="_blank" title="Facebook" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+						<a href="https://www.instagram.com/opiniaosocialista/" target="_blank" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
 					</div>
 				</div>
 			</nav>

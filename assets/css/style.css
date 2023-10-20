@@ -610,7 +610,7 @@ article .sup-category {
 
 article .author-line {
     font-size: 0.7em;
-    color: var(--grey-500);
+    color: var(--grey-700);
     text-transform: uppercase;
 }
 
