@@ -7,8 +7,8 @@ $channels = json_decode($channels, true);
     <div class="container">
         <div class="col">
             <h2 class="block-header">
-                <span><?= get_cat_name($cat) ?></span>
-                <a href="<?= get_category_link($cat) ?>" class="more">Ver todos</a>
+                <span>Videos</span>
+                <a href="videos" class="more">Ver todos</a>
             </h2>
 
             <div class="video-container">
