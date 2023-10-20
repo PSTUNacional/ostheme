@@ -50,7 +50,7 @@ get_header(); ?>
                                 <div class="featured-image" style="background-image:url('<?= get_the_post_thumbnail_url($editorial->ID); ?>')"></div>
                             </a>
                             <div class="article-info">
-                                <h5 class="sup-category">Editorial</h5>
+                                <span class="sup-category">Editorial</span>
                                 <a href="<?= get_permalink($editorial->ID); ?>" title="<?= $editorial->post_title; ?>">
                                     <h2><?= $editorial->post_title; ?></h2>
                                 </a>
@@ -80,7 +80,7 @@ get_header(); ?>
                                     <div class="featured-image" style="background-image:url('<?= get_the_post_thumbnail_url($post->ID); ?>')"></div>
                                 </a>
                                 <div class="article-info">
-                                    <h5 class="sup-category">Centrais</h5>
+                                    <span class="sup-category">Centrais</span>
                                     <a href="<?= get_permalink($post->ID); ?>" title="<?= $post->post_title; ?>">
                                         <h2><?= $post->post_title; ?></h2>
                                     </a>
@@ -136,9 +136,9 @@ get_header(); ?>
                                     <div class="featured-image" style="background-image:url('<?= get_the_post_thumbnail_url($post->ID); ?>')"></div>
                                 </a>
                                 <div class="post-info">
-                                    <h5 class="sup-category">
+                                    <span class="sup-category">
                                         <?= escape_categories(wp_get_post_categories($post->ID))?>
-                                    </h5>
+                                    </span>
                                     <a href="<?= get_permalink($posts[$i]->ID); ?>" title="<?= $post->post_title; ?>">
                                         <h2><?= $post->post_title; ?></h2>
                                     </a>

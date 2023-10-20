@@ -141,7 +141,7 @@ document.querySelector('#search-bar input[type=text]')
                             category = results[i]['categories_names'][0]
 
                             article = document.createElement('article')
-                            article.innerHTML = '<a class="featured-image-container" href="' + link + '"><div class="featured-image" style="background-image:url(' + fimg + ')"></div></a><div class="info"><h5 class="sup-category">' + category + '</h5><a href=' + link + '><h3>' + title + '</h3></a>'
+                            article.innerHTML = '<a class="featured-image-container" href="' + link + '"><div class="featured-image" style="background-image:url(' + fimg + ')"></div></a><div class="info"><span class="sup-category">' + category + '</span><a href=' + link + '><h3>' + title + '</h3></a>'
                             place.prepend(article)
                         }
                     } else {

@@ -21,7 +21,7 @@
             </h2>
             <div class="content">
                 <div class="oscover">
-                    <img src="<?= '/archive/cover/webp/os'.$edition.'.webp'?>" alt="Opinião Socialista Nº <?=$edition?>"/>
+                    <img load="lazy" src="<?= '/archive/cover/webp/os'.$edition.'.webp'?>" alt="Opinião Socialista Nº <?=$edition?>"/>
                 </div>
                 <div class="edition-info">
                     <!-- <h3>Destaques</h3> -->
@@ -50,7 +50,7 @@
                                             <div class="featured-image" style="background-image:url('<?= get_the_post_thumbnail_url($post->ID); ?>')"></div>
                                         </div>
                                         <div class="article-info">
-                                            <h5 class="sup-category"><?= ucfirst($tag->slug) ?></h5>
+                                            <span class="sup-category"><?= ucfirst($tag->slug) ?></span>
                                             <a href="<?= get_permalink($post->ID); ?>" title="<?= $post->post_title; ?>">
                                                 <h2><?= $post->post_title; ?></h2>
                                             </a>
@@ -79,7 +79,7 @@
 
                                 <article>
                                     <div class="article-info">
-                                        <h5 class="sup-category"><?= escape_categories(wp_get_post_categories($post->ID)); ?></h5>
+                                        <span class="sup-category"><?= escape_categories(wp_get_post_categories($post->ID)); ?></span>
                                         <a href="<?= get_permalink($post->ID); ?>" title="<?= $post->post_title; ?>">
                                             <h2><?= $post->post_title; ?></h2>
                                         </a>

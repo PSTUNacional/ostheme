@@ -74,7 +74,7 @@ get_header(); ?>
                     <article class="article-01">
                         <?= os_render_thumbnail($posts[$i]); ?>
                         <div class="post-info">
-                            <h5 class="sup-category"><?= get_cat_name(wp_get_post_categories($posts[$i]->ID)[0]); ?></h5>
+                            <span class="sup-category"><?= get_cat_name(wp_get_post_categories($posts[$i]->ID)[0]); ?></span>
                             <a href="<?= get_permalink($posts[$i]->ID); ?>" title="<?= $posts[$i]->post_title; ?>">
                                 <h2><?= $posts[$i]->post_title; ?></h2>
                             </a>

@@ -4,7 +4,7 @@
     <div class="header-block-02">
         <div class="container">
             <article class="destak">
-                <h5 class="badge primary"><?= get_cat_name(wp_get_post_categories($posts[0]->ID)[0]); ?></h5>
+                <h5 class="badge primary"><?= get_cat_name(wp_get_post_categories($posts[0]->ID)[0]); ?></span>
                 <a href="<?= get_permalink($posts[0]->ID); ?>" title="<?= $posts[0]->post_title; ?>">
                     <h2><?= $posts[0]->post_title; ?></h2>
                 </a>

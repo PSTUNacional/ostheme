@@ -33,7 +33,7 @@ $search = $search_query['s'];
                         </a>
                         <div class="post-info">
 
-                            <h5 class="sup-category"><?= escape_categories(wp_get_post_categories($post->ID)); ?></h5>
+                            <span class="sup-category"><?= escape_categories(wp_get_post_categories($post->ID)); ?></span>
                             <a href="<?= get_permalink($post->ID); ?>" title="<?= $posts[$i]->post_title; ?>">
                                 <h2><?= $post->post_title; ?></h2>
                             </a>

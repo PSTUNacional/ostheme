@@ -604,6 +604,7 @@ article.destak h2 {
 
 article .sup-category {
     font-size: 0.7em;
+    font-weight: 700;
     color: var(--primary);
 }
 
