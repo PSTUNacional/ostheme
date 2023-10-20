@@ -106,13 +106,13 @@ get_header(); ?>
 
         render_section('02');
 
-        // Video section
-
-        include(__DIR__ . '/components/block_video_01.php');
-
         render_section('03');
 
         render_section('04');
+
+        // Video section
+
+        include(__DIR__ . '/components/block_video_01.php');
 
         ?>
         <section>
