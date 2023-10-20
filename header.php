@@ -85,8 +85,8 @@
 				<div class="mobile">
 					<hr />
 					<ul>
-						<li><a>Contribua</a></li>
-						<li><a>Seja um colaborador</a></li>
+						<li><a href="contribua">Contribua</a></li>
+						<li><a href="colabore">Seja um colaborador</a></li>
 					</ul>
 					<hr />
 					<p style="padding-left:24px;">Siga o <b>Opinião</b></p><br />

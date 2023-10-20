@@ -12,7 +12,7 @@
         </div>
         <div class="col col-33"></div>
         <div class="col col-33 va-center">
-            <a href="https://www.pstu.org.br" style="margin-left:auto; width:120px;">
+            <a href="https://www.pstu.org.br" style="margin-left:auto; width:120px;" tile="PSTU" aria-label="Acesse o site do PSTU">
                 <svg xmlns="http://www.w3.org/2000/svg" style="max-width:120px; aspect-ratio:4/3">
                     <image href="<?= get_template_directory_uri() . '/assets/img/logos/pstu.svg'; ?>" style="width:100%" />
                 </svg>
