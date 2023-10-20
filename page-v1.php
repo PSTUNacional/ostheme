@@ -108,7 +108,7 @@ get_header(); ?>
 
         // Video section
 
-        include(__DIR__ . '/components/block_08.php');
+        include(__DIR__ . '/components/block_video_01.php');
 
         render_section('03');
 
