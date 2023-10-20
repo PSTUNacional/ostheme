@@ -6,7 +6,8 @@
                 <a href="<?= get_category_link($cat) ?>" class="more">Ver todos</a>
             </h2>
             <div class="opinion-block-01">
-                <?php foreach ($posts as $post) {    
+                <?php foreach ($posts as $post) {   
+                    the_post(); 
                     $profile = get_avatar_url($post->post_author);
                     ?>
                     <article>
