@@ -1,7 +1,9 @@
 <?php
 
 get_header(); ?>
+
 <div class="content-area">
+  
   <main>
     <div class="container">
       <article class="post">
@@ -9,7 +11,6 @@ get_header(); ?>
         if (have_posts()) {
           while (have_posts()) {
             the_post();
-
             $categories = get_the_category();
             $profile = get_avatar_url($post->post_author);
         ?>

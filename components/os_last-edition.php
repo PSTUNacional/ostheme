@@ -99,7 +99,7 @@
     <div class="cta">
         <div class="container">
             <h3>Leia a edição completa no nosso leitor.</h3>
-            <a href="">Leia aqui</a>
+            <a href="app" aria-label="Leia o Opinião Socialista">Leia aqui</a>
         </div>
     </div>
 </section>
