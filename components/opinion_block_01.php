@@ -18,7 +18,7 @@
                                     <i class="fa fa-user"></i>
                                 <?php } ?>
                             </div>
-                            <h4 class="author-line"><?= the_author_meta('display_name', $post->post_author); ?></h4>
+                            <span class="author-line"><?= the_author_meta('display_name', $post->post_author); ?></span>
                         </div>
                         <a href="<?= get_permalink($post->ID); ?>" title="<?= $post->post_title; ?>">
                             <h2><?= $post->post_title; ?></h2>

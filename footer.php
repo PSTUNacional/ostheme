@@ -6,8 +6,8 @@
             </svg>
             <p>Jornal oficial do <a href="https://www.pstu.org.br">PSTU - Partido Socialista dos Trabalhadores Unificado</a>.
             <div>
-                <a href="https://www.facebook.com/opiniaosocialista" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="https://www.instagram.com/opiniaosocialista/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/opiniaosocialista" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/opiniaosocialista/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
         <div class="col col-33"></div>

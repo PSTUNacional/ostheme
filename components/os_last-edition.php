@@ -51,7 +51,7 @@
                                         </div>
                                         <div class="article-info">
                                             <span class="sup-category"><?= ucfirst($tag->slug) ?></span>
-                                            <a href="<?= get_permalink($post->ID); ?>" title="<?= $post->post_title; ?>">
+                                            <a href="<?= get_permalink($post->ID); ?>" title="<?= $post->post_title; ?>" aria-label="<?= $post->post_title; ?>">
                                                 <h2><?= $post->post_title; ?></h2>
                                             </a>
                                         </div>
@@ -99,7 +99,7 @@
     <div class="cta">
         <div class="container">
             <h3>Leia a edição completa no nosso leitor.</h3>
-            <a href="app" aria-label="Leia o Opinião Socialista">Leia aqui</a>
+            <a href="app" aria-label="Leia aqui o Opinião Socialista">Leia aqui</a>
         </div>
     </div>
 </section>
