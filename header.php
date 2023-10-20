@@ -9,7 +9,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="robots" content="follow">
 	<linl rel="canonical" href="https://www.opiniaosocialista.com.br"/>
-	<meta name="description" content="Uma visão socialista do mundo, a serviço da classe trabalhadora"/>
+	<meta
+		name="description"
+		content="Opinião Socialista, o jornal oficial do PSTU. Uma visão socialista do mundo a serviço da classe trabalhadora"
+	/>
 
 	<meta property="og:title" content="<?php is_front_page() ? bloginfo('name') : wp_title('|', 1, 'right').' | '.bloginfo('name'); ?>"/>
 	<meta property="og:type" content="article"/>
