@@ -228,7 +228,7 @@ function os_render_thumbnail($post)
     $link =  get_permalink($post->ID);
     $thumbURL = get_the_post_thumbnail_url($post->ID);
 
-    $tb = '<a class="featured-image-container" href="'. $link .'" title="'.$post->post_title.'" aria-label="'.$post->post_title.'><div class="featured-image" style="background-image:url(\''. $thumbURL . '\')"></div></a>';
+    $tb = '<a class="featured-image-container" href="'. $link .'" title="'.$post->post_title.'" aria-label="'.$post->post_title.'"><div class="featured-image" style="background-image:url(\''. $thumbURL . '\')"></div></a>';
 
     foreach ($cats as $cat)
     {
