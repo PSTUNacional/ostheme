@@ -226,7 +226,7 @@ function os_render_thumbnail($post)
 {
     $cats = wp_get_post_categories($post->ID);
     $link =  get_permalink($post->ID);
-    $thumbURL = get_the_post_thumbnail_url($post->ID);
+    $thumbURL = get_the_post_thumbnail_url($post->ID, 'medium');
 
     $tb = '<a class="featured-image-container" href="'. $link .'" title="'.$post->post_title.'" aria-label="'.$post->post_title.'"><div class="featured-image" style="background-image:url(\''. $thumbURL . '\')"></div></a>';
 
