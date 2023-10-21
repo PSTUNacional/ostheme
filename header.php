@@ -8,11 +8,10 @@
 	<meta http-equiv="content-language" content="pt-br">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="robots" content="follow">
-	<linl rel="canonical" href="https://www.opiniaosocialista.com.br"/>
-	<meta
-		name="description"
-		content="Opinião Socialista, o jornal oficial do PSTU. Uma visão socialista do mundo a serviço da classe trabalhadora"
-	/>
+	<link rel="canonical" href="https://www.opiniaosocialista.com.br"/>
+	<meta name="description" content="Author: A.N. Author,
+    Illustrator: P. Picture, Category: Books, Price: $17.99,
+    Length: 784 pages">
 
 	<meta property="og:title" content="<?php is_front_page() ? bloginfo('name') : wp_title('|', 1, 'right').' | '.bloginfo('name'); ?>"/>
 	<meta property="og:type" content="article"/>

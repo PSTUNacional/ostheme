@@ -3,7 +3,7 @@ $url = 'https://data.pstu.org.br/src/Api/YoutubeContent.php?method=listchannels'
 $channels = file_get_contents($url);
 $channels = json_decode($channels, true);
 ?>
-<section class="video-section" style="background-color:var(--grey-700);">
+<section class="video-section">
     <div class="container">
         <div class="col">
             <h2 class="block-header">
