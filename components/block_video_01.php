@@ -23,7 +23,17 @@ $channels = json_decode($channels, true);
                     array_push($videos_arr, $videos[0]);
                 } 
 
-                var_dump($videos_arr);
+                $date = [];
+                foreach($videos_arr as $key=>$row)
+                {
+                    $date[$key] = $row['date'];
+                }
+
+                array_multisort($date, SORT_DESC, $videos_arr);
+
+                echo '<pre>';
+
+                print_r($videos_arr);
                 ?>
 
 <!--
