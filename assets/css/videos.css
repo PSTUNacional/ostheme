@@ -19,7 +19,6 @@
 }
 
 .video-container {
-
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: calc(var(--gap)/2);
@@ -55,6 +54,7 @@
     margin-bottom: 8px;
     background-size: cover;
     background-position: center;
+    border-radius: 16px;
 }
 
 .video-destak {
@@ -277,3 +277,16 @@
         width: 100%;
     }
 }
+
+/*========================================
+
+    VIDEO SECTION
+
+*========================================*/
+
+section.video-section{
+    background: linear-gradient(0deg, #000 0%, var(--grey-700) 100%);
+    padding: var(--gap) 0;
+}
+
+
