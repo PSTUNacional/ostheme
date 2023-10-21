@@ -222,11 +222,11 @@ function escape_categories($cats)
     return $cat;
 }
 
-function os_render_thumbnail($post)
+function os_render_thumbnail($post, $size = "medium")
 {
     $cats = wp_get_post_categories($post->ID);
     $link =  get_permalink($post->ID);
-    $thumbURL = get_the_post_thumbnail_url($post->ID, 'medium');
+    $thumbURL = get_the_post_thumbnail_url($post->ID, $size);
 
     $tb = '<a class="featured-image-container" href="'. $link .'" title="'.$post->post_title.'" aria-label="'.$post->post_title.'"><div class="featured-image" style="background-image:url(\''. $thumbURL . '\')"></div></a>';
 
