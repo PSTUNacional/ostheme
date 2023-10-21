@@ -30,39 +30,42 @@ $channels = json_decode($channels, true);
                 array_multisort($date, SORT_DESC, $videos_arr);
                 ?>
 
-                <div class="video-item main" data-video="<?= $videos_arr[0]['video_id'] ?>">
-                    <div class="video-thumb" style="background-image:url('https://i.ytimg.com/vi/<?= $videos_arr[0]['video_id'] ?>/mqdefault.jpg')"></div>
-                    <div class="video-info">
-                        <span class="badge primary"><?= $videos_arr[0]['channel_name'] ?></span>
-                        <h3><?= $videos_arr[0]['title'] ?></h3>
-                        <span class="date"><?= date("d M Y", strtotime($videos_arr[0]['date'])) ?></span>
-                        <p class="description"><?= $videos_arr[0]['description'] ?></p>
-                        <p class="duration"><?= $videos_arr[0]['duration'] ?></p>
+                <div class="col">
+                    <div class="video-item main" data-video="<?= $videos_arr[0]['video_id'] ?>">
+                        <div class="video-thumb" style="background-image:url('https://i.ytimg.com/vi/<?= $videos_arr[0]['video_id'] ?>/mqdefault.jpg')"></div>
+                        <div class="video-info">
+                            <span class="badge primary"><?= $videos_arr[0]['channel_name'] ?></span>
+                            <h3><?= $videos_arr[0]['title'] ?></h3>
+                            <span class="date"><?= date("d M Y", strtotime($videos_arr[0]['date'])) ?></span>
+                            <p class="description"><?= $videos_arr[0]['description'] ?></p>
+                            <p class="duration"><?= $videos_arr[0]['duration'] ?></p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="video-item" data-video="<?= $videos_arr[1]['video_id'] ?>">
-                    <div class="video-thumb" style="background-image:url('https://i.ytimg.com/vi/<?= $videos_arr[1]['video_id'] ?>/mqdefault.jpg')"></div>
-                    <div class="video-info">
-                        <span class="badge primary"><?= $videos_arr[1]['channel_name'] ?></span>
-                        <h3><?= $videos_arr[1]['title'] ?></h3>
-                        <span class="date"><?= date("d M Y", strtotime($videos_arr[1]['date'])) ?></span>
-                        <p class="description"><?= $videos_arr[1]['description'] ?></p>
-                        <p class="duration"><?= $videos_arr[1]['duration'] ?></p>
+                </div>
+                <div class="col">
+                    <div class="video-item" data-video="<?= $videos_arr[1]['video_id'] ?>">
+                        <div class="video-thumb" style="background-image:url('https://i.ytimg.com/vi/<?= $videos_arr[1]['video_id'] ?>/mqdefault.jpg')"></div>
+                        <div class="video-info">
+                            <span class="badge primary"><?= $videos_arr[1]['channel_name'] ?></span>
+                            <h3><?= $videos_arr[1]['title'] ?></h3>
+                            <span class="date"><?= date("d M Y", strtotime($videos_arr[1]['date'])) ?></span>
+                            <p class="description"><?= $videos_arr[1]['description'] ?></p>
+                            <p class="duration"><?= $videos_arr[1]['duration'] ?></p>
+                        </div>
                     </div>
-                </div>
-                <div class="video-item" data-video="<?= $videos_arr[2]['video_id'] ?>">
-                    <div class="video-thumb" style="background-image:url('https://i.ytimg.com/vi/<?= $videos_arr[2]['video_id'] ?>/mqdefault.jpg')"></div>
-                    <div class="video-info">
-                        <span class="badge primary"><?= $videos_arr[2]['channel_name'] ?></span>
-                        <h3><?= $videos_arr[2]['title'] ?></h3>
-                        <span class="date"><?= date("d M Y", strtotime($videos_arr[2]['date'])) ?></span>
-                        <p class="description"><?= $videos_arr[2]['description'] ?></p>
-                        <p class="duration"><?= $videos_arr[2]['duration'] ?></p>
+                    <div class="video-item" data-video="<?= $videos_arr[2]['video_id'] ?>">
+                        <div class="video-thumb" style="background-image:url('https://i.ytimg.com/vi/<?= $videos_arr[2]['video_id'] ?>/mqdefault.jpg')"></div>
+                        <div class="video-info">
+                            <span class="badge primary"><?= $videos_arr[2]['channel_name'] ?></span>
+                            <h3><?= $videos_arr[2]['title'] ?></h3>
+                            <span class="date"><?= date("d M Y", strtotime($videos_arr[2]['date'])) ?></span>
+                            <p class="description"><?= $videos_arr[2]['description'] ?></p>
+                            <p class="duration"><?= $videos_arr[2]['duration'] ?></p>
+                        </div>
                     </div>
+
                 </div>
-
-
             </div>
         </div>
     </div>
