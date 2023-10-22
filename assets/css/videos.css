@@ -291,6 +291,14 @@ section.video-section {
     padding: var(--gap) 0;
 }
 
+section.video-section .block-header{
+    color: #fff;
+}
+
+section.video-section .block-header span{
+    border-color:#fff;
+}
+
 section.video-section .video-item {
     display: flex;
     gap: calc(var(--gap)/2);
