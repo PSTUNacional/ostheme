@@ -657,6 +657,7 @@ article .author-line {
     aspect-ratio: 16/9;
     margin-bottom: calc(var(--gap)/2);
     position: relative;
+    background-color: var(--grey-100);
 }
 
 .featured-image-container .opinion-ribbon {
@@ -678,6 +679,7 @@ article .author-line {
     background-size: cover;
     background-position: center;
     transition: all .3s ease-in-out;
+    object-fit: cover;
 }
 
 .featured-image-container:hover .featured-image {

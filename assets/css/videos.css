@@ -297,6 +297,10 @@ section.video-section .video-item {
     align-items: center;
 }
 
+section.video-section .video-item .video-thumb{
+    min-width: 50%;
+}
+
 section.video-section .video-item.main {
     position: relative;
     width: 100%;

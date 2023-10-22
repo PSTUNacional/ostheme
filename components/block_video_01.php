@@ -10,7 +10,6 @@ $channels = json_decode($channels, true);
                 <span>Videos</span>
                 <a href="videos" class="more">Ver todos</a>
             </h2>
-
             <div class="video-container">
                 <?php
                 $videos_arr = [];
@@ -29,9 +28,8 @@ $channels = json_decode($channels, true);
 
                 array_multisort($date, SORT_DESC, $videos_arr);
                 ?>
-
-                <div class="col" >
-                    <div class="video-item main" data-video="<?= $videos_arr[0]['video_id'] ?>">
+                <div class="col">
+                    <a target="_blank" href="https://www.youtube.com/watch?v=<?= $videos_arr[0]['video_id'] ?>" aria-label="Clique para assistir o vídeo" class="video-item main" data-video="<?= $videos_arr[0]['video_id'] ?>">
                         <div class="video-thumb" style="background-image:url('https://i.ytimg.com/vi/<?= $videos_arr[0]['video_id'] ?>/mqdefault.jpg')"></div>
                         <div class="video-info">
                             <span class="badge primary"><?= $videos_arr[0]['channel_name'] ?></span>
@@ -40,11 +38,10 @@ $channels = json_decode($channels, true);
                             <p class="description"><?= $videos_arr[0]['description'] ?></p>
                             <p class="duration"><?= $videos_arr[0]['duration'] ?></p>
                         </div>
-                    </div>
-
+                    </a>
                 </div>
                 <div class="col">
-                    <div class="video-item" data-video="<?= $videos_arr[1]['video_id'] ?>">
+                    <a target="_blank" href="https://www.youtube.com/watch?v=<?= $videos_arr[0]['video_id'] ?>" aria-label="Clique para assistir o vídeo" class="video-item" data-video="<?= $videos_arr[1]['video_id'] ?>">
                         <div class="video-thumb" style="background-image:url('https://i.ytimg.com/vi/<?= $videos_arr[1]['video_id'] ?>/mqdefault.jpg')"></div>
                         <div class="video-info">
                             <span class="badge primary"><?= $videos_arr[1]['channel_name'] ?></span>
@@ -53,8 +50,8 @@ $channels = json_decode($channels, true);
                             <p class="description"><?= $videos_arr[1]['description'] ?></p>
                             <p class="duration"><?= $videos_arr[1]['duration'] ?></p>
                         </div>
-                    </div>
-                    <div class="video-item" data-video="<?= $videos_arr[2]['video_id'] ?>">
+                    </a>
+                    <a target="_blank" href="https://www.youtube.com/watch?v=<?= $videos_arr[0]['video_id'] ?>" aria-label="Clique para assistir o vídeo" class="video-item" data-video="<?= $videos_arr[2]['video_id'] ?>">
                         <div class="video-thumb" style="background-image:url('https://i.ytimg.com/vi/<?= $videos_arr[2]['video_id'] ?>/mqdefault.jpg')"></div>
                         <div class="video-info">
                             <span class="badge primary"><?= $videos_arr[2]['channel_name'] ?></span>
@@ -63,8 +60,7 @@ $channels = json_decode($channels, true);
                             <p class="description"><?= $videos_arr[2]['description'] ?></p>
                             <p class="duration"><?= $videos_arr[2]['duration'] ?></p>
                         </div>
-                    </div>
-
+                    </a>
                 </div>
             </div>
         </div>
