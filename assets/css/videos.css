@@ -291,10 +291,16 @@ section.video-section {
     padding: var(--gap) 0;
 }
 
+section.video-section .video-item{
+    display: flex;
+    gap: cacl(var(--gap)/2);
+}
+
 section.video-section .video-item.main {
     position: relative;
     width: 100%;
     height: 100%;
+    aspect-ratio: 16/9;
 }
 
 section.video-section .video-item.main .video-thumb {
