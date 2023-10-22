@@ -198,7 +198,7 @@
 
 ==============================*/
 
-.mainvideo{
+.mainvideo {
     background-color: #000;
     border-radius: 12px;
     overflow: hidden;
@@ -208,7 +208,7 @@
 }
 
 
-.mainvideo .video-info{
+.mainvideo .video-info {
     width: 100%;
     height: 100%;
     color: #fff;
@@ -219,61 +219,63 @@
     padding: 24px;
 }
 
-.mainvideo h1{
+.mainvideo h1 {
     font-size: 2em;
 }
 
-.mainvideo .video-thumb-container{
+.mainvideo .video-thumb-container {
     width: 100%;
     overflow: hidden;
-    position:relative;
+    position: relative;
 }
 
-.mainvideo .video-thumb-container .video-thumb{
+.mainvideo .video-thumb-container .video-thumb {
     margin: 0;
-    height:100%;
+    height: 100%;
     background-position: center;
 }
 
-.mainvideo .video-thumb-container .gradient{
-    left:0;
+.mainvideo .video-thumb-container .gradient {
+    left: 0;
 }
 
-.mainvideo .btn{
-    padding:8px 16px;
+.mainvideo .btn {
+    padding: 8px 16px;
     background-color: #ffffff00;
     color: #fff;
     border-radius: 4px;
-    width:fit-content;
+    width: fit-content;
     cursor: pointer;
-    border:1px solid #fff;
-    margin-top:24px;
+    border: 1px solid #fff;
+    margin-top: 24px;
 }
-.mainvideo .btn:hover{
+
+.mainvideo .btn:hover {
     background-color: #ffffff55;
 }
 
 @media screen and (max-width: 640px) {
-    .mainvideo{
+    .mainvideo {
         flex-direction: column;
     }
 
-    .mainvideo .video-info{
-        order:2;
+    .mainvideo .video-info {
+        order: 2;
         width: 100%;
         height: fit-content;
     }
 
-    .mainvideo .video-thumb-container{
+    .mainvideo .video-thumb-container {
         width: 100%;
-        order:1;
+        order: 1;
         aspect-ratio: 16/9;
     }
 
-    .mainvideo .video-thumb-container .gradient{
+    .mainvideo .video-thumb-container .gradient {
         display: none;
     }
-    .mainvideo .video-thumb-container .video-thumb{
+
+    .mainvideo .video-thumb-container .video-thumb {
         width: 100%;
     }
 }
@@ -284,9 +286,37 @@
 
 *========================================*/
 
-section.video-section{
+section.video-section {
     background: linear-gradient(0deg, #000 0%, var(--grey-700) 100%);
     padding: var(--gap) 0;
 }
 
+section.video-section .video-item.main {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
 
+section.video-section .video-item.main .video-thumb {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+section.video-section .video-item.main .video-info {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    z-index: 2;
+    padding: 24px;
+    width: 100%;
+    opacity: 0;
+    transition:  all .3s ease-in-out;
+    background: linear-gradient(0deg, #000f 50%, #0000 100%);
+}
+
+section.video-section .video-item.main:hover .video-info {
+    opacity: 0;
+    transition:  all .3s ease-in-out;
+}

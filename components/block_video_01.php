@@ -30,7 +30,7 @@ $channels = json_decode($channels, true);
                 array_multisort($date, SORT_DESC, $videos_arr);
                 ?>
 
-                <div class="col">
+                <div class="col" >
                     <div class="video-item main" data-video="<?= $videos_arr[0]['video_id'] ?>">
                         <div class="video-thumb" style="background-image:url('https://i.ytimg.com/vi/<?= $videos_arr[0]['video_id'] ?>/mqdefault.jpg')"></div>
                         <div class="video-info">
