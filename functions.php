@@ -228,7 +228,7 @@ function os_render_thumbnail($post, $size = "medium")
     $link =  get_permalink($post->ID);
     $thumbURL = get_the_post_thumbnail_url($post->ID, $size);
 
-    $tb = '<a class="featured-image-container" href="'. $link .'" title="'.$post->post_title.'" aria-label="'.$post->post_title.'"><div class="featured-image" style="background-image:url(\''. $thumbURL . '\')"></div></a>';
+    $tb = '<a class="featured-image-container" href="'. $link .'" title="'.$post->post_title.'" aria-label="'.$post->post_title.'"><img class="featured-image" src="'. $thumbURL . '" load="lazy"/></a>';
 
     foreach ($cats as $cat)
     {
@@ -236,7 +236,7 @@ function os_render_thumbnail($post, $size = "medium")
        
         if($name == 'Colunas')
         {
-            $tb = '<a class="featured-image-container" href="'. $link .'" title="'.$post->post_title.'" aria-label="'.$post->post_title.'"><div class="opinion-ribbon">Opinião</div><div class="featured-image" style="background-image:url(\''. $thumbURL . '\')"></div></a>';
+            $tb = '<a class="featured-image-container" href="'. $link .'" title="'.$post->post_title.'" aria-label="'.$post->post_title.'"><<div class="opinion-ribbon">Opinião</div><img class="featured-image" src="'. $thumbURL . '" load="lazy"/></a>';
         }
     }
 

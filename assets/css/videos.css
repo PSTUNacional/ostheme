@@ -291,9 +291,10 @@ section.video-section {
     padding: var(--gap) 0;
 }
 
-section.video-section .video-item{
+section.video-section .video-item {
     display: flex;
-    gap: cacl(var(--gap)/2);
+    gap: calc(var(--gap)/2);
+    align-items: center;
 }
 
 section.video-section .video-item.main {
@@ -318,11 +319,11 @@ section.video-section .video-item.main .video-info {
     padding: 24px;
     width: 100%;
     opacity: 0;
-    transition:  all .3s ease-in-out;
+    transition: all .3s ease-in-out;
     background: linear-gradient(0deg, #000f 50%, #0000 100%);
 }
 
 section.video-section .video-item.main:hover .video-info {
-    opacity: 0;
-    transition:  all .3s ease-in-out;
+    opacity: 1;
+    transition: all .3s ease-in-out;
 }
