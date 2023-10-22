@@ -19,7 +19,7 @@
 
 	<!-- CSS -->
 	<link rel="icon" type="image/x-icon" href=<?= get_template_directory_uri() . "/assets/img/favicon.gif" ?>>
-	<link rel="stylesheet" href="<?= get_template_directory_uri() . "/assets/css/font-awesome-all.min.css"?>" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="<?= get_template_directory_uri() . "/assets/fonts/fontawesome/css/all.min.css"?>" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	
 
 	<title><?php is_front_page() ? bloginfo('name') : wp_title('|', 1, 'right').' | '.bloginfo('name'); ?></title>
