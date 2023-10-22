@@ -45,7 +45,7 @@ $channels = json_decode($channels, true);
                         <a target="_blank" href="https://www.youtube.com/watch?v=<?= $videos_arr[2]['video_id'] ?>" aria-label="Clique para assistir o vídeo" class="video-thumb" style="background-image:url('https://i.ytimg.com/vi/<?= $videos_arr[1]['video_id'] ?>/mqdefault.jpg')"></a>
                         <div class="video-info">
                             <span class="badge primary"><?= $videos_arr[1]['channel_name'] ?></span>
-                            <a target="_blank" href="https://www.youtube.com/watch?v=<?= $videos_arr[1]['video_id'] ?>" aria-label="Clique para assistir o vídeo">
+                            <a target="_blank" href="https://www.youtube.com/watch?v=<?= $videos_arr[1]['video_id'] ?>" aria-label="Clique para assistir <?= $videos_arr[1]['title'] ?>">
                                 <h3><?= $videos_arr[1]['title'] ?></h3>
                             </a>
                             <span class="date"><?= date("d M Y", strtotime($videos_arr[1]['date'])) ?></span>
@@ -57,7 +57,7 @@ $channels = json_decode($channels, true);
                         <a target="_blank" href="https://www.youtube.com/watch?v=<?= $videos_arr[2]['video_id'] ?>" aria-label="Clique para assistir o vídeo" class="video-thumb" style="background-image:url('https://i.ytimg.com/vi/<?= $videos_arr[2]['video_id'] ?>/mqdefault.jpg')"></a>
                         <div class="video-info">
                             <span class="badge primary"><?= $videos_arr[2]['channel_name'] ?></span>
-                            <a target="_blank" href="https://www.youtube.com/watch?v=<?= $videos_arr[2]['video_id'] ?>" aria-label="Clique para assistir o vídeo">
+                            <a target="_blank" href="https://www.youtube.com/watch?v=<?= $videos_arr[2]['video_id'] ?>" aria-label="Clique para assistir <?= $videos_arr[2]['title'] ?>">
                                 <h3><?= $videos_arr[2]['title'] ?></h3>
                             </a>
                             <span class="date"><?= date("d M Y", strtotime($videos_arr[2]['date'])) ?></span>
