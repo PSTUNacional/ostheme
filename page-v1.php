@@ -31,8 +31,10 @@ get_header(); ?>
         $mainvideo_url =  get_option('ostheme_mainvideo_url');
 
         if (get_option('ostheme_mainvideo_active') == 'on' && $mainvideo_url !== '') {
-            preg_match("/v=(.*)&/", $mainvideo_url, $url);
+            print_r($mainvideo_url);
+            preg_match("/v=(.*)/", $mainvideo_url, $url);
             $videoId = $url[1];
+
         ?>
             <section>
                 <div class="container">
@@ -45,7 +47,7 @@ get_header(); ?>
                         </div>
                         <div class="video-thumb-container">
                             <div class="gradient"></div>
-                            <div class="video-thumb" style="background-image:url('https://i.ytimg.com/vi/<?= $videoId ?>/mqdefault.jpg')"></div>
+                            <div class="video-thumb" style="background-image:url('https://i3.ytimg.com/vi/<?= $videoId ?>/maxresdefault.jpg')"></div>
                         </div>
                     </div>
             </section>
