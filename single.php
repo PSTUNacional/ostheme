@@ -21,9 +21,7 @@ get_header(); ?>
             <h3 class="tagline">
               <?php
               $tagline = get_post_meta($post->ID, 'post_tagline', true);
-              if ($tagline == '') {
-                echo get_the_excerpt();
-              } else {
+              if (!$tagline == '') {
                 echo $tagline;
               }
 
