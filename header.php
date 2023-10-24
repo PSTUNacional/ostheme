@@ -84,8 +84,9 @@
 				<div class="mobile">
 					<hr />
 					<ul>
-						<li><a href="contribua">Contribua</a></li>
-						<li><a href="colabore">Seja um colaborador</a></li>
+						<li><a href="colabore" targe="_blank">Seja um colaborador</a></li>
+						<li><a href="https://doe.pstu.org.br" targe="_blank">Contribua</a></li>
+						<li><a href="https://facaparte.pstu.org.br" targe="_blank">Venha para o PSTU</a></li>
 					</ul>
 					<hr />
 					<p style="padding-left:24px;">Siga o <b>Opinião</b></p><br />

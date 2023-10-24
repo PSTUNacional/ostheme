@@ -53,7 +53,12 @@ get_header(); ?>
         $posts = get_posts($args);
 
         // ========== Header Block ========== //
-        include(__DIR__ . '/components/header_block_04.php'); ?>
+
+        if (sizeof($posts) > 0) {
+            include(__DIR__ . '/components/header_block_04.php');
+        } else{
+            echo '<section><h3 class="ta-center">Ainda não há conteúdo aqui...</h3></section>';
+        }?>
 
         <?php
         // ========== Ad Block ========== //
@@ -69,22 +74,24 @@ get_header(); ?>
         <?php } ?>
         <div class="container">
             <?php
-            for ($i = 4; $i < 19; $i++) {
-                if ($posts[$i]->post_title) { 
-                    
-                    do_shortcode('[molongui_author_name]');?>
-                    <article class="article-01">
-                        <?= os_render_thumbnail($posts[$i]); ?>
-                        <div class="post-info">
-                            <span class="sup-category"><?= get_cat_name(wp_get_post_categories($posts[$i]->ID)[0]); ?></span>
-                            <a href="<?= get_permalink($posts[$i]->ID); ?>" title="<?= $posts[$i]->post_title; ?>">
-                                <h2><?= $posts[$i]->post_title; ?></h2>
-                            </a>
-                            <span class="author-line">Por <?= the_author_meta('display_name', $posts[$i]->post_author); ?></span>
-                            <p><?= formatDate($posts[$i]->post_date) ?></p>
-                        </div>
-                    </article>
+            if (sizeof($posts) > 4) {
+                for ($i = 4; $i < 19; $i++) {
+                    if ($posts[$i]->post_title) {
+
+                        do_shortcode('[molongui_author_name]'); ?>
+                        <article class="article-01">
+                            <?= os_render_thumbnail($posts[$i]); ?>
+                            <div class="post-info">
+                                <span class="sup-category"><?= get_cat_name(wp_get_post_categories($posts[$i]->ID)[0]); ?></span>
+                                <a href="<?= get_permalink($posts[$i]->ID); ?>" title="<?= $posts[$i]->post_title; ?>">
+                                    <h2><?= $posts[$i]->post_title; ?></h2>
+                                </a>
+                                <span class="author-line">Por <?= the_author_meta('display_name', $posts[$i]->post_author); ?></span>
+                                <p><?= formatDate($posts[$i]->post_date) ?></p>
+                            </div>
+                        </article>
             <?php }
+                }
             } ?>
         </div>
     </main>
