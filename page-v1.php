@@ -31,7 +31,6 @@ get_header(); ?>
         $mainvideo_url =  get_option('ostheme_mainvideo_url');
 
         if (get_option('ostheme_mainvideo_active') == 'on' && $mainvideo_url !== '') {
-            print_r($mainvideo_url);
             preg_match("/v=(.*)/", $mainvideo_url, $url);
             $videoId = $url[1];
 

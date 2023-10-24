@@ -7,7 +7,7 @@
             </h2>
             <div class="opinion-block-01">
                 <?php foreach ($posts as $post) {   
-                    the_post(); 
+
                     $profile = get_avatar_url($post->post_author);
                     ?>
                     <article>

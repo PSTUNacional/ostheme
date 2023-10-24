@@ -1289,6 +1289,7 @@ div.divider {
 #lastOS .main-articles article {
     flex-direction: row;
     gap: var(--gap);
+    max-width: 48%;
 }
 
 #lastOS .main-articles article h2 {
@@ -1302,6 +1303,7 @@ div.divider {
 
 #lastOS .edition-info .main-articles {
     display: flex;
+    flex-wrap: wrap;
     gap: var(--gap);
 }
 
@@ -1358,6 +1360,10 @@ div.divider {
     #lastOS .main-articles,
     #lastOS .main-articles article {
         flex-direction: column;
+    }
+
+    #lastOS .main-articles article {
+        max-width: 100%;
     }
 
     #lastOS .article-list {
