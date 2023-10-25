@@ -75,14 +75,15 @@ get_header(); ?>
 
         <?php
 
+        // ========== Header Block ========== //
         $args = array(
             'numberposts' => 5,
             'category__not_in' => array(50),
-            'tag__not_in' => array(4)
+            'tag__not_in' => array(4),
+            'orderby'   => 'menu_order'
         );
         $posts = get_posts($args);
-
-        // ========== Header Block ========== //
+        
         $headerblock = get_option('ostheme_headerblock_layout');
         $headerblock == '' ? $headerblock = 'header_block_01' : '';
         include(__DIR__ . '/components/' . $headerblock . '.php'); ?>
