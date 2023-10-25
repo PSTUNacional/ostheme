@@ -6,9 +6,15 @@ Template Name: OS Home Page
 
 function render_section($section_id, $posts = 5)
 {
-    $cat = get_option('ostheme_section' . $section_id . '_category');
     $layout = get_option('ostheme_section' . $section_id . '_layout');
     $block_path = __DIR__ . '/components/' . $layout . '.php';
+
+    if ($layout == 'opinion_block_01')
+    {
+        $cat = '3793';
+    } else {
+        $cat = get_option('ostheme_section' . $section_id . '_category');
+    }
 
     $args = array(
         'numberposts' => $posts,
@@ -20,6 +26,7 @@ function render_section($section_id, $posts = 5)
     $posts = get_posts($args);
     include($block_path);
 }
+
 
 get_header(); ?>
 <div class="content-area">

@@ -38,7 +38,18 @@ get_header(); ?>
                   <?php } ?>
                 </div>
                 <div class="info">
-                  <h4 class="author-line"><?= the_author_meta('display_name', $post->post_author); ?></h4>
+                  <h4 class="author-line">
+					  <?php
+			  			echo the_author_meta('display_name', $post->post_author);
+			  			if(get_the_author_meta('description') !== '')
+						{
+							echo '<span style="font-weight:300">, '.get_the_author_meta('description').'</span>';
+	
+						}
+
+
+					  ?>
+					</h4>
                   <span><?= get_the_date() ?></span>
                 </div>
               </div>

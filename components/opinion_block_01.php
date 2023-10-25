@@ -1,3 +1,14 @@
+<?php
+
+$args = [
+	"cat" => 3793,
+	'posts_per_page' => 4 
+];
+
+$posts = new WP_Query($args);
+
+?>
+
 <section>
     <div class="container">
         <div class="col">
@@ -6,9 +17,10 @@
                 <a href="categoria/colunas" class="more">Ver todos</a>
             </h2>
             <div class="opinion-block-01">
-                <?php foreach ($posts as $post) {   
-
-                    $profile = get_avatar_url($post->post_author);
+                <?php if ( $posts->have_posts() ) {  
+					while ( $posts->have_posts() ) {
+						$posts->the_post();
+						$profile = get_avatar_url( get_the_author_meta('ID'));
                     ?>
                     <article>
                         <div class="author-box">
@@ -18,13 +30,13 @@
                                     <i class="fa fa-user"></i>
                                 <?php } ?>
                             </div>
-                            <span class="author-line"><?= the_author_meta('display_name', $post->post_author); ?></span>
+                            <span class="author-line"><?= the_author_meta('display_name'); ?></span>
                         </div>
-                        <a href="<?= get_permalink($post->ID); ?>" title="<?= $post->post_title; ?>">
-                            <h2><?= $post->post_title; ?></h2>
+                        <a href="<?= the_permalink() ?>" title="<?= the_title() ?>">
+                            <h2><?= the_title(); ?></h2>
                         </a>
                     </article>
-                <?php }   ?>
+                <?php  } }   ?>
             </div>
         </div> 
     </div>
