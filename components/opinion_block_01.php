@@ -2,7 +2,8 @@
 
 $args = [
 	"cat" => 3793,
-	'posts_per_page' => 4 
+	'posts_per_page' => 4,
+    'orderby' => 'menu_order'
 ];
 
 $posts = new WP_Query($args);
