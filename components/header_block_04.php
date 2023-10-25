@@ -5,7 +5,7 @@
         <div class="header-block-04">
             <div class="col col-50">
                 <article class="destak">
-                    <?= os_render_thumbnail($posts[0]->ID) ?>
+                    <?= os_render_thumbnail($posts[0], 'large') ?>
                     <span class="sup-category"><?= get_cat_name(wp_get_post_categories($posts[0]->ID)[0]); ?></span>
                     <a href="<?= get_permalink($posts[0]->ID); ?>" title="<?= $posts[0]->post_title; ?>" aria-label="<?= $posts[0]->post_title; ?>">
                         <h2><?= $posts[0]->post_title; ?></h2>
@@ -17,7 +17,7 @@
             <div class="divider"></div>
             <div class="col col-50 middle">
                 <article>
-                <?= os_render_thumbnail($posts[1]->ID) ?>
+                <?= os_render_thumbnail($posts[1]) ?>
                     <div class="post-info">
                         <span class="sup-category"><?= get_cat_name(wp_get_post_categories($posts[1]->ID)[0]); ?></span>
                         <a href="<?= get_permalink($posts[1]->ID); ?>" title="<?= $posts[1]->post_title; ?>" aria-label="<?= $posts[1]->post_title; ?>">
@@ -27,7 +27,7 @@
                     </div>
                 </article>
                 <article>
-                <?= os_render_thumbnail($posts[2]->ID) ?>
+                <?= os_render_thumbnail($posts[2]) ?>
                     <div class="post-info">
                         <span class="sup-category"><?= get_cat_name(wp_get_post_categories($posts[2]->ID)[0]); ?></span>
                         <a href="<?= get_permalink($posts[2]->ID); ?>" title="<?= $posts[2]->post_title; ?>" aria-label="<?= $posts[2]->post_title; ?>">
@@ -37,7 +37,7 @@
                     </div>
                 </article>
                 <article>
-                <?= os_render_thumbnail($posts[3]->ID) ?>
+                <?= os_render_thumbnail($posts[3]) ?>
                     <div class="post-info">
                         <span class="sup-category"><?= get_cat_name(wp_get_post_categories($posts[3]->ID)[0]); ?></span>
                         <a href="<?= get_permalink($posts[3]->ID); ?>" title="<?= $posts[3]->post_title; ?>" aria-label="<?= $posts[3]->post_title; ?>">
