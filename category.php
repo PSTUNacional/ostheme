@@ -85,7 +85,7 @@ get_header(); ?>
                                 <a href="<?= get_permalink($posts[$i]->ID); ?>" title="<?= $posts[$i]->post_title; ?>">
                                     <h2><?= $posts[$i]->post_title; ?></h2>
                                 </a>
-                                <span class="author-line">Por <?= the_author_meta('display_name', $posts[$i]->post_author); ?></span>
+                                <!-- <span class="author-line">Por <?= the_author_meta('display_name', $posts[$i]->post_author); ?></span> -->
                                 <p><?= formatDate($posts[$i]->post_date) ?></p>
                             </div>
                         </article>

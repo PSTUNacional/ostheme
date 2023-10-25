@@ -243,7 +243,7 @@ function os_render_thumbnail($post, $size = "medium")
        
         if($name == 'Colunas')
         {
-            $tb = '<a class="featured-image-container" href="'. $link .'" title="'.$post->post_title.'" aria-label="'.$post->post_title.'"><<div class="opinion-ribbon">Opinião</div><img class="featured-image" src="'. $thumbURL . '" load="lazy" alt="'.$post->post_title.'"/></a>';
+            $tb = '<a class="featured-image-container" href="'. $link .'" title="'.$post->post_title.'" aria-label="'.$post->post_title.'"><div class="opinion-ribbon">Opinião</div><img class="featured-image" src="'. $thumbURL . '" load="lazy" alt="'.$post->post_title.'"/></a>';
         }
     }
 
