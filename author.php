@@ -5,6 +5,13 @@ Template Name: Author page
 */
 
 get_header();
+
+$args = [
+	"cat" => 3793,
+];
+
+$posts = new WP_Query($args);
+
 $profile = get_avatar_url(get_the_author_meta('ID'));
 
 ?>
@@ -23,7 +30,7 @@ $profile = get_avatar_url(get_the_author_meta('ID'));
                     <h1><?= the_author_meta('display_name'); ?></h1>
                     <?php
                     if (get_the_author_meta('description') !== '') {
-                        echo '<p>, ' . get_the_author_meta('description') . '</p>';
+                        echo '<p>' . get_the_author_meta('description') . '</p>';
                     }
                     ?>
                 </div>
@@ -71,6 +78,8 @@ $profile = get_avatar_url(get_the_author_meta('ID'));
                     </article>
             <?php
                 }
+            } else {
+                echo '<h3>Ops... não há nada por aqui ainda. =/';
             } ?>
         </div>
     </main>
