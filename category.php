@@ -76,9 +76,7 @@ get_header(); ?>
             <?php
             if (sizeof($posts) > 4) {
                 for ($i = 4; $i < 19; $i++) {
-                    if ($posts[$i]->post_title) {
-
-                        do_shortcode('[molongui_author_name]'); ?>
+                    if ($posts[$i]->post_title) { ?>
                         <article class="article-01">
                             <?= os_render_thumbnail($posts[$i]); ?>
                             <div class="post-info">

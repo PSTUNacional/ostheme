@@ -77,6 +77,13 @@ add_action('template_include', function ($template) {
     return get_template_directory() . '/os-edition.php';
 });
 
+function custom_author_base() {
+    global $wp_rewrite;
+    $wp_rewrite->author_base = 'coluna';
+    $wp_rewrite->author_structure = '/' . $wp_rewrite->author_base . '/%author%';
+}
+add_action( 'init', 'custom_author_base' );
+
 /*==============================
 
     API Modifyers
@@ -182,7 +189,6 @@ add_action('save_post', 'tagline_metabox_saver');
 
 function get_the_rate($id)
 {
-
     $evaluation = new EvaluationRepository;
     $result = $evaluation->getRateById($id);
     return ($result);

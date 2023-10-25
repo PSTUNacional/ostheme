@@ -1559,6 +1559,36 @@ div.divider {
     }
 }
 
+/*========================================
+
+    AUTHOR PAGE
+
+*========================================*/
+
+.author-title {
+    margin: 48px 0;
+    border-bottom: 1px solid var(--grey-500);
+    width: 100%;
+    display: flex;
+    gap: var(--gap);
+    padding-bottom: var(--gap);
+}
+
+.author-title .info span {
+    font-size: 1em;
+    padding: 0;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.author-title .author-avatar {
+    aspect-ratio: 1;
+    background-position: center;
+    background-size: cover;
+    max-width: 160px;
+    border-radius: 50%;
+}
+
 
 /*========================================
 
