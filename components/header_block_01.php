@@ -50,7 +50,7 @@
             <div class="divider"></div>
             <div class="col col-25">
                 <?php
-                $args = array('numberposts' => 1, 'category_name' => 'editorial',);
+                $args = array('numberposts' => 1, 'category_name' => 'editorial','category__not_in' => array(1093));
                 $editorial = get_posts($args);
                 ?>
                 <article class="article-editorial">
