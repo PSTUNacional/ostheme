@@ -30,7 +30,7 @@ $posts = new WP_Query($args);
                                     <i class="fa fa-user"></i>
                                 <?php } ?>
                             </div>
-                            <span class="author-line"><a href="<?=the_author_url()?>"><?= the_author_meta('display_name'); ?></a></span>
+                            <span class="author-line"><a href="coluna/<?=the_author_meta('user_nicename')?>"><?= the_author_meta('display_name'); ?></a></span>
                         </div>
                         <a href="<?= the_permalink() ?>" title="<?= the_title() ?>">
                             <h2><?= the_title(); ?></h2>
