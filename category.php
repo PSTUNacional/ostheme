@@ -56,9 +56,9 @@ get_header(); ?>
 
         if (sizeof($posts) > 0) {
             include(__DIR__ . '/components/header_block_04.php');
-        } else{
+        } else {
             echo '<section><h3 class="ta-center">Ainda não há conteúdo aqui...</h3></section>';
-        }?>
+        } ?>
 
         <?php
         // ========== Ad Block ========== //
@@ -76,7 +76,8 @@ get_header(); ?>
             <?php
             if (sizeof($posts) > 4) {
                 for ($i = 4; $i < 19; $i++) {
-                    if ($posts[$i]->post_title) { ?>
+                    if ($posts[$i]->post_title) {
+            ?>
                         <article class="article-01">
                             <?= os_render_thumbnail($posts[$i]); ?>
                             <div class="post-info">

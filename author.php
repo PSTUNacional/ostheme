@@ -5,14 +5,8 @@ Template Name: Author page
 */
 
 get_header();
-
-$args = [
-	"cat" => 3793,
-];
-
-$posts = new WP_Query($args);
-
-$profile = get_avatar_url(get_the_author_meta('ID'));
+$author_id = get_the_author_meta('ID');
+$profile = get_avatar_url($author_id);
 
 ?>
 <div class="content-area">
@@ -66,6 +60,10 @@ $profile = get_avatar_url(get_the_author_meta('ID'));
             if (have_posts()) {
                 while (have_posts()) {
                     the_post();
+					$cats = wp_get_post_categories(get_the_id());
+					foreach($cats as $cat){
+						if($cat == 3793){
+						
             ?>
                     <article class="article-01">
                         <?= os_render_thumbnail(get_the_id()); ?>
@@ -73,10 +71,11 @@ $profile = get_avatar_url(get_the_author_meta('ID'));
                             <a href="<?= the_permalink(); ?>" title="<?= the_title() ?>">
                                 <h2><?= the_title() ?></h2>
                             </a>
-                            <p><?= formatDate($posts[$i]->post_date) ?></p>
+                            <p><?= formatDate($posts->the_date) ?></p>
                         </div>
                     </article>
             <?php
+					}}
                 }
             } else {
                 echo '<h3>Ops... não há nada por aqui ainda. =/';
