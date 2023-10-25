@@ -122,7 +122,7 @@ document.querySelector('#search-bar input[type=text]')
     .addEventListener('keyup', async () => {
         sq = event.target.value
         if (sq.length > 3) {
-            await fetch('http://localhost:8080/wordpress/wp-json/wp/v2/search?_embed&search=' + sq)
+            await fetch('https://www.opiniaosocialista.com.br/wp-json/wp/v2/search?_embed&search=' + sq)
                 .then(resp => resp.json())
                 .then(results => {
 

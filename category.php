@@ -7,23 +7,6 @@ Template Name: Category Page
 $cat = get_queried_object();
 $cat = $cat->term_id;
 
-function render_section($section_id)
-{
-    $cat = get_option('ostheme_section' . $section_id . '_category');
-    $layout = get_option('ostheme_section' . $section_id . '_layout');
-    $block_path = __DIR__ . '/components/' . $layout . '.php';
-
-    $args = array(
-        'numberposts' => 5,
-        'category' => array($cat),
-        'offset' => 0,
-        'tag__not_in' => array(4)
-    );
-
-    $posts = get_posts($args);
-    include($block_path);
-}
-
 get_header(); ?>
 <div class="content-area">
     <main>
@@ -46,6 +29,7 @@ get_header(); ?>
         <?php } ?>
 
         <?php
+        
         $args = array(
             'category' => $cat,
             'numberposts' => 19,

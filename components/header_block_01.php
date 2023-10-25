@@ -12,8 +12,8 @@
                     <a href="<?= get_permalink($posts[0]->ID); ?>" title="<?= $posts[0]->post_title; ?>" aria-label="<?= $posts[0]->post_title; ?>">
                         <h2><?= $posts[0]->post_title; ?></h2>
                     </a>
-                    <span class="author-line">Por <?= the_author_meta('display_name', $posts[0]->post_author); ?></span>
-                    <p><?= get_the_excerpt($posts[0]->ID); ?></p>
+                    <!--<span class="author-line">Por <?= the_author_meta('display_name', $posts[0]->post_author); ?></span>
+                    <p><?= get_the_excerpt($posts[0]->ID); ?></p>-->
                 </article>
             </div>
             <div class="divider"></div>
@@ -30,21 +30,21 @@
                     <a href="<?= get_permalink($posts[2]->ID); ?>" title="<?= $posts[2]->post_title; ?>" aria-label="<?= $posts[2]->post_title; ?>">
                         <h2><?= $posts[2]->post_title; ?></h2>
                     </a>
-                    <span class="author-line">Por <?= the_author_meta('display_name', $posts[2]->post_author); ?></span>
+                    <!--<span class="author-line">Por <?= the_author_meta('display_name', $posts[2]->post_author); ?></span>-->
                 </article>
                 <article>
                     <span class="sup-category"><?= get_cat_name(wp_get_post_categories($posts[3]->ID)[0]); ?></span>
                     <a href="<?= get_permalink($posts[3]->ID); ?>" title="<?= $posts[3]->post_title; ?>" aria-label="<?= $posts[3]->post_title; ?>">
                         <h2><?= $posts[3]->post_title; ?></h2>
                     </a>
-                    <span class="author-line">Por <?= the_author_meta('display_name', $posts[3]->post_author); ?></span>
+                    <!--<span class="author-line">Por <?= the_author_meta('display_name', $posts[3]->post_author); ?></span>-->
                 </article>
                 <article>
                     <span class="sup-category"><?= get_cat_name(wp_get_post_categories($posts[4]->ID)[0]); ?></span>
                     <a href="<?= get_permalink($posts[4]->ID); ?>" title="<?= $posts[4]->post_title; ?>" aria-label="<?= $posts[4]->post_title; ?>">
                         <h2><?= $posts[4]->post_title; ?></h2>
                     </a>
-                    <span class="author-line">Por <?= the_author_meta('display_name', $posts[4]->post_author); ?></span>
+                    <!--<span class="author-line">Por <?= the_author_meta('display_name', $posts[4]->post_author); ?></span>-->
                 </article>
             </div>
             <div class="divider"></div>
