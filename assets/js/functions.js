@@ -87,6 +87,7 @@ function submitEvaluation() {
     form.append('id', id)
     form.append('comment', comment)
     form.append('title', title)
+    form.append('local', 'site')
 
     box.innerHTML = "<h3>Obrigado pelo sua avaliação!</h3><p>Sua contribuição é importante para melhoria do nosso trabalho.</p>"
 
