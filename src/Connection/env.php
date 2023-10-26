@@ -1,6 +1,6 @@
 <?php
 
-define("DBHOST", 'localhost');
-define("DBNAME", 'opiniao_database');
-define("DBUSER", 'opiniao_admin');
-define("DBPASS", 'nifAN%0)l]fgF~Jtsu');
+define("DBHOST", 'mysqldb');
+define("DBNAME", 'opiniao');
+define("DBUSER", 'admin');
+define("DBPASS", 'admin');

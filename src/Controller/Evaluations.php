@@ -12,6 +12,7 @@ if($method == 'insert')
     $id = $_POST['id'];
     $rank = $_POST['rank'];
     $comment = $_POST['comment'];
+    $title = $_POST['title'];
 
     $evaluation->insertEvaluation($id, $rank, $comment);
 }
@@ -19,5 +20,10 @@ if($method == 'insert')
 if($method == 'getRateById')
 {
     $id = $_GET['id'];
-    $result = $evaluation->getRateById($id);
+    return $evaluation->getRateById($id);
+}
+
+if($method == 'getAllEvaluations')
+{
+    return $evaluation->getAllEvaluations();
 }

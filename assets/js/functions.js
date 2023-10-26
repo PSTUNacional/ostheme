@@ -81,10 +81,12 @@ function submitEvaluation() {
     rank = box.querySelector('input:checked').value;
     id = box.querySelector('input[name="contentid"]').value;
     comment = box.querySelector('textarea').value;
+    title = document.querySelector('article h1').innerText
 
     form.append('rank', rank)
     form.append('id', id)
     form.append('comment', comment)
+    form.append('title', title)
 
     box.innerHTML = "<h3>Obrigado pelo sua avaliação!</h3><p>Sua contribuição é importante para melhoria do nosso trabalho.</p>"
 
