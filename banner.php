@@ -60,7 +60,11 @@ get_header(); ?>
             height:32px;
             border-radius:50%;
             background-color: var(--primary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
+
 
         .banner-grid .banner-card:hover .info{
             display: flex;
@@ -75,7 +79,9 @@ get_header(); ?>
 
             foreach($banners as $b)
             {
-                echo '<div class="banner-card" style="background-image:url(\'https://opiniaosocialista.com.br/automation/assets/rendered/'.$b.'\')"><div class="info"><a><i class="fa fa-file-download"></i></a><a><i class="fa fa-link"></i></a></div></div>';
+
+                $id = (int) filter_Var($b, FILTER_SANITIZE_NUMBER_INT);
+                echo '<div class="banner-card" style="background-image:url(\'https://opiniaosocialista.com.br/automation/assets/rendered/'.$b.'\')"><div class="info"><a><i class="fa fa-file-download"></i></a><a href="https://www.opiniaosocialista.com.br/?p='.$id.'"><i class="fa fa-link"></i></a></div></div>';
             }
             ?>
         </div>
