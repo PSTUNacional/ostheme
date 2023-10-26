@@ -93,11 +93,19 @@ label.switcher input:checked + span .pin{
     transition: all .3s ease-in-out;
 }
 
+.admin-table{
+    width: auto;
+}
+
 .admin-table .dashicons{
     font-size: 12px;
     margin: 0 6px;
     color: #999;
     line-height: 1.25rem;
+}
+
+.admin-table tbody tr:hover{
+    background-color: #fee;
 }
 
 

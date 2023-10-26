@@ -27,3 +27,9 @@ if($method == 'getAllEvaluations')
 {
     return $evaluation->getAllEvaluations();
 }
+
+if($method == 'getAllComments')
+{
+    $id = $_GET['id'];
+    return $evaluation->getAllComments($id);
+}

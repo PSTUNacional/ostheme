@@ -40,6 +40,18 @@ class EvaluationRepository extends Repository
         return $prepare->fetch(\PDO::FETCH_ASSOC) ?: [];
     }
 
+    public function getAllComments(int $id)
+    {
+        $sql = "SELECT * FROM os_content_evaluation WHERE content_id = :id";
+        $prepare = $this->conn->prepare($sql);
+        $prepare->execute([
+            'id' => $id
+        ]);
+        $result = $prepare->fetchAll(\PDO::FETCH_ASSOC) ?: [];
+        header('Content-Type: application/json; charset=utf-8');
+        echo json_encode($result);
+    }
+
     public function getAllEvaluations(int $limit = 30)
     {
         $sql = "SELECT `content_id`, `title`, ROUND(AVG(`rate`),1) as rate, COUNT(`rate`) as 'evaluations', COUNT(NULLIF(`comment`,'')) as comments FROM `os_content_evaluation` GROUP BY `content_id` ORDER BY `content_id` DESC LIMIT 0, $limit";
