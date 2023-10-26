@@ -29,13 +29,16 @@ get_header(); ?>
     <style>
         .banner-grid{
             display:flex;
+            flex-wrap: wrap;
             gap:8px;
+            width: 100%;
+  height: 100%;
         }
         .banner-grid .banner-card{
             aspect-ratio: 1;
             width: 100%;
             height: 100%;
-            max-width: 180px;
+            max-width: 240px;
             background-size:cover;
             background-position:Center;
             cursor:pointer;
@@ -49,6 +52,7 @@ get_header(); ?>
             height: 100%;
             justify-content: center;
             align-items: center;
+            background-color: #fffa;
         }
 
         .banner-grid .info a{
@@ -60,6 +64,7 @@ get_header(); ?>
 
         .banner-grid .banner-card:hover .info{
             display: flex;
+            transition: all .3 ease-in-out;
         }
 
     </style>
@@ -70,7 +75,7 @@ get_header(); ?>
 
             foreach($banners as $b)
             {
-                echo '<div class="banner-card" style="background-image:url(\'https://opiniaosocialista.com.br/automation/assets/rendered/'.$b.'\')"><div class="info"><a></a><a></a></div></div>';
+                echo '<div class="banner-card" style="background-image:url(\'https://opiniaosocialista.com.br/automation/assets/rendered/'.$b.'\')"><div class="info"><a><i class="fa fa-file-download"></i></a><a><i class="fa fa-link"></i></a></div></div>';
             }
             ?>
         </div>
