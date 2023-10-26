@@ -34,7 +34,7 @@ article.post img {
     height: auto;
 }
 
-article.post iframe {
+article.post iframe[title="YouTube video player"] {
     width: 100%;
     height: auto;
     aspect-ratio: 16/9;
