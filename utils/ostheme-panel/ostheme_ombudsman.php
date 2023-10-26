@@ -13,7 +13,7 @@ function render_theme_ombudsman()
     <h1>Ombudsman</h1>
     <?php settings_errors(); // Exibe alertas na página 
     ?>
-    <table class="admin-table">
+    <table class="wp-list-table widefat striped admin-table">
         <thead>
             <tr>
             <th>Matéria</th>

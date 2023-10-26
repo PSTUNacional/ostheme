@@ -93,12 +93,6 @@ label.switcher input:checked + span .pin{
     transition: all .3s ease-in-out;
 }
 
-.admin-table{
-    background-color: #fff;
-    max-width: 960px;
-    width: 100%;
-}
-
 .admin-table .dashicons{
     font-size: 12px;
     margin: 0 6px;
@@ -106,24 +100,4 @@ label.switcher input:checked + span .pin{
     line-height: 1.25rem;
 }
 
-.admin-table thead{
-    background-color: #999;
-    color:#fff
-}
-
-.admin-table thead th{
-    padding:8px 32px;
-}
-.admin-table td{
-    padding: 8px 16px;
-    border-bottom: 1px solid #ccc;
-}
-
-.admin-table tbody tr:hover{
-    background-color: #fee;
-}
-
-.admin-table tbody td:not(:first-child){
-    text-align: center;
-}
 
