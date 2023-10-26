@@ -45,7 +45,7 @@ get_header(); ?>
 
             foreach($banners as $b)
             {
-                echo '<div class="banner-card" style="background-image:url(https://opiniaosocialista.com.br/automation/assets/rendered/'.$b.')"></div>';
+                echo '<div class="banner-card" style="background-image:url(\'https://opiniaosocialista.com.br/automation/assets/rendered/'.$b.'\')"></div>';
             }
             ?>
         </div>
