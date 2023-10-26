@@ -37,9 +37,20 @@ function theme_admin_page()
         'ostheme_ads', // Menu Slug
         'render_theme_admin_ads', // Function
     );
+
+    add_menu_page(
+        'Ombusdman', // Page title
+        'Ombudsman', // Menu title
+        'manage_options', // Capabilities
+        'os_ombudsman', // Menu slug
+        'render_theme_ombudsman', // Function
+        'dashicons-star-filled' // Icon URL
+        // Position
+    );
 }
 
 add_action('admin_menu', 'theme_admin_page');
 
 include get_template_directory() . '/utils/ostheme-panel/ostheme_layout.php';
 include get_template_directory() . '/utils/ostheme-panel/ostheme_ads.php';
+include get_template_directory() . '/utils/ostheme-panel/ostheme_ombudsman.php';
