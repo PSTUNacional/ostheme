@@ -1,6 +1,6 @@
 <?php
 
-include get_template_directory() . '/autoloader.php';
+include dirname(__DIR__, 2).'/autoloader.php';
 
 use OS\Repository\EvaluationRepository;
 
@@ -19,6 +19,5 @@ if($method == 'insert')
 if($method == 'getRateById')
 {
     $id = $_GET['id'];
-    return $evaluation->getRateById($id);
-
+    $result = $evaluation->getRateById($id);
 }

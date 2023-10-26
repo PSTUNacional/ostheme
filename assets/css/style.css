@@ -289,6 +289,20 @@ nav hr {
     display: none;
 }
 
+#socialmediatop {
+    display: flex;
+    gap: 8px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+}
+
+#socialmediatop i {
+    font-size: 18px;
+    color: var(--grey-500);
+}
+
 .main-menu .mobile .social-media {
     display: flex;
     gap: 8px;
@@ -306,6 +320,9 @@ nav hr {
 }
 
 @media screen and (max-width:560px) {
+    #socialmediatop {
+        display: none;
+    }
 
     .main-menu {
         position: fixed;

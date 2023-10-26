@@ -2,7 +2,7 @@
 
 namespace OS\Repository;
 
-include get_template_directory() . '/autoloader.php';
+include dirname(__DIR__, 2).'/autoloader.php';
 
 use OS\Connection\PDOConnection;
 

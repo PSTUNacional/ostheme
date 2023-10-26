@@ -2,6 +2,8 @@
 
 namespace OS\Connection;
 
+include 'env.php';
+
 class PDOConnection
 {
 
@@ -13,10 +15,10 @@ class PDOConnection
 
     public function __construct()
     {
-        $this->host = DB_HOST;
-        $this->database = DB_NAME;
-        $this->user = DB_USER;
-        $this->password = DB_PASSWORD;
+        $this->host = DBHOST;
+        $this->database = DBNAME;
+        $this->user = DBUSER;
+        $this->password = DBPASS;
         $this->driver = 'mysql';
     }
 
