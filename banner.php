@@ -12,11 +12,11 @@ $stories = [];
 
 foreach($bannerList as $content)
 {
-    if(strpos($content, 'OS-B') == true )
+    if(strpos($content, 'OS-B') !== false )
     {
         array_push($banners, $content);
     }
-    if(strpos($content, 'OS-S') == true )
+    if(strpos($content, 'OS-S') !== false )
     {
         array_push($stories, $content);
     }
@@ -26,11 +26,29 @@ foreach($bannerList as $content)
 get_header(); ?>
 
 <div class="content-area">
+    <style>
+        .banner-grid{
+            display:flex;
+            gap:8px;
+        }
+        .banner-grid .banner-card{
+            aspect-ratio: 1;
+            width: 100%;
+            height: 100%;
+            max-width: 180px;
+        }
+
+    </style>
     <main>
-        <pre>
-            <?=print_r($banners)?>
-            <?=print_r($stories)?>
-        </pre>
+        <div class="banner-grid">
+            <?php
+
+            foreach($banners as $b)
+            {
+                echo '<div class="banner-card" style="background-image:url(https://opiniaosocialista.com.br/automation/assets/rendered/'.$b.')"></div>';
+            }
+            ?>
+        </div>
     </main>
 </div>
 <?php get_footer(); ?>
