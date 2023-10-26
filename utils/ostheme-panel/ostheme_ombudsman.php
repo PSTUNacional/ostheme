@@ -130,7 +130,6 @@ function render_theme_ombudsman()
                             rateone = 0
 
                             data.forEach(comment => {
-                   
                                 switch (comment['rate']){
                                     case '5':
                                         ratefive++
@@ -163,9 +162,6 @@ function render_theme_ombudsman()
                                 document.getElementById('ratethree').innerText = ratethree
                                 document.getElementById('ratetwo').innerText = ratetwo
                                 document.getElementById('rateone').innerText = rateone
-
-                                console.log(ratefive)
-
                             })
                         })
                 }
