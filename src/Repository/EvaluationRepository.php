@@ -12,18 +12,20 @@ class EvaluationRepository extends Repository
         int $id,
         int $rank,
         string $comment,
-        string $title
+        string $title,
+        string $local
     ) {
         $sql = "INSERT INTO `os_content_evaluation`
-                (`content_id`, `rate`, `comment`, `title`)
-                VALUES (:id, :rank, :comment, :title)";
+                (`content_id`, `rate`, `comment`, `title`, `local`)
+                VALUES (:id, :rank, :comment, :title, :local)";
 
         $prepare = $this->conn->prepare($sql);
         $prepare->execute([
             'id'        => $id,
             'rank'      => $rank,
             'comment'   => $comment,
-            'title'     => $title
+            'title'     => $title,
+            'local'     => $local
         ]);
         return $prepare->fetchAll(\PDO::FETCH_ASSOC) ?: [];
     }
