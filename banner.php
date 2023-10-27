@@ -73,7 +73,9 @@ get_header(); ?>
                 })
             })
         }
-        window.load(()=>{getContent()})
+        window.addEventListener('load', function (){
+            getContent()
+        })
     </script>
 </div>
 <?php get_footer(); ?>
