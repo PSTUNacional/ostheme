@@ -95,7 +95,7 @@ get_header(); ?>
     </main>
     <script>
         var offset = 0
-        async function getContent(offset) {
+        async function getContent() {
             await fetch('/automation/src/Controller/Content.php?method=getByType&type=Banner&limit=12&offset=' + offset)
                 .then(resp => resp.json())
                 .then(data => {
