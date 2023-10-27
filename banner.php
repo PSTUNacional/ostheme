@@ -71,7 +71,7 @@ get_header(); ?>
         }
 
         .banner-grid .banner-card:hover .info,
-        .story-grid .banner-card:hover .info {
+        .story-grid .story-card:hover .info {
             display: flex;
             transition: all .3 ease-in-out;
         }
