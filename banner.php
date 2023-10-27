@@ -117,7 +117,7 @@ get_header(); ?>
                         document.querySelector('.story-grid').innerHTML += c
                     })
                 })
-            offset + 12;
+            offset += 12;
             return offset
         }
 
