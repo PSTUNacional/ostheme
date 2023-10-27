@@ -66,13 +66,14 @@ get_header(); ?>
             await fetch('/automation/src/Controller/Content.php?method=getByType&type=Banner&limit=9')
             .then(resp=>resp.json())
             .then(data=>{
-                data.foreach(banner =>{
+                data.forEach(banner =>{
                     c = '<div class="banner-card" style="background-image:url(\'https://opiniaosocialista.com.br/automation/assets/rendered/'+c['filename']+'\')"><div class="info"><a><i class="fa fa-file-download"></i></a><a href="'+c['link']+'"><i class="fa fa-link"></i></a></div></div>'
 
                     document.querySelector('.banner-grid').innerHTML += c
                 })
             })
         }
+        window.onload(()=>{getContent()})
     </script>
 </div>
 <?php get_footer(); ?>
