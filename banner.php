@@ -8,12 +8,17 @@ get_header(); ?>
 
 <div class="content-area">
     <style>
-        .banner-grid {
+        .banner-grid,
+        .story-grid {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
             width: 100%;
             height: 100%;
+        }
+
+        .story-grid {
+            display: none;
         }
 
         .banner-grid .banner-card {
@@ -24,6 +29,20 @@ get_header(); ?>
             background-size: cover;
             background-position: Center;
             cursor: pointer;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .banner-grid .story-card {
+            aspect-ratio: 9/16;
+            width: 100%;
+            height: 100%;
+            max-width: 240px;
+            background-size: cover;
+            background-position: Center;
+            cursor: pointer;
+            border-radius: 4px;
+            overflow: hidden;
         }
 
         .banner-grid .info {
@@ -48,32 +67,66 @@ get_header(); ?>
             color: #fff;
         }
 
-
         .banner-grid .banner-card:hover .info {
             display: flex;
             transition: all .3 ease-in-out;
         }
     </style>
     <main>
+        <div class="container ta-center" style="justify-content:center; margin: 48px auto">
+
+                <button class="btn primary" onclick="changeContent('banner')">Banners</button>
+                <button class="btn secondary" onclick="changeContent('story')">Stories</button>
+        </div>
         <div class="container">
             <div class="banner-grid">
-              
+
+            </div>
+            <div class="story-grid">
+
             </div>
         </div>
     </main>
     <script>
-        async function getContent(){
-            await fetch('/automation/src/Controller/Content.php?method=getByType&type=Banner&limit=9')
-            .then(resp=>resp.json())
-            .then(data=>{
-                data.forEach(banner =>{
-                    c = '<div class="banner-card" style="background-image:url(\'https://opiniaosocialista.com.br/automation/assets/rendered/'+banner['filename']+'\')"><div class="info"><a><i class="fa fa-file-download"></i></a><a href="'+banner['link']+'"><i class="fa fa-link"></i></a></div></div>'
+        async function getContent() {
+            await fetch('/automation/src/Controller/Content.php?method=getByType&type=Banner&limit=12')
+                .then(resp => resp.json())
+                .then(data => {
+                    data.forEach(banner => {
+                        c = '<div class="banner-card" style="background-image:url(\'https://opiniaosocialista.com.br/automation/assets/rendered/' + banner['filename'] + '\')"><div class="info"><a><i class="fa fa-file-download"></i></a><a href="' + banner['link'] + '"><i class="fa fa-link"></i></a></div></div>'
 
-                    document.querySelector('.banner-grid').innerHTML += c
+                        document.querySelector('.banner-grid').innerHTML += c
+                    })
                 })
-            })
+
+            await fetch('/automation/src/Controller/Content.php?method=getByType&type=Stoy&limit=12')
+                .then(resp => resp.json())
+                .then(data => {
+                    data.forEach(banner => {
+                        c = '<div class="story-card" style="background-image:url(\'https://opiniaosocialista.com.br/automation/assets/rendered/' + banner['filename'] + '\')"><div class="info"><a><i class="fa fa-file-download"></i></a><a href="' + banner['link'] + '"><i class="fa fa-link"></i></a></div></div>'
+
+                        document.querySelector('.story-grid').innerHTML += c
+                    })
+                })
         }
-        window.addEventListener('load', function (){
+
+        function changeContent(content){
+            if(content == 'banner')
+            {
+                document.querySelector('.banner-grid').style.display = 'flex'
+                document.querySelector('.story-grid').style.display = 'none'
+                document.querySelectorAll('main button')[0].className = "btn primary"
+                document.querySelectorAll('main button')[1].className = "btn secondary"
+            }
+            if(content == 'story')
+            {
+                document.querySelector('.story-grid').style.display = 'flex'
+                document.querySelector('.banner-grid').style.display = 'none'
+                document.querySelectorAll('main button')[1].className = "btn primary"
+                document.querySelectorAll('main button')[0].className = "btn secondary"
+            }
+        }
+        window.addEventListener('load', function() {
             getContent()
         })
     </script>
