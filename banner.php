@@ -15,6 +15,7 @@ get_header(); ?>
             gap: 8px;
             width: 100%;
             height: 100%;
+            justify-content:center;
         }
 
         .story-grid {
