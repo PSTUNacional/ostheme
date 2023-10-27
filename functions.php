@@ -77,12 +77,13 @@ add_action('template_include', function ($template) {
     return get_template_directory() . '/os-edition.php';
 });
 
-function custom_author_base() {
+function custom_author_base()
+{
     global $wp_rewrite;
     $wp_rewrite->author_base = 'coluna';
     $wp_rewrite->author_structure = '/' . $wp_rewrite->author_base . '/%author%';
 }
-add_action( 'init', 'custom_author_base' );
+add_action('init', 'custom_author_base');
 
 
 /*==============================
@@ -92,52 +93,54 @@ add_action( 'init', 'custom_author_base' );
 ==============================*/
 
 
-add_action('rest_api_init', 'register_rest_images' );
+add_action('rest_api_init', 'register_rest_images');
 
 function register_rest_images()
 {
-    register_rest_field( array('post', 'search-result'),
+    register_rest_field(
+        array('post', 'search-result'),
         'fimg_url',
         array(
             'get_callback'    => 'get_rest_featured_image',
             'update_callback' => null,
             'schema'          => null,
-        ));
+        )
+    );
 }
 
-function get_rest_featured_image( $object, $field_name, $request )
+function get_rest_featured_image($object, $field_name, $request)
 {
 
-    if( $object['featured_media'] ){
-        $img = wp_get_attachment_image_src( $object['featured_media'], 'app-thumb' );
+    if ($object['featured_media']) {
+        $img = wp_get_attachment_image_src($object['featured_media'], 'app-thumb');
         return $img[0];
     } else {
         $img = get_the_post_thumbnail_url($object['id']);
         return $img;
     }
     return false;
-
 }
 
-add_action('rest_api_init', 'register_categories_names' );
+add_action('rest_api_init', 'register_categories_names');
 
 function register_categories_names()
 {
-    register_rest_field( array('post', 'search-result'),
+    register_rest_field(
+        array('post', 'search-result'),
         'categories_names',
         array(
             'get_callback'    => 'get_categories_names',
             'update_callback' => null,
             'schema'          => null,
-        ));
+        )
+    );
 }
 
-function get_categories_names( $object, $field_name, $request )
+function get_categories_names($object, $field_name, $request)
 {
     $names = [];
     $cats = wp_get_post_categories($object['id']);
-    foreach($cats as $cat)
-    {
+    foreach ($cats as $cat) {
         $name = get_cat_name($cat);
         array_push($names, $name);
     }
@@ -229,21 +232,41 @@ function escape_categories($cats)
     return $cat;
 }
 
+function render_section($section_id, $posts = 5)
+{
+    $layout = get_option('ostheme_section' . $section_id . '_layout');
+    $block_path = __DIR__ . '/components/' . $layout . '.php';
+
+    if ($layout == 'opinion_block_01') {
+        $cat = '3793';
+    } else {
+        $cat = get_option('ostheme_section' . $section_id . '_category');
+    }
+
+    $args = array(
+        'numberposts' => $posts,
+        'category' => array($cat),
+        'offset' => 0,
+        'tag__not_in' => array(4)
+    );
+
+    $posts = get_posts($args);
+    include($block_path);
+}
+
 function os_render_thumbnail($post, $size = "medium")
 {
     $cats = wp_get_post_categories($post->ID);
     $link =  get_permalink($post->ID);
     $thumbURL = get_the_post_thumbnail_url($post->ID, $size);
 
-    $tb = '<a class="featured-image-container" href="'. $link .'" title="'.$post->post_title.'" aria-label="'.$post->post_title.'"><img class="featured-image" src="'. $thumbURL . '" load="lazy" alt="'.$post->post_title.'"/></a>';
+    $tb = '<a class="featured-image-container" href="' . $link . '" title="' . $post->post_title . '" aria-label="' . $post->post_title . '"><img class="featured-image" src="' . $thumbURL . '" load="lazy" alt="' . $post->post_title . '"/></a>';
 
-    foreach ($cats as $cat)
-    {
+    foreach ($cats as $cat) {
         $name = get_cat_name($cat);
-       
-        if($name == 'Colunas')
-        {
-            $tb = '<a class="featured-image-container" href="'. $link .'" title="'.$post->post_title.'" aria-label="'.$post->post_title.'"><div class="opinion-ribbon">Opinião</div><img class="featured-image" src="'. $thumbURL . '" load="lazy" alt="'.$post->post_title.'"/></a>';
+
+        if ($name == 'Colunas') {
+            $tb = '<a class="featured-image-container" href="' . $link . '" title="' . $post->post_title . '" aria-label="' . $post->post_title . '"><div class="opinion-ribbon">Opinião</div><img class="featured-image" src="' . $thumbURL . '" load="lazy" alt="' . $post->post_title . '"/></a>';
         }
     }
 

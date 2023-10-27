@@ -31,14 +31,14 @@ get_header(); ?>
         <?php
         
         $args = array(
-            'category' => $cat,
+            'cat' => $cat,
             'numberposts' => 19,
         );
-        $posts = get_posts($args);
+        $posts = new WP_Query($args);
 
         // ========== Header Block ========== //
 
-        if (sizeof($posts) > 0) {
+        if (sizeof($posts->posts) > 0) {
             include(__DIR__ . '/components/header_block_04.php');
         } else {
             echo '<section><h3 class="ta-center">Ainda não há conteúdo aqui...</h3></section>';
@@ -58,19 +58,20 @@ get_header(); ?>
         <?php } ?>
         <div class="container">
             <?php
-            if (sizeof($posts) > 4) {
+            if (sizeof($posts->posts) > 4) {
                 for ($i = 4; $i < 19; $i++) {
-                    if ($posts[$i]->post_title) {
+                    $post = $posts->posts[$i];
+                    if ($post->post_title) {
             ?>
                         <article class="article-01">
-                            <?= os_render_thumbnail($posts[$i]); ?>
+                            <?= os_render_thumbnail($post); ?>
                             <div class="post-info">
-                                <span class="sup-category"><?= get_cat_name(wp_get_post_categories($posts[$i]->ID)[0]); ?></span>
-                                <a href="<?= get_permalink($posts[$i]->ID); ?>" title="<?= $posts[$i]->post_title; ?>">
-                                    <h2><?= $posts[$i]->post_title; ?></h2>
+                                <span class="sup-category"><?= get_cat_name(wp_get_post_categories($post->ID)[0]); ?></span>
+                                <a href="<?= get_permalink($post->ID); ?>" title="<?= $post->post_title; ?>">
+                                    <h2><?= $post->post_title; ?></h2>
                                 </a>
-                                <!-- <span class="author-line">Por <?= the_author_meta('display_name', $posts[$i]->post_author); ?></span> -->
-                                <p><?= formatDate($posts[$i]->post_date) ?></p>
+                                <span class="author-line">Por <?= the_author_meta('display_name', $post->post_author); ?></span>
+                                <p><?= formatDate($post->post_date) ?></p>
                             </div>
                         </article>
             <?php }

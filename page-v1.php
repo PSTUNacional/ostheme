@@ -4,30 +4,6 @@
 Template Name: OS Home Page
 */
 
-function render_section($section_id, $posts = 5)
-{
-    $layout = get_option('ostheme_section' . $section_id . '_layout');
-    $block_path = __DIR__ . '/components/' . $layout . '.php';
-
-    if ($layout == 'opinion_block_01')
-    {
-        $cat = '3793';
-    } else {
-        $cat = get_option('ostheme_section' . $section_id . '_category');
-    }
-
-    $args = array(
-        'numberposts' => $posts,
-        'category' => array($cat),
-        'offset' => 0,
-        'tag__not_in' => array(4)
-    );
-
-    $posts = get_posts($args);
-    include($block_path);
-}
-
-
 get_header(); ?>
 <div class="content-area">
     <main>
@@ -82,8 +58,8 @@ get_header(); ?>
             'tag__not_in' => array(4),
             'orderby'   => 'menu_order'
         );
-        $posts = get_posts($args);
-        
+        $posts = new WP_Query( $args );
+
         $headerblock = get_option('ostheme_headerblock_layout');
         $headerblock == '' ? $headerblock = 'header_block_01' : '';
         include(__DIR__ . '/components/' . $headerblock . '.php'); ?>
@@ -101,8 +77,13 @@ get_header(); ?>
             </section>
         <?php }
 
-        $args = array('numberposts' => 4, 'offset' => 5, 'category__not_in' => array(50), 'tag__not_in' => array(4));
-        $posts = get_posts($args);
+        $args = array(
+            'numberposts' => 4,
+            'post__not_in' => $skipDestak,
+            'category__not_in' => array(50,3793,91),
+            'tag__not_in' => array(4));
+
+        $posts = get_posts( $args );
         include(__DIR__ . '/components/block_01.php');
 
         /***
