@@ -32,7 +32,7 @@ get_header(); ?>
         
         $args = array(
             'cat' => $cat,
-            'numberposts' => 19,
+            'posts_per_page' => 20,
         );
         $posts = new WP_Query($args);
 

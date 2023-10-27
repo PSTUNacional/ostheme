@@ -7,7 +7,7 @@ $skipDestak = []; // Prepare skip list;
             <div class="col col-50">
                 <article class="destak">
                     <?php
-                    $post = $posts->posts[0];
+                    $post = $posts[0];
                     array_push($skipDestak, $post->ID);
                     ?>
                     <a class="featured-image-container" href="<?= get_permalink($post->ID); ?>" title="<?= $post->post_title; ?>" aria-label="<?= $post->post_title; ?>">
@@ -25,7 +25,7 @@ $skipDestak = []; // Prepare skip list;
             <div class="col col-25 middle">
                 <article>
                     <?php
-                    $post = $posts->posts[1];
+                    $post = $posts[1];
                     array_push($skipDestak, $post->ID); ?>
                     <span class="sup-category"><?= get_cat_name(wp_get_post_categories($post->ID)[0]); ?></span>
                     <a href="<?= get_permalink($post->ID); ?>" title="<?= $post->post_title; ?>" aria-label="<?= $post->post_title; ?>">
@@ -35,7 +35,7 @@ $skipDestak = []; // Prepare skip list;
                 </article>
                 <article>
                     <?php
-                    $post = $posts->posts[2];
+                    $post = $posts[2];
                     array_push($skipDestak, $post->ID);
                     ?>
                     <span class="sup-category"><?= get_cat_name(wp_get_post_categories($post->ID)[0]); ?></span>
@@ -46,7 +46,7 @@ $skipDestak = []; // Prepare skip list;
                 </article>
                 <article>
                     <?php
-                    $post = $posts->posts[3];
+                    $post = $posts[3];
                     array_push($skipDestak, $post->ID);
                     ?>
                     <span class="sup-category"><?= get_cat_name(wp_get_post_categories($post->ID)[0]); ?></span>
@@ -57,7 +57,7 @@ $skipDestak = []; // Prepare skip list;
                 </article>
                 <article>
                     <?php
-                    $post = $posts->posts[4];
+                    $post = $posts[4];
                     array_push($skipDestak, $post->ID);
                     ?>
                     <span class="sup-category"><?= get_cat_name(wp_get_post_categories($post->ID)[0]); ?></span>

@@ -52,13 +52,15 @@ get_header(); ?>
         <?php
 
         // ========== Header Block ========== //
+
         $args = array(
-            'numberposts' => 5,
+            'posts_per_page' => 5,
             'category__not_in' => array(50),
             'tag__not_in' => array(4),
-            'orderby'   => 'menu_order'
+            'orderby' => 'menu_order',
+            'order' => 'DESC'
         );
-        $posts = new WP_Query( $args );
+        $posts = get_posts($args);
 
         $headerblock = get_option('ostheme_headerblock_layout');
         $headerblock == '' ? $headerblock = 'header_block_01' : '';
