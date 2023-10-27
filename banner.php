@@ -45,7 +45,8 @@ get_header(); ?>
             overflow: hidden;
         }
 
-        .banner-grid .info {
+        .banner-grid .info,
+        .story-grid .info {
             display: none;
             transition: all .3s ease-in-out;
             gap: 8px;
@@ -56,7 +57,8 @@ get_header(); ?>
             background-color: #fffa;
         }
 
-        .banner-grid .info a {
+        .banner-grid .info a,
+        .story-grid .info a {
             width: 32px;
             height: 32px;
             border-radius: 50%;
@@ -67,7 +69,8 @@ get_header(); ?>
             color: #fff;
         }
 
-        .banner-grid .banner-card:hover .info {
+        .banner-grid .banner-card:hover .info,
+        .story-grid .banner-card:hover .info {
             display: flex;
             transition: all .3 ease-in-out;
         }
