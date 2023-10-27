@@ -15,7 +15,7 @@ get_header(); ?>
             gap: 8px;
             width: 100%;
             height: 100%;
-            justify-content:center;
+            justify-content: center;
         }
 
         .story-grid {
@@ -78,9 +78,8 @@ get_header(); ?>
     </style>
     <main>
         <div class="container ta-center" style="justify-content:center; margin: 48px auto">
-
-                <button class="btn primary" onclick="changeContent('banner')">Banners</button>
-                <button class="btn secondary" onclick="changeContent('story')">Stories</button>
+            <button class="btn primary" onclick="changeContent('banner')">Banners</button>
+            <button class="btn secondary" onclick="changeContent('story')">Stories</button>
         </div>
         <div class="container">
             <div class="banner-grid">
@@ -90,42 +89,46 @@ get_header(); ?>
 
             </div>
         </div>
+        <div class="container ta-center" style="justify-content:center; margin: 48px auto">
+            <button class="btn primary" onclick="getContent()">Carregar mais</button>
+        </div>
     </main>
     <script>
-        async function getContent() {
-            await fetch('/automation/src/Controller/Content.php?method=getByType&type=Banner&limit=12')
+        var offset = 0
+        async function getContent(offset) {
+            await fetch('/automation/src/Controller/Content.php?method=getByType&type=Banner&limit=12&offset=' + offset)
                 .then(resp => resp.json())
                 .then(data => {
                     data.forEach(banner => {
-                        webp = banner['filename'].substr(0,banner['filename'].lastIndexOf('.')) + '.webp'
-                        c = '<div class="banner-card" style="background-image:url(\'https://opiniaosocialista.com.br/automation/assets/rendered/webp/' + webp + '\')"><div class="info"><a target="_blank" href="https://opiniaosocialista.com.br/automation/assets/rendered/'+banner['filename']+'" dowload><i class="fa fa-file-download"></i></a><a target="_blank" href="' + banner['link'] + '"><i class="fa fa-link"></i></a></div></div>'
+                        webp = banner['filename'].substr(0, banner['filename'].lastIndexOf('.')) + '.webp'
+                        c = '<div class="banner-card" style="background-image:url(\'https://opiniaosocialista.com.br/automation/assets/rendered/webp/' + webp + '\')"><div class="info"><a target="_blank" href="https://opiniaosocialista.com.br/automation/assets/rendered/' + banner['filename'] + '" dowload><i class="fa fa-file-download"></i></a><a target="_blank" href="' + banner['link'] + '"><i class="fa fa-link"></i></a></div></div>'
 
                         document.querySelector('.banner-grid').innerHTML += c
                     })
                 })
 
-            await fetch('/automation/src/Controller/Content.php?method=getByType&type=Story&limit=12')
+            await fetch('/automation/src/Controller/Content.php?method=getByType&type=Story&limit=12&offset=' + offset)
                 .then(resp => resp.json())
                 .then(data => {
                     data.forEach(banner => {
-                        webp = banner['filename'].substr(0,banner['filename'].lastIndexOf('.')) + '.webp'
-                        c = '<div class="story-card" style="background-image:url(\'https://opiniaosocialista.com.br/automation/assets/rendered/webp/' + webp + '\')"><div class="info"><a target="_blank" href="https://opiniaosocialista.com.br/automation/assets/rendered/'+banner['filename']+'" dowload><i class="fa fa-file-download"></i></a><a target="_blank" href="' + banner['link'] + '"><i class="fa fa-link"></i></a></div></div>'
+                        webp = banner['filename'].substr(0, banner['filename'].lastIndexOf('.')) + '.webp'
+                        c = '<div class="story-card" style="background-image:url(\'https://opiniaosocialista.com.br/automation/assets/rendered/webp/' + webp + '\')"><div class="info"><a target="_blank" href="https://opiniaosocialista.com.br/automation/assets/rendered/' + banner['filename'] + '" dowload><i class="fa fa-file-download"></i></a><a target="_blank" href="' + banner['link'] + '"><i class="fa fa-link"></i></a></div></div>'
 
                         document.querySelector('.story-grid').innerHTML += c
                     })
                 })
+            offset + 12;
+            return offset
         }
 
-        function changeContent(content){
-            if(content == 'banner')
-            {
+        function changeContent(content) {
+            if (content == 'banner') {
                 document.querySelector('.banner-grid').style.display = 'flex'
                 document.querySelector('.story-grid').style.display = 'none'
                 document.querySelectorAll('main button')[0].className = "btn primary"
                 document.querySelectorAll('main button')[1].className = "btn secondary"
             }
-            if(content == 'story')
-            {
+            if (content == 'story') {
                 document.querySelector('.story-grid').style.display = 'flex'
                 document.querySelector('.banner-grid').style.display = 'none'
                 document.querySelectorAll('main button')[1].className = "btn primary"
