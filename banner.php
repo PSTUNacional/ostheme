@@ -98,7 +98,7 @@ get_header(); ?>
                 .then(data => {
                     data.forEach(banner => {
                         webp = banner['filename'].substr(0,banner['filename'].lastIndexOf('.')) + '.webp'
-                        c = '<div class="banner-card" style="background-image:url(\'https://opiniaosocialista.com.br/automation/assets/rendered/webp/' + webp + '\')"><div class="info"><a href="https://opiniaosocialista.com.br/automation/assets/rendered/'+banner['filename']+'" dowload><i class="fa fa-file-download"></i></a><a target="_blank" href="' + banner['link'] + '"><i class="fa fa-link"></i></a></div></div>'
+                        c = '<div class="banner-card" style="background-image:url(\'https://opiniaosocialista.com.br/automation/assets/rendered/webp/' + webp + '\')"><div class="info"><a target="_blank" href="https://opiniaosocialista.com.br/automation/assets/rendered/'+banner['filename']+'" dowload><i class="fa fa-file-download"></i></a><a target="_blank" href="' + banner['link'] + '"><i class="fa fa-link"></i></a></div></div>'
 
                         document.querySelector('.banner-grid').innerHTML += c
                     })
@@ -109,7 +109,7 @@ get_header(); ?>
                 .then(data => {
                     data.forEach(banner => {
                         webp = banner['filename'].substr(0,banner['filename'].lastIndexOf('.')) + '.webp'
-                        c = '<div class="story-card" style="background-image:url(\'https://opiniaosocialista.com.br/automation/assets/rendered/webp/' + webp + '\')"><div class="info"><a href="https://opiniaosocialista.com.br/automation/assets/rendered/'+banner['filename']+'" dowload><i class="fa fa-file-download"></i></a><a target="_blank" href="' + banner['link'] + '"><i class="fa fa-link"></i></a></div></div>'
+                        c = '<div class="story-card" style="background-image:url(\'https://opiniaosocialista.com.br/automation/assets/rendered/webp/' + webp + '\')"><div class="info"><a target="_blank" href="https://opiniaosocialista.com.br/automation/assets/rendered/'+banner['filename']+'" dowload><i class="fa fa-file-download"></i></a><a target="_blank" href="' + banner['link'] + '"><i class="fa fa-link"></i></a></div></div>'
 
                         document.querySelector('.story-grid').innerHTML += c
                     })
