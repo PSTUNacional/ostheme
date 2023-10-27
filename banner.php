@@ -63,7 +63,7 @@ get_header(); ?>
     </main>
     <script>
         async function getContent(){
-            await fetch('automation/src/Controller/Content.php?method=getByType&type=Banner&limit=9')
+            await fetch('/automation/src/Controller/Content.php?method=getByType&type=Banner&limit=9')
             .then(resp=>resp.json())
             .then(data=>{
                 data.foreach(banner =>{
