@@ -94,7 +94,7 @@ get_header(); ?>
                 .then(data => {
                     data.forEach(banner => {
                         webp = banner['filename'].substr(0,banner['filename'].lastIndexOf('.')) + '.webp'
-                        c = '<div class="banner-card" style="background-image:url(\'https://opiniaosocialista.com.br/automation/assets/rendered/webp' + webp + '\')"><div class="info"><a><i class="fa fa-file-download"></i></a><a href="' + banner['link'] + '"><i class="fa fa-link"></i></a></div></div>'
+                        c = '<div class="banner-card" style="background-image:url(\'https://opiniaosocialista.com.br/automation/assets/rendered/webp/' + webp + '\')"><div class="info"><a><i class="fa fa-file-download"></i></a><a href="' + banner['link'] + '"><i class="fa fa-link"></i></a></div></div>'
 
                         document.querySelector('.banner-grid').innerHTML += c
                     })
@@ -105,7 +105,7 @@ get_header(); ?>
                 .then(data => {
                     data.forEach(banner => {
                         webp = banner['filename'].substr(0,banner['filename'].lastIndexOf('.')) + '.webp'
-                        c = '<div class="story-card" style="background-image:url(\'https://opiniaosocialista.com.br/automation/assets/rendered/webp' + webp + '\')"><div class="info"><a><i class="fa fa-file-download"></i></a><a href="' + banner['link'] + '"><i class="fa fa-link"></i></a></div></div>'
+                        c = '<div class="story-card" style="background-image:url(\'https://opiniaosocialista.com.br/automation/assets/rendered/webp/' + webp + '\')"><div class="info"><a><i class="fa fa-file-download"></i></a><a href="' + banner['link'] + '"><i class="fa fa-link"></i></a></div></div>'
 
                         document.querySelector('.story-grid').innerHTML += c
                     })
