@@ -99,7 +99,7 @@ get_header(); ?>
                     })
                 })
 
-            await fetch('/automation/src/Controller/Content.php?method=getByType&type=Stoy&limit=12')
+            await fetch('/automation/src/Controller/Content.php?method=getByType&type=Story&limit=12')
                 .then(resp => resp.json())
                 .then(data => {
                     data.forEach(banner => {
