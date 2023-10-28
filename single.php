@@ -108,7 +108,7 @@ get_header(); ?>
     ////////// Player de áudio //////////
     raw_id = document.querySelector('article').id
     id = raw_id.replace(/[ˆa-z | -]/g, '')
-    await fetch('https://www.opiniaosocialista.com.br/automation/src/Controller/Content.php?method=getAudioByPostId&id=' + id)
+    fetch('https://www.opiniaosocialista.com.br/automation/src/Controller/Content.php?method=getAudioByPostId&id=' + id)
       .then(resp => resp.json())
       .then(data => {
         place = document.querySelector('#post-content')
