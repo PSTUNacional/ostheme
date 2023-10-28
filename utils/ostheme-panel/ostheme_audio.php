@@ -97,11 +97,10 @@ function render_theme_audio()
                         <p>Procurando resultados...</p>
                     </div>
                 </div>
-
                 <input type="file" name="audiofile" id="" accept=".mp3,.wav,.flac,.ogg">
                 <div class="line">
-                    <label for="authorName">Locutor</label>
-                    <input type="text" name="authorName" id="" />
+                    <label for="author">Locutor</label>
+                    <input type="text" name="author" id="" />
                 </div>
                 <div class="line">
                     <label for="tags">Tags</label>
@@ -176,12 +175,13 @@ function render_theme_audio()
             data.append('id', form.id.value)
             data.append('url', form.url.value)
             data.append('title', form.title.value)
+            data.append('author', form.author.value)
             data.append('tags', form.tags.value)
             data.append('file', form.audiofile.files[0])
 
             fetch("https://www.opiniaosocialista.com.br/automation/src/Controller/Content.php?method=createAudio", {
                 method: "POST",
-                body: form,
+                body: data,
             })
         }
     </script>
