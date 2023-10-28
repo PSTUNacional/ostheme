@@ -142,15 +142,20 @@ function render_theme_audio()
             form.url.value = url
         }
 
+
+        function getAudioList(){
+            p = document.querySelector('table tbody');
+            p.innerHTML = ''
         fetch('https://www.opiniaosocialista.com.br/automation/src/Controller/Content.php?method=getByType&type=audio&limit=30')
             .then(resp => resp.json())
             .then(data => {
                 data.forEach(result => {
                     tr = '<tr"><td>' + result['post_title'] + '</td><td><a href="https://www.opiniaosocialista.com.br/archive/audio/' + result['filename'] + '" download><span class="dashicons dashicons-media-audio"></span></a></td></tr>'
 
-                    document.querySelector('table tbody').innerHTML += tr
+                    p.innerHTML += tr
                 })
             })
+        } 
 
 
 
@@ -182,6 +187,10 @@ function render_theme_audio()
             fetch("https://www.opiniaosocialista.com.br/automation/src/Controller/Content.php?method=createAudio", {
                 method: "POST",
                 body: data,
+            })
+            .then(response=>{
+                getAudioList()
+                form.reset()
             })
         }
     </script>
