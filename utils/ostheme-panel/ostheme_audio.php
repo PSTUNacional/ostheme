@@ -165,7 +165,7 @@ function render_theme_audio()
                 window.alert('É preciso inserir um arquivo.')
                 return false
             }
-            if (form.authorName.value == '') {
+            if (form.author.value == '') {
                 window.alert('É preciso inserir um autor.')
                 return false
             }
