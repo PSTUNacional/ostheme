@@ -72,7 +72,7 @@ function render_theme_audio()
             background-color: #fee;
         }
     </style>
-    <h1>Ombudsman</h1>
+    <h1>Matérias em áudio</h1>
     <?php settings_errors(); // Exibe alertas na página 
     ?>
     <div style="display: flex; gap:24px">
