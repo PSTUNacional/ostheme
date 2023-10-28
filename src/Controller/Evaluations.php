@@ -13,8 +13,9 @@ if($method == 'insert')
     $rank = $_POST['rank'];
     $comment = $_POST['comment'];
     $title = $_POST['title'];
+    $local = $_POST['local'];
 
-    $evaluation->insertEvaluation($id, $rank, $comment);
+    $evaluation->insertEvaluation($id, $rank, $comment, $title, $local);
 }
 
 if($method == 'getRateById')
