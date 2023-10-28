@@ -117,6 +117,8 @@ function render_theme_audio()
     </div>
 
     <script>
+        getAudioList()
+
         document.querySelector('.search input').addEventListener('input', (event) => {
             p = document.querySelector('.search-result')
 
@@ -156,8 +158,6 @@ function render_theme_audio()
                 })
             })
         } 
-
-
 
         function validate() {
             event.preventDefault()
