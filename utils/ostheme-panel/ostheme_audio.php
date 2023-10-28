@@ -34,6 +34,22 @@ function render_theme_audio()
             flex-direction: column;
             gap: 8px
         }
+
+        form {
+            display: flex;
+            gap: 24px;
+            width: 100%;
+        }
+
+        form input {
+            width: 100%;
+        }
+
+        form div.line {
+            display: flex;
+            gap: 4px;
+            flex-direction: column;
+        }
     </style>
     <h1>Ombudsman</h1>
     <?php settings_errors(); // Exibe alertas na página 
@@ -53,9 +69,11 @@ function render_theme_audio()
         <div class="card" style="margin-top:0">
             <h3 id="post-title">Adicionar um áudio</h3>
             <form>
-                <input type="file" name="file" id="">
-                <label for="authoNama">Locutor</label>
-                <input type="text" name="authorName" id=""/>
+                <input type="file" name="file" id="" accept=".mp3,.wav,.flac,.ogg">
+                <div class="line">
+                    <label for="authoNama">Locutor</label>
+                    <input type="text" name="authorName" id="" />
+                </div>
             </form>
         </div>
     </div>
