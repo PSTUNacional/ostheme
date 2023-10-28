@@ -13,7 +13,7 @@ get_header(); ?>
           $categories = get_the_category();
           $profile = get_avatar_url($post->post_author);
       ?>
-          <article class="post" id=<?=$post->ID?>>
+          <article class="post" id=<?= $post->ID ?>>
             <div class="block-header">
               <span><?= $categories[0]->name; ?></span>
             </div>
@@ -92,23 +92,6 @@ get_header(); ?>
   </main>
 </div>
 <script>
-  ////////// Player de áudio //////////
-  raw_id = document.querySelector('article').id
-  id = raw_id.replace(/[ˆa-z | -]/g, '')
-  await fetch('https://www.opiniaosocialista.com.br/automation/src/Controller/Content.php?method=getAudioByPostId&id=' + id)
-    .then(resp => resp.json())
-    .then(data => {
-      place = document.querySelector('#post-content')
-      p = document.createElement('audio')
-      p.setAttribute('controls', true)
-      p.style.width = "100%"
-      s = document.createElement('source')
-      ref = 'https://www.opiniaosocialista.com.br/archive/audio/' + data[0]['filename']
-      s.setAttribute('src', ref)
-      p.prepend(s)
-      place.prepend(p)
-    })
-
   let getPostInfo = () => {
     return ({
       id: "<?= get_the_ID() ?>",
@@ -120,5 +103,24 @@ get_header(); ?>
   setTimeout(() => {
     renderEvaluationScale(<?= get_the_ID() ?>)
   }, 10000)
+
+  window.onload = () => {
+    ////////// Player de áudio //////////
+    raw_id = document.querySelector('article').id
+    id = raw_id.replace(/[ˆa-z | -]/g, '')
+    await fetch('https://www.opiniaosocialista.com.br/automation/src/Controller/Content.php?method=getAudioByPostId&id=' + id)
+      .then(resp => resp.json())
+      .then(data => {
+        place = document.querySelector('#post-content')
+        p = document.createElement('audio')
+        p.setAttribute('controls', true)
+        p.style.width = "100%"
+        s = document.createElement('source')
+        ref = 'https://www.opiniaosocialista.com.br/archive/audio/' + data[0]['filename']
+        s.setAttribute('src', ref)
+        p.prepend(s)
+        place.prepend(p)
+      })
+  }
 </script>
 <?php get_footer(); ?>
