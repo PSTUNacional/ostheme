@@ -103,7 +103,7 @@ get_header(); ?>
       p.setAttribute('controls', true)
       p.style.width = "100%"
       s = document.createElement('source')
-      ref = 'https:/www.opiniaosocialista.com.br/archive/audio/' + data[0]['filename']
+      ref = 'https://www.opiniaosocialista.com.br/archive/audio/' + data[0]['filename']
       s.setAttribute('src', ref)
       p.prepend(s)
       place.prepend(p)
