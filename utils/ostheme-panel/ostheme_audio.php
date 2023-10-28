@@ -71,6 +71,23 @@ function render_theme_audio()
         .result:hover {
             background-color: #fee;
         }
+
+        .card{
+            position: relative;
+        }
+        #load{
+            position:absolute;
+            width: 100%;
+            height: 100%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            background-color: #0005;
+            backdrop-filter: blur(5px);
+            z-index: 99;
+            top:0;
+            left:0;
+        }
     </style>
     <h1>Matérias em áudio</h1>
     <?php settings_errors(); // Exibe alertas na página 
@@ -84,10 +101,10 @@ function render_theme_audio()
                 </tr>
             </thead>
             <tbody>
-
             </tbody>
         </table>
         <div class="card" style="margin-top:0">
+        <div id="load"><img style="max-width:128px" src="https://www.opiniaosocialista.com.br/app/content/img/osgif_load.gif"/></div>
             <h3 id="post-title">Adicionar um áudio</h3>
             <form id="audioform">
                 <div class="line search">
@@ -175,6 +192,8 @@ function render_theme_audio()
                 return false
             }
 
+            load = document.getElementById('load').style.display = "flex"
+
             data = new FormData();
 
             data.append('id', form.id.value)
@@ -191,6 +210,7 @@ function render_theme_audio()
             .then(response=>{
                 getAudioList()
                 form.reset()
+                load = document.getElementById('load').style.display = "none"
             })
         }
     </script>
