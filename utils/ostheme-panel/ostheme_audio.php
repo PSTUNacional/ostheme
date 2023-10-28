@@ -11,34 +11,12 @@ function render_theme_audio()
 ?>
     <link rel="stylesheet" href="./style.css">
     <style>
-        .comment-card {
-            display: flex;
-            gap: 8px;
-            flex-direction: column;
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-        }
-
-        .global-rate .dashicons,
-        .comment-card .stars .dashicons {
-            color: #999;
-        }
-
-        .global-rate .dashicons {
-            margin: 0;
-        }
-
-        .global-rate {
-            display: flex;
-            flex-direction: column;
-            gap: 8px
-        }
-
         form {
             display: flex;
+            flex-direction: column;
             gap: 24px;
             width: 100%;
+            padding-bottom: 24px;
         }
 
         form input {
@@ -69,17 +47,28 @@ function render_theme_audio()
         <div class="card" style="margin-top:0">
             <h3 id="post-title">Adicionar um áudio</h3>
             <form>
+                <div class="line">
+                    <label for="post">Matéria</label>
+                    <input type="text" name="post" id="" />
+                </div>
                 <input type="file" name="file" id="" accept=".mp3,.wav,.flac,.ogg">
                 <div class="line">
-                    <label for="authoNama">Locutor</label>
+                    <label for="authorName">Locutor</label>
                     <input type="text" name="authorName" id="" />
+                </div>
+                <div class="line">
+                    <label for="tags">Tags</label>
+                    <input type="text" name="tags" id="" />
+                </div>
+                <div class="line">
+                    <input class="btn primary" type="submit" value="Postar" />
                 </div>
             </form>
         </div>
     </div>
 
     <script>
-        fetch('https://www.opiniaosocialista.com.br/automation/src/Controller/Content.php?method=getByType&type=audio')
+        fetch('https://www.opiniaosocialista.com.br/automation/src/Controller/Content.php?method=getByType&type=audio&offset=30')
             .then(resp => resp.json())
             .then(data => {
                 data.forEach(result => {
