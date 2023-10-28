@@ -47,6 +47,15 @@ function theme_admin_page()
         'dashicons-star-filled' // Icon URL
         // Position
     );
+    add_menu_page(
+        'Matérias em Áudio', // Page title
+        'Áudios', // Menu title
+        'manage_options', // Capabilities
+        'os_audio', // Menu slug
+        'render_theme_audio', // Function
+        'dashicons-controls-volumeon' // Icon URL
+        // Position
+    );
 }
 
 add_action('admin_menu', 'theme_admin_page');
@@ -54,3 +63,4 @@ add_action('admin_menu', 'theme_admin_page');
 include get_template_directory() . '/utils/ostheme-panel/ostheme_layout.php';
 include get_template_directory() . '/utils/ostheme-panel/ostheme_ads.php';
 include get_template_directory() . '/utils/ostheme-panel/ostheme_ombudsman.php';
+include get_template_directory() . '/utils/ostheme-panel/ostheme_audio.php';
