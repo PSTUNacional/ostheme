@@ -94,7 +94,7 @@ function render_theme_stats()
     <?php settings_errors(); // Exibe alertas na página 
     ?>
 
-    <iframe width="1080" height="1200" src="https://lookerstudio.google.com/embed/reporting/4913cf9a-a68a-468a-b2ff-93c9b6c63e72/page/wrqgD" frameborder="0" style="border:0" allowfullscreen></iframe>
+    <iframe width="1080" height="1600" src="https://lookerstudio.google.com/embed/reporting/4913cf9a-a68a-468a-b2ff-93c9b6c63e72/page/wrqgD" frameborder="0" style="border:0" allowfullscreen></iframe>
 
     <script>
         getAudioList()
