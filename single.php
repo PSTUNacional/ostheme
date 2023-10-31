@@ -67,11 +67,12 @@ get_header(); ?>
               </div>
             </div>
 
-            <?php if (the_post_thumbnail()) { ?>
-              <div>
-                <?php the_post_thumbnail() ?>
+            <div class="thumbnail-container">
+              <?= the_post_thumbnail() ?>
+              <div class="caption">
+                <?= the_post_thumbnail_caption(); ?>
               </div>
-            <?php } ?>
+            </div>
 
             <!-- Content -->
             <div class="container" id="post-content">

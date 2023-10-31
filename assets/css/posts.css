@@ -28,10 +28,15 @@ article.post h3 {
     margin-bottom: var(--gap);
 }
 
-article.post img {
+article.post img,
+article.post .thumbnail-container {
     margin: 48px auto;
     width: 100%;
     height: auto;
+}
+
+article.post .thumbnail-container img{
+    margin: 0;
 }
 
 article.post iframe[title="YouTube video player"] {
