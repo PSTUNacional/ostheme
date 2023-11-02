@@ -129,7 +129,7 @@ get_header(); ?>
     img = item['category']+'_'+item['version']+'.jpg'
     ad.innerHTML = '<img src="/wp-content/themes/ostheme/assets/img/ads/'+img+'" alt="Faça uma doação" />'
 
-    ad.href = 'https://doe.pstu.org.br/?utm_source=opiniao&utm_medium='+item['category']+item['version']+'&utm_campaign=regular'
+    ad.href = 'https://doe.pstu.org.br/?utm_source=opiniao&utm_medium='+item['category']+'-'+item['version']+'&utm_campaign=regular'
     place = document.querySelectorAll('#post-content p')[2]
     place.after(ad)
 
