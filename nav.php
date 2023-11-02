@@ -45,7 +45,7 @@
 				<hr />
 				<ul>
 					<li><a href="colabore" targe="_blank">Seja um colaborador</a></li>
-					<li><a href="https://doe.pstu.org.br" targe="_blank">Contribua</a></li>
+					<li><a href="https://doe.pstu.org.br/?utm_source=opiniao&utm_medium=navmenu&campaign=regular" targe="_blank">Contribua</a></li>
 					<li><a href="https://facaparte.pstu.org.br" targe="_blank">Venha para o PSTU</a></li>
 				</ul>
 				<hr />
