@@ -89,7 +89,6 @@ get_header(); ?>
 
     </div>
     </article>
-
   </main>
 </div>
 <script>
@@ -106,6 +105,34 @@ get_header(); ?>
   }, 10000)
 
   window.onload = () => {
+
+    ////////// Ads //////////
+
+    ads_list = [
+      {
+        'category' : 'contribua',
+        'version' : 'v1'
+      },
+      {
+        'category' : 'contribua',
+        'version' : 'v2'
+      },
+      {
+        'category' : 'contribua',
+        'version' : 'v3'
+      },
+    ]
+
+    item = ads_list[Math.floor(Math.random()*ads_list.length)]
+    ad = document.createElement('a')
+    ad.className = 'post-ad'
+    img = item['category']+'_'+item['version']+'.jpg'
+    ad.innerHTML = '<img src="<?=$_SERVER['DOCUMENT_ROOT']?>/wp-content/themes/ostheme/assets/img/ads/'+img+'" alt="Faça uma doação" />'
+
+    ad.href = 'https://doe.pstu.org.br/?utm_source=opiniao&utm_medium='+item['category']+item['version']+'&utm_campaign=regular'
+    place = document.querySelectorAll('#post-content p')[2]
+    place.after(ad)
+
     ////////// Player de áudio //////////
     raw_id = document.querySelector('article').id
     id = raw_id.replace(/[ˆa-z | -]/g, '')
