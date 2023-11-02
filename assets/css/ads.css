@@ -72,9 +72,15 @@ section.ads {
     }
 }
 
-.post-ad{
+.post-insert{
     width: 100%;
     height: auto;
     overflow: hidden;
     border-radius:8px;
+    border:1px solid #eee;
+}
+.post-insert img{
+    width: 100%;
+    height: auto;
+    display: block;
 }

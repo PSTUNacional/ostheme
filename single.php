@@ -125,7 +125,7 @@ get_header(); ?>
 
     item = ads_list[Math.floor(Math.random()*ads_list.length)]
     ad = document.createElement('a')
-    ad.className = 'post-ad'
+    ad.className = 'post-insert'
     img = item['category']+'_'+item['version']+'.jpg'
     ad.innerHTML = '<img src="/wp-content/themes/ostheme/assets/img/ads/'+img+'" alt="Faça uma doação" />'
 
