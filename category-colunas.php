@@ -59,15 +59,21 @@ get_header(); ?>
         global $wpdb;
         $authors = $wpdb->get_results(
             "SELECT DISTINCT post_author,
-            COUNT(id) as total
+            display_name,
+            COUNT({$wpdb->prefix}posts.id) as total
             FROM {$wpdb->prefix}posts
+            LEFT JOIN {$wpdb->prefix}users
+            ON {$wpdb->prefix}posts.post_author = {$wpdb->prefix}users.id
             LEFT JOIN {$wpdb->prefix}term_relationships
             ON {$wpdb->prefix}posts.id = {$wpdb->prefix}term_relationships.object_id
             WHERE {$wpdb->prefix}posts.post_type = 'post'
             AND {$wpdb->prefix}term_relationships.term_taxonomy_id = 3793
-            GROUP BY {$wpdb->prefix}posts.post_author",
+            GROUP BY {$wpdb->prefix}posts.post_author
+            ORDER BY display_name ASC",
             ARRAY_A
         );
+
+        var_dump($authors);
         ?>
         <div class="columns">
             <div class="container">
