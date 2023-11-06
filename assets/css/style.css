@@ -1684,7 +1684,7 @@ article.opinion-article-01 h2 {
 }
 
 article.opinion-article-01 .author-avatar {
-    min-width: 128px;
+    min-width: 96px;
     aspect-ratio: 1;
     border-radius: 50%;
     background-size: cover;
