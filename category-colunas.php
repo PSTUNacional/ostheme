@@ -31,11 +31,6 @@ get_header(); ?>
 </style>
 <div class="content-area">
     <main>
-        <div class="container">
-            <div class="category-title">
-                <h1><?php single_cat_title(); ?></h1>
-            </div>
-        </div>
         <?php
         // ========== Ad Block ========== //
         if (get_option('theme_ads_01_options_active') == 'on') {
