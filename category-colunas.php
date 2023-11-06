@@ -72,8 +72,6 @@ get_header(); ?>
             ORDER BY display_name ASC",
             ARRAY_A
         );
-
-        var_dump($authors);
         ?>
         <div class="columns">
             <div class="container">
