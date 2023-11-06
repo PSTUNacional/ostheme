@@ -20,12 +20,16 @@ get_header(); ?>
         .columns{
             flex-direction: column;
         }
+        .author-col{
+            padding: var(--gap);
+        }
     }
     .author-col{
         display: flex;
         flex-direction: column;
         gap:calc(var(--gap)/2);
         min-width: 256px;
+
     }
     .author-col h3{
         padding-bottom: 12px;
