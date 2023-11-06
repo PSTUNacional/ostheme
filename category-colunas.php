@@ -16,6 +16,11 @@ get_header(); ?>
         max-width:var(--max-width);
         margin: auto;
     }
+    @media screen and (max-width:560px){
+        .columns{
+            flex-direction: column;
+        }
+    }
     .author-col{
         display: flex;
         flex-direction: column;
