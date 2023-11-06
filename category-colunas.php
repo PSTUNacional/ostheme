@@ -43,7 +43,8 @@ get_header(); ?>
                 for ($i = 0; $i < 19; $i++) {
                     $post = $posts->posts[$i];
                     if ($post->post_title) {
-                        $profile = get_avatar_url($post->ID);
+                        $profile = get_avatar_url($post->post_author);
+
             ?>
                         <article class="opinion-article-01">
                             <div class="author-avatar" style="background-image:url('<?=$profile?>')"></div>
