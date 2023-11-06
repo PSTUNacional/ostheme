@@ -39,7 +39,7 @@ function render_blocks($value)
             'options' => [
                 ['os_last-edition', 'OS Última edição'],
                 ['opinion_block_01', 'Opinião (4)'],
-                ['opinion_block_02', 'Opinião (8)'],
+                ['opinion_block_02', 'Opinião (10)'],
             ]
         ],
         [
