@@ -1205,7 +1205,7 @@ div.divider {
 }
 
 .opinion-block-01 article {
-    padding: var(--gap);
+    padding: calc(var(--gap)/2);
     border: 1px solid var(--grey-400);
     border-radius: 8px;
     height: 100%;
@@ -1242,7 +1242,7 @@ div.divider {
 .opinion-block-01 h2 {
     font-style: italic;
     font-weight: 400;
-    font-size: 1.25em;
+    font-size: 1em;
 }
 
 @media screen and (max-width:560px) {

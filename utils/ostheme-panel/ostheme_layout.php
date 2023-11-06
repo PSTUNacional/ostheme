@@ -38,7 +38,8 @@ function render_blocks($value)
             'name' => 'Fixos',
             'options' => [
                 ['os_last-edition', 'OS Última edição'],
-                ['opinion_block_01', 'Opinião']
+                ['opinion_block_01', 'Opinião (4)'],
+                ['opinion_block_02', 'Opinião (8)'],
             ]
         ],
         [
@@ -152,7 +153,7 @@ function headerblock_layout_callback()
                     $checked = 'checked';
                 }
 
-                $img = get_theme_root_uri().'/ostheme/assets/img/panel/headerblock_layout_0' . $i . '.gif")';
+                $img = get_theme_root_uri() . '/ostheme/assets/img/panel/headerblock_layout_0' . $i . '.gif")';
 
                 echo '<label for="headerblock_layout_version' . $i . '" style="background-image: url(' . $img . ')"><input type="radio" id="headerblock_layout_version' . $i . '" name="ostheme_headerblock_layout" value="header_block_0' . $i . '" ' . $checked . '/><span ></span></label>';
             }
@@ -572,38 +573,38 @@ function section01_layout_callback()
     <?php
         }
 
-                /* ==============================
+        /* ==============================
 
     Sectiont 11
 
 ============================== */
 
-function section11_layout_callback()
-{
-    $value = get_option('ostheme_section11_layout');
-?>
-<div class="field-line">
-    <div class="info">
-        <p><b>Seção 11</b></p>
-    </div>
-    <div>
-        <select name="ostheme_section11_layout" class="layout_selector">
-            <?php render_blocks($value); ?>
-        </select>
-    <?php
-}
-
-function section11_category_callback()
-{
-    render_categories_dropdown(
-        'ostheme_section11_category',
-        get_option('ostheme_section11_category')
-    );
+        function section11_layout_callback()
+        {
+            $value = get_option('ostheme_section11_layout');
     ?>
-    </div>
-</div>
-<?php
-}
+        <div class="field-line">
+            <div class="info">
+                <p><b>Seção 11</b></p>
+            </div>
+            <div>
+                <select name="ostheme_section11_layout" class="layout_selector">
+                    <?php render_blocks($value); ?>
+                </select>
+            <?php
+        }
+
+        function section11_category_callback()
+        {
+            render_categories_dropdown(
+                'ostheme_section11_category',
+                get_option('ostheme_section11_category')
+            );
+            ?>
+            </div>
+        </div>
+    <?php
+        }
 
 
         /*========================================
@@ -642,7 +643,8 @@ function section11_category_callback()
             document.querySelectorAll("#sections .layout_selector")
                 .forEach(select => {
                     select.addEventListener('change', () => {
-                        if (event.target.value == 'os_last-edition' || event.target.value == 'opinion_block_01') {
+                        if (event.target.value == 'os_last-edition' ||      event.target.value == 'opinion_block_01' ||
+                            event.target.value == 'opinion_block_02') {
                             event.target.nextElementSibling.disabled = true
                         } else {
                             event.target.nextElementSibling.disabled = false
