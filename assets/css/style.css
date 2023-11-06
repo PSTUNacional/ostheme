@@ -1633,7 +1633,9 @@ footer i {
     padding: 4px;
 }
 
-article.article-01 {
+
+article.article-01,
+article.opinion-article-01 {
     display: flex;
     gap: var(--gap);
     flex-direction: row;
@@ -1643,7 +1645,8 @@ article.article-01 {
 
 }
 
-article.article-01:not(:first-child) {
+article.article-01:not(:first-child),
+article.opinion-article-01:not(:first-child) {
     border-top: 2px dotted var(--grey-400);
 }
 
@@ -1652,7 +1655,8 @@ article.article-01 .featured-image-container {
     min-width: 30%;
 }
 
-article.article-01 h2 {
+article.article-01 h2,
+article.opinion-article-01 h2 {
     font-size: 1.5em;
 }
 
@@ -1677,6 +1681,17 @@ article.article-01 h2 {
     article.article-01 h2 {
         font-size: 1.25rem;
     }
+}
+
+article.opinion-article-01 .author-avatar {
+    min-width: 128px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-size: cover;
+}
+
+article.opinion-article-01 .sup-category{
+    font-size: 1em;
 }
 
 .search-pagination {
