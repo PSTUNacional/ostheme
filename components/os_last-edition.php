@@ -7,11 +7,11 @@
             array(
                 'taxonomy' => 'post_tag',
                 'field'    => 'name',
-                'terms'    =>  'OS663')//'oscapa')
+                'terms'    =>  'OS664')//'oscapa')
             ),
         );
     $posts = get_posts($args);
-    $edition = '663'//(int)filter_var($posts[0]->post_title, FILTER_SANITIZE_NUMBER_INT);
+    $edition = '664'//(int)filter_var($posts[0]->post_title, FILTER_SANITIZE_NUMBER_INT);
     ?>
     <div class="container">
         <div class="col">
