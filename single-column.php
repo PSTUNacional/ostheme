@@ -66,7 +66,7 @@
 <!-- Related posts | Same author -->
 <?php
 $args = array(
-  //'author'        =>  $post->post_author,
+  'author'        =>  $post->post_author,
   'orderby'       =>  'post_date',
   'order'         =>  'ASC',
   'post__not_in'  =>  array($post->ID),
