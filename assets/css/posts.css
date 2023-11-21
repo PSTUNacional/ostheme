@@ -9,7 +9,7 @@ article.post {
 }
 
 article.post p,
-article.post a{
+article.post a {
     font-family: 'Merriweather', serif;
 }
 
@@ -35,7 +35,7 @@ article.post .thumbnail-container {
     height: auto;
 }
 
-article.post .thumbnail-container img{
+article.post .thumbnail-container img {
     margin: 0;
 }
 
@@ -165,7 +165,23 @@ article .metainfo {
     background-color: #39f;
 }
 
+.related-posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 423px));
+    gap: var(--gap);
+    width: 100%;
+    justify-content: center;
+}
+
+.related-posts .related-post h3 {
+    font-size: 1.25em;
+}
+
 @media screen and (max-width:560px) {
+
+    .related-posts {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)) !important;
+    }
 
     article.post .container {
         padding: 0;
