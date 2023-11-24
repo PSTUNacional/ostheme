@@ -26,9 +26,11 @@ get_header(); ?>
         }
       } ?>
     </div>
+    <div class="container">
     <a href="https://facaparte.pstu.org.br/?utm_source=opiniao&utm_medium=materia&utm_campaign=regular">
       <img src="/wp-content/themes/ostheme/assets/img/ads/facaparte_2023v1.jpg"/>
     </a>
+    </div>
   </main>
 </div>
 <script>
