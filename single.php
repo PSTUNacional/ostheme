@@ -27,7 +27,7 @@ get_header(); ?>
       } ?>
     </div>
     <div class="container">
-    <a href="https://facaparte.pstu.org.br/?utm_source=opiniao&utm_medium=materia&utm_campaign=regular" style="margin: auto; width:100%">
+    <a href="https://facaparte.pstu.org.br/?utm_source=opiniao&utm_medium=materia&utm_campaign=regular" style="margin: auto">
       <img style="width:100%; max-width:900px; margin:auto" src="/wp-content/themes/ostheme/assets/img/ads/facaparte_2023v1.jpg"/>
     </a>
     </div>
