@@ -26,7 +26,14 @@ if($method == 'getRateById')
 
 if($method == 'getAllEvaluations')
 {
-    return $evaluation->getAllEvaluations();
+    $limit = isset($_GET['limit']) ? $_GET['limit'] : 30;
+    $order = isset($_GET['order']) ? $_GET['order'] : 'content_id';
+    $offset = isset($_GET['offset']) ? $_GET['offeset'] : 0;
+    return $evaluation->getAllEvaluations(
+        $limit,
+        $order,
+        $offset
+    );
 }
 
 if($method == 'getAllComments')

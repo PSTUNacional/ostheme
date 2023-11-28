@@ -26,32 +26,50 @@ function render_theme_ombudsman()
             color: #999;
         }
 
-        .global-rate .dashicons{
+        .global-rate .dashicons {
             margin: 0;
         }
 
-        .global-rate{
-            display:flex;
-            flex-direction:column;
-            gap:8px
+        .global-rate {
+            display: flex;
+            flex-direction: column;
+            gap: 8px
         }
     </style>
     <h1>Ombudsman</h1>
     <?php settings_errors(); // Exibe alertas na página 
     ?>
     <div style="display: flex; gap:24px">
-        <table class="wp-list-table widefat striped admin-table">
-            <thead>
-                <tr>
-                    <th>Matéria</th>
-                    <th>Avaliação</th>
-                    <th>Comentários</th>
-                </tr>
-            </thead>
-            <tbody>
+        <div style="display:flex; gap: 24px; flex-direction:column">
+            <div style="display:flex; gap:24px;">
+            <p>Filtrar por: </p>
+            <select name="" id="orderBy" onchange="getResults()">
+                <option value="" disabled selected>Ordenar por</option>
+                <option value="content_id">Conteúdo mais recente</option>
+                <option value="evaluations">Mais avaliações</option>
+                <option value="comments">Mais comentários</option>
+            </select>   
+            <p>Resultados por página: </p>
+            <select name="" id="perPage" onchange="getResults()">
+                <option value="" disabled selected>Resultados por página</option>
+                <option value="15">15</option>
+                <option value="30">30</option>
+                <option value="60">60</option>
+            </select>    
+        </div>
+            <table class="wp-list-table widefat striped admin-table">
+                <thead>
+                    <tr>
+                        <th>Matéria</th>
+                        <th>Avaliação</th>
+                        <th>Comentários</th>
+                    </tr>
+                </thead>
+                <tbody>
 
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        </div>
         <div class="card" style="margin-top:0">
             <h3 id="post-title">Selecione uma matéria</h3>
             <div></div>
@@ -106,7 +124,22 @@ function render_theme_ombudsman()
             </div>
 
             <script>
-                fetch('/wp-content/themes/ostheme/src/Controller/Evaluations.php?method=getAllEvaluations')
+                async function getResults(){
+
+                urlBase = '/wp-content/themes/ostheme/src/Controller/Evaluations.php?method=getAllEvaluations'
+                
+                orderBy = document.getElementById('orderBy').value
+                if (orderBy !== ''){
+                    urlBase += '&order='+orderBy
+                }
+
+                resultsPerPage = document.getElementById('perPage').value
+                if (resultsPerPage !== ''){
+                    urlBase += '&limit='+resultsPerPage
+                }
+
+                document.querySelector('table tbody').innerHTML = ''
+                fetch(urlBase)
                     .then(resp => resp.json())
                     .then(data => {
                         data.forEach(result => {
@@ -115,6 +148,7 @@ function render_theme_ombudsman()
                             document.querySelector('table tbody').innerHTML += tr
                         })
                     })
+                }
 
                 async function getComments(id) {
                     await fetch('/wp-content/themes/ostheme/src/Controller/Evaluations.php?method=getAllComments&id=' + id)
@@ -130,7 +164,7 @@ function render_theme_ombudsman()
                             rateone = 0
 
                             data.forEach(comment => {
-                                switch (comment['rate']){
+                                switch (comment['rate']) {
                                     case '5':
                                         ratefive++
                                         break;
@@ -165,6 +199,8 @@ function render_theme_ombudsman()
                             })
                         })
                 }
+
+                getResults();
             </script>
         <?php
     }

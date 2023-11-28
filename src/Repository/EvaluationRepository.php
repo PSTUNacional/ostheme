@@ -52,9 +52,13 @@ class EvaluationRepository extends Repository
         echo json_encode($result);
     }
 
-    public function getAllEvaluations(int $limit = 30)
+    public function getAllEvaluations(
+        int $limit,
+        string $order,
+        int $offset
+        )
     {
-        $sql = "SELECT `content_id`, `title`, ROUND(AVG(`rate`),1) as rate, COUNT(`rate`) as 'evaluations', COUNT(NULLIF(`comment`,'')) as comments FROM `os_content_evaluation` GROUP BY `content_id` ORDER BY `content_id` DESC LIMIT 0, $limit";
+        $sql = "SELECT `content_id`, `title`, ROUND(AVG(`rate`),1) as rate, COUNT(`rate`) as 'evaluations', COUNT(NULLIF(`comment`,'')) as comments FROM `os_content_evaluation` GROUP BY `content_id` ORDER BY $order DESC LIMIT $limit OFFSET $offset";
         $prepare = $this->conn->prepare($sql);
         $prepare->execute();
         $result = $prepare->fetchAll(\PDO::FETCH_ASSOC) ?: [];
