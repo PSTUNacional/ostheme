@@ -71,7 +71,7 @@ $profile = get_avatar_url($author_id);
                             <a href="<?= the_permalink(); ?>" title="<?= the_title() ?>">
                                 <h2><?= the_title() ?></h2>
                             </a>
-                            <p><?= formatDate($posts->the_date) ?></p>
+                            <p><?= the_date() ?></p>
                         </div>
                     </article>
             <?php
