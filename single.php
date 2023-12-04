@@ -12,7 +12,7 @@ get_header(); ?>
           the_post();
           $categories = get_the_category();
           $categoriesArr = [];
-          foreach ($cats as $a) {
+          foreach ($categories as $a) {
             array_push($categoriesArr, $a->name);
           }
           $profile = get_avatar_url($post->post_author);

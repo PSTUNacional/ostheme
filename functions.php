@@ -92,6 +92,12 @@ add_action('init', 'custom_author_base');
 
 ==============================*/
 
+/****
+ * 
+ * Featured image url
+ * 
+ */
+
 
 add_action('rest_api_init', 'register_rest_images');
 
@@ -121,6 +127,12 @@ function get_rest_featured_image($object, $field_name, $request)
     return false;
 }
 
+/***
+ * 
+ * Categories names
+ * 
+ */
+
 add_action('rest_api_init', 'register_categories_names');
 
 function register_categories_names()
@@ -146,6 +158,40 @@ function get_categories_names($object, $field_name, $request)
     }
     return $names;
 }
+
+/***
+ * 
+ * Author name and profile pic
+ * 
+ */
+
+ add_action('rest_api_init', 'register_author_info');
+
+ function register_author_info()
+ {
+     register_rest_field(
+         array('post', 'search-result'),
+         'author_info',
+         array(
+             'get_callback'    => 'get_author_info',
+             'update_callback' => null,
+             'schema'          => null,
+         )
+     );
+ }
+ 
+ function get_author_info($object, $field_name, $request)
+ {
+
+    $name = get_author_name();
+    $profile = get_avatar_url($object['author']);
+
+    $arr = [
+        'name' => $name,
+        'pic'   => $profile,
+    ];
+    return $arr;
+ }
 
 /*==============================
 
