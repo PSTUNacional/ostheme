@@ -82,10 +82,11 @@ get_header(); ?>
         $args = array(
             'numberposts' => 4,
             'post__not_in' => $skipDestak,
-            'category__not_in' => array(50,3793,91),
-            'tag__not_in' => array(4));
+            'category__not_in' => array(50, 3793, 91),
+            'tag__not_in' => array(4)
+        );
 
-        $posts = get_posts( $args );
+        $posts = get_posts($args);
         include(__DIR__ . '/components/block_01.php');
 
         /***

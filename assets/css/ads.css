@@ -85,3 +85,59 @@ section.ads {
     display: block;
     margin:0 !important;
 }
+
+/*========================================
+
+    FOOTER POPUP
+
+*========================================*/
+
+.footer-popup{
+    width: 100%;
+    padding:12px;
+    position: sticky;
+    bottom: 0;
+    background-color:#fff;
+    box-shadow: 0 -20px 40px 0px #0005;
+    z-index: 98;
+    transition: all 1s ease-in-out;
+    transform: translateY(150%);
+}
+
+.footer-popup.active{
+    transition: all 1s ease-in-out;
+    transform: translateY(0%);
+}
+
+.footer-popup .container{
+    flex-wrap: nowrap;
+    padding:12px;
+}
+
+.footer-popup .container .col:first-child{
+    gap:4px
+}
+
+.footer-popup .container .col:last-child{
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+}
+
+.footer-popup h5{
+    color:var(--primary);
+}
+
+.footer-popup p{
+    font-size:0.75rem;
+}
+
+@media screen and (max-width:560px){
+    .footer-popup .container{
+        flex-wrap: wrap;
+    }
+    .footer-popup .container .col:last-child{
+        justify-content: start;
+    }
+    
+}

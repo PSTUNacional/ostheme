@@ -159,3 +159,31 @@ document.querySelector('#search-bar input[type=text]')
         }
 
     })
+
+/*========================================
+
+FOOTER POPUP
+
+*========================================*/
+
+popup = document.createElement('div')
+popup.className = "footer-popup"
+popup.innerHTML = `<div class="container">
+        <div class="col">
+            <h5>Apoie a imprensa socialista</h5>
+            <p>Todo o nosso trabalho é mantido por esforço militante. Faça uma doação e ajude-nos a manter a independência de classe.</p>
+        </div>
+        <div class="col">
+            <a href="https://doe.pstu.org.br/?utm_source=opiniao&utm_medium=footerpopup&utm_campaign=regular" target="_blank" class="btn primary" onclick="closeFooterPopup()" >Apoie</a>
+            <button onclick="closeFooterPopup()" class="btn secondary">Depois</button>
+        </div>
+    </div>`
+
+document.body.append(popup)
+window.onload = setTimeout(() => {
+    document.querySelector('.footer-popup').classList.add('active')
+}, 5000)
+
+function closeFooterPopup() {
+    document.querySelector('.footer-popup').classList.remove('active')
+}
