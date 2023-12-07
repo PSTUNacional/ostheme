@@ -112,6 +112,7 @@ section.ads {
 .footer-popup .container{
     flex-wrap: nowrap;
     padding:12px;
+    max-width: 720px;
 }
 
 .footer-popup .container .col:first-child{
