@@ -185,5 +185,5 @@ window.onload = setTimeout(() => {
 }, 5000)
 
 function closeFooterPopup() {
-    document.querySelector('.footer-popup').classList.remove('active')
+    document.querySelector('.footer-popup').remove()
 }
