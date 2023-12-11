@@ -51,7 +51,6 @@ section {
     display: flex;
     flex-direction: row;
     gap: var(--gap);
-    flex-wrap: wrap;
     position: relative;
 }
 

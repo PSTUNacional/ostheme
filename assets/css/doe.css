@@ -1,0 +1,181 @@
+.container {
+    flex-wrap: nowrap;
+}
+
+@media screen and (max-width:560px) {
+    .container {
+        flex-direction: column;
+    }
+}
+
+#form_data {
+    display: flex;
+    flex-direction: column;
+    max-width: 480px;
+    margin: var(--gap);
+    gap: var(--gap);
+}
+
+#form_data fieldset {
+    border: 0;
+    padding: 12px 0;
+    display: flex;
+    width: 100%;
+}
+
+input {
+    height: 40px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 1px solid var(--grey-500);
+    background-color: var(--grey-100)
+}
+
+#form_data .line {
+    display: flex;
+    gap: 8px;
+    flex-direction: column;
+}
+
+h1 {
+    color: var(--primary);
+    font-size: 3rem;
+}
+
+h1 span {
+    display: block;
+    font-size: 0.7em;
+    color: var(--black);
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: 300;
+}
+
+#form_data div.pill-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px;
+    width: 100%;
+}
+
+.pill-container label {
+    width: fit-content;
+}
+
+.pill-container input {
+    display: none;
+}
+
+.pill-container span {
+    padding: 8px 16px;
+    border-radius: 48px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pill-container label:hover span {
+    border: 1px solid #c00;
+    color: #c00;
+    background-color: #cc00001A;
+}
+
+.pill-container input:checked+span {
+    border: 1px solid #c00;
+    background-color: #c00;
+    color: #fff;
+    cursor: pointer;
+}
+
+form .alert {
+    color: #c00;
+    display: none;
+    font-size: 0.8rem;
+    margin: 4px 0 12px 0;
+}
+
+input.error {
+    border-color: #c00;
+}
+
+input.error:focus {
+    border-color: #c00;
+    outline: 2px solid #c008;
+}
+
+#backdrop {
+    background-color: #0009;
+    backdrop-filter: blur(20px);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    display: none;
+    opacity: 1;
+}
+
+.pix-modal {
+    width: 80%;
+    max-width: 420px;
+    padding: 24px;
+    border-radius: 24px;
+    background-color: #fff;
+    box-shadow: 0 10px 20px #0009;
+    top: 50%;
+    transform: translateY(-50%);
+    position: sticky;
+    z-index: 100;
+    display: none;
+    text-align: center;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.pix-modal img {
+    max-width: 100%;
+}
+
+.pix-modal h3 {
+    font-size: 1.5rem;
+    color: #c00;
+}
+
+.pix-modal button {
+    border: none;
+    max-width: 120px;
+    margin: auto;
+}
+
+/*=====================================
+
+  INFOBOX
+
+=====================================*/
+
+.infobox {
+    background-color: #0000000D;
+    padding: 24px;
+    border-radius: 24px;
+    font-size: 12px;
+}
+
+.infobox h3 {
+    font-weight: bold;
+    color: #c00;
+    margin: 0 0 8px 0;
+    font-size: 1rem;
+}
+
+.infobox p {
+    margin: 0;
+}

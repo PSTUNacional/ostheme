@@ -17,7 +17,7 @@
                     <image href="<?= get_template_directory_uri() . '/assets/img/logos/pstu.svg'; ?>" style="width:100%" />
                 </svg>
                 <a href="https://facaparte.pstu.org.br?utm_source=opiniao&utm_medium=footer&utm_campaign=organic" target="_blank">Venha para o PSTU</a>
-                <a href="https://doe.pstu.org.br?utm_source=opiniao&utm_medium=footer&utm_campaign=organic" target="_blank">Contribua</a>
+                <a href="https://www.opiniaosocialista.com.br/doe/?utm_source=opiniao&utm_medium=footer&utm_campaign=organic" target="_blank">Contribua</a>
             </a>
         </div>
     </div>
