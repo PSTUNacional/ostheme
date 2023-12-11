@@ -175,7 +175,7 @@ if (!window.location.pathname.includes('/doe')) {
             <p>Todo o nosso trabalho é mantido por esforço militante. Faça uma doação e ajude-nos a manter a independência de classe.</p>
         </div>
         <div class="col">
-            <a href="https://www.opiniaosocialista.com.br/doe/?utm_source=opiniao&utm_medium=footerpopup&utm_campaign=regular" target="_blank" class="btn primary" onclick="closeFooterPopup()" >Apoie</a>
+            <a href="https://www.opiniaosocialista.com.br/contribua/?utm_source=opiniao&utm_medium=footerpopup&utm_campaign=regular" target="_blank" class="btn primary" onclick="closeFooterPopup()" >Apoie</a>
             <button onclick="closeFooterPopup()" class="btn secondary">Depois</button>
         </div>
     </div>`
