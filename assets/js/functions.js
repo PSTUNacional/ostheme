@@ -166,7 +166,7 @@ FOOTER POPUP
 
 *========================================*/
 
-if (!window.location.pathname.includes('/doe')) {
+if (!window.location.pathname.includes('/contribua')) {
     popup = document.createElement('div')
     popup.className = "footer-popup"
     popup.innerHTML = `<div class="container">
