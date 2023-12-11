@@ -15,7 +15,7 @@ get_header(); ?>
             <div>
                 <p>Você também pode copiar o código do pagamento:</p>
                 <div style="display:flex;gap:16px;">
-                    <input type="text" style="margin:0" id="qrcode-number">
+                    <input type="text" style="margin:0; width: 100%" id="qrcode-number">
                     <button class="btn primary" onclick="copyQRCode()">Copiar</button>
                 </div>
                 <button class="btn secondary" style="margin-top:24px; width:100%; max-width:inherit" onclick="closeModal()">Fechar</button>
