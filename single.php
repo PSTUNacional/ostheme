@@ -42,11 +42,13 @@ get_header(); ?>
       origin: document.referrer
     })
   }
+
   setTimeout(() => {
     renderEvaluationScale(<?= get_the_ID() ?>)
   }, 10000)
 
-  window.onload = () => {
+  window.addEventListener('load',() => {
+
 
     ////////// Ads //////////
 
@@ -90,6 +92,6 @@ get_header(); ?>
         p.prepend(s)
         place.prepend(p)
       })
-  }
+  })
 </script>
 <?php get_footer(); ?>

@@ -179,3 +179,33 @@ input.error:focus {
 .infobox p {
     margin: 0;
 }
+
+.pay-options{
+    display: flex;
+    gap: var(--gap);
+}
+
+.pay-options .card{
+    padding: var(--gap);
+    border-radius:8px;
+    box-shadow: 0 3px 6px 0 #0003;
+    cursor:pointer;
+    border:1px solid #fff;
+    text-align: center;
+    width: 100%;
+}
+
+
+.pay-options .card span{
+    color:var(--grey-700);
+    display: block;
+    font-size: 0.8rem;
+}
+
+.pay-options .card:hover{
+    padding: var(--gap);
+    border-radius:8px;
+    box-shadow: 0 3px 6px 0 #0003;
+    cursor:pointer;
+    border:1px solid var(--primary);
+}

@@ -30,9 +30,15 @@ get_header(); ?>
                     <h3>E ajude a fortalecer a imprensa socialista e independente.</h3>
                     <p>Tudo o que fazemos é fruto do esforço de militantes comprometidos com um programa socialista e revolucionário para o Brasil e para o mundo. Mas para manter uma imprensa ativa, publicando e elaborando diaramente sobre a realidade brasileira, existem custos que não são possíveis contornar.</p>
                     <p>Além disso, ao contribuir com o <b>Opinião Socialista</b> você nos ajuda a manter a independência de classe. Não aceitamos dinheiro de banqueiros e empresários. Tudo aqui é fruto do esforço de trabalhadoras e trabalhadores que dedicam suas horas livres para a construção desse projeto.</p>
+                    <h3 style="margin-top:48px">Outras opções de pagamento</h3><hr/>
+                    <div class="pay-options">
+                <a href="https://app.essentjus.com.br/contribua/pstunacionalmensal" target="_blank"  class="card">Doação Mensal<span>Boleto ou Cartão</span></a>
+                <a href="https://app.essentjus.com.br/contribua/pstu" target="_blank" class="card">Doação Única<span>Boleto ou Cartão</span></a></div>
                 </div>
                 <div class="col">
+                    
                     <form id="form_data" onsubmit="validatePixForm()">
+                    <h4>Doação em PIX</h4>
                         <div class="line">
                             <label for="fname">Nome completo</label>
                             <input type="text" name="fname" required />
