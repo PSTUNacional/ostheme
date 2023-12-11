@@ -120,7 +120,6 @@ header {
     display: none;
 }
 
-
 .backdrop {
     display: none;
     opacity: 0;
@@ -213,7 +212,8 @@ section.menu-area {
 
     .top-bar .container {
         align-items: center;
-        padding: 12px 24px
+        padding: 12px 24px;
+        flex-direction: row;
     }
 
     .top-bar .hamb {
