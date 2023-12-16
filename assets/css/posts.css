@@ -28,6 +28,12 @@ article.post h3 {
     margin-bottom: var(--gap);
 }
 
+article.post blockquote{
+    padding-left: var(--gap);
+    border-left: 4px solid var(--primary);
+    font-size: 1.5rem;
+}
+
 article.post img,
 article.post .thumbnail-container {
     margin: 48px auto;
