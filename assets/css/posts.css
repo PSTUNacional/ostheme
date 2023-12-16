@@ -219,4 +219,13 @@ article .metainfo {
     .socialmedia .share.wa {
         display: flex;
     }
+
+    article.post blockquote{
+        padding-left: var(--gap);
+        border-left: 4px solid var(--primary);
+    }
+    article.post blockquote p{
+        font-size: 1.15rem;
+        font-weight: bold;
+    }
 }
