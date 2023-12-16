@@ -34,6 +34,7 @@ article.post blockquote{
 }
 article.post blockquote p{
     font-size: 1.5rem;
+    font-weight: bold;
 }
 
 article.post img,
