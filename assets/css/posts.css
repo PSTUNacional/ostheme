@@ -31,6 +31,8 @@ article.post h3 {
 article.post blockquote{
     padding-left: var(--gap);
     border-left: 4px solid var(--primary);
+}
+article.post blockquote p{
     font-size: 1.5rem;
 }
 
