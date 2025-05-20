@@ -318,3 +318,17 @@ function os_render_thumbnail($post, $size = "medium")
 
     return $tb;
 }
+
+function get_post_views_from_ga($slug) {
+    $cache_key = 'ga_views_' . md5($slug);
+    $cached = get_transient($cache_key);
+
+    if ($cached !== false) {
+        return $cached;
+    }
+
+    $ga4 = new GoogleAnalyticsController();
+    $views = $ga4->get_views_by_slug($slug); // Função que chama sua API
+    set_transient($cache_key, $views, HOUR_IN_SECONDS * 1); // cache por 6h
+    return $views;
+}

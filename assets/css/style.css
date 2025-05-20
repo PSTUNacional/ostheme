@@ -882,7 +882,7 @@ div.divider {
 }
 
 .header-block-04 h2 {
-    font-size: 1.25em;
+    font-size: 1.4em;
 }
 
 .header-block-04 .col.middle article:not(:last-child) {
@@ -1205,9 +1205,6 @@ div.divider {
 }
 
 .opinion-block-01 article {
-    padding: calc(var(--gap)/2);
-    border: 1px solid var(--grey-400);
-    border-radius: 8px;
     height: 100%;
     gap: 0;
 }
@@ -1231,18 +1228,19 @@ div.divider {
     justify-content: center;
     color: var(--grey-100);
     font-size: 24px;
+	aspect-ratio: 1;
 }
 
 .opinion-block-01 .author-line {
-    color: var(--primary);
+    color: var(--black);
     font-size: 1em;
+    font-weight: 600;
     text-transform: none;
 }
 
 .opinion-block-01 h2 {
-    font-style: italic;
     font-weight: 400;
-    font-size: 1em;
+    font-size: 0.85em;
 }
 
 @media screen and (max-width:560px) {

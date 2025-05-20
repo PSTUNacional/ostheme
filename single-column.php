@@ -42,11 +42,24 @@
 
     <div class="rate-box">
       <?php
-      $evaluation = get_the_rate($post->ID);
-      $evRate = round($evaluation['rate'], 2);
-      $evTotal = round($evaluation['total']);
+      try {
+        $evaluation = get_the_rate($post->ID);
+        $evRate = round($evaluation['rate'], 2);
+        $evTotal = round($evaluation['total']);
+      } catch (Exception $e) {
+        $evRate = 0;
+        $evTotal = 0;
+      }
 
-      echo '<i class="material-icons checked">star</i>' . $evRate . ' (' . $evTotal . ' avaliações)'; ?>
+      $slug = get_post()->post_name;
+      $views = get_post_views_from_ga($slug);
+      ?>
+      <span>
+        <i class="material-icons checked">star</i><?= $evRate ?> (<?= $evTotal ?>)
+      </span>
+      <span>
+        <i class="material-icons checked">visibility</i> <?= $views ?>
+      </span>
     </div>
   </div>
 
@@ -78,8 +91,8 @@ $relatedPosts = new WP_Query($args);
 ?>
 
 <div class="block-header">
-    <span>Mais textos de <?=the_author_meta('display_name', $post->post_author);?></span>
-  </div>
+  <span>Mais textos de <?= the_author_meta('display_name', $post->post_author); ?></span>
+</div>
 <div class="related-posts">
   <?php foreach ($relatedPosts->posts as $relpost) { ?>
     <article class="related-post">
